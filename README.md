@@ -14588,7 +14588,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[64]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1">#for manipulating the csv data</span>
@@ -14618,7 +14618,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[64]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 
 
 
@@ -14649,7 +14649,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[65]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">nulling</span> <span class="p">(</span><span class="n">df_in</span><span class="p">,</span> <span class="n">col_name</span><span class="p">):</span>
@@ -14786,9 +14786,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
         <span class="n">zz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">aa</span>
     <span class="k">return</span> <span class="n">zz</span>
 
-<span class="k">def</span> <span class="nf">runAll</span><span class="p">():</span>
-
-    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;diabetes.csv&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">runAll</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">data</span><span class="o">=</span><span class="n">praproses</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
     <span class="n">splitter</span> <span class="o">=</span> <span class="n">helper_disk</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="s1">&#39;Outcome&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">splitter</span><span class="p">)</span>
@@ -14797,7 +14796,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
     <span class="k">return</span> <span class="n">pp_disc</span>
 
-<span class="k">def</span> <span class="nf">runNoknn</span><span class="p">():</span>
+<span class="k">def</span> <span class="nf">runNoknn</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">data</span> <span class="o">=</span>  <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;diabetes.csv&#39;</span><span class="p">)</span>
     <span class="n">data</span><span class="o">=</span><span class="n">praproses</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">splitter</span> <span class="o">=</span> <span class="n">helper_disk</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="s1">&#39;Outcome&#39;</span><span class="p">)</span>
@@ -14823,48 +14823,6 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[66]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">raw_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;diabetes.csv&#39;</span><span class="p">)</span>
-<span class="n">datasets_imputed</span> <span class="o">=</span> <span class="n">praproses</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span>
-<span class="n">dnoknn</span> <span class="o">=</span> <span class="n">runNoknn</span><span class="p">()</span>
-<span class="n">dwithknn</span> <span class="o">=</span> <span class="n">runAll</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{&#39;Pregnancies&#39;: (0.039180260954807755, 6.0), &#39;Glucose&#39;: (0.13518841941127935, 127.0), &#39;BloodPressure&#39;: (0.018731718578645196, 63.0), &#39;SkinThickness&#39;: (0.07250945002996534, 23.0), &#39;Insulin&#39;: (0.14435516834581175, 108.0), &#39;BMI&#39;: (0.07469977982812326, 27.8), &#39;DiabetesPedigreeFunction&#39;: (0.02079639637723707, 0.527), &#39;Age&#39;: (0.0724727100056407, 28.0)}
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -14872,7 +14830,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="DATASET-ASLI">DATASET ASLI<a class="anchor-link" href="#DATASET-ASLI">&#182;</a></h3>
+<h4 id="DATASET-ASLI">DATASET ASLI<a class="anchor-link" href="#DATASET-ASLI">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -14881,10 +14839,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[67]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">raw_data</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">raw_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;diabetes.csv&#39;</span><span class="p">)</span>
+<span class="n">raw_data</span>
 </pre></div>
 
      </div>
@@ -14902,7 +14861,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[67]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
 
 
 
@@ -14940,10 +14899,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>0</th>
       <td>6</td>
-      <td>148.0</td>
-      <td>72.0</td>
-      <td>35.0</td>
-      <td>NaN</td>
+      <td>148</td>
+      <td>72</td>
+      <td>35</td>
+      <td>0</td>
       <td>33.6</td>
       <td>0.627</td>
       <td>50</td>
@@ -14952,10 +14911,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>1</th>
       <td>1</td>
-      <td>85.0</td>
-      <td>66.0</td>
-      <td>29.0</td>
-      <td>NaN</td>
+      <td>85</td>
+      <td>66</td>
+      <td>29</td>
+      <td>0</td>
       <td>26.6</td>
       <td>0.351</td>
       <td>31</td>
@@ -14964,10 +14923,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>2</th>
       <td>8</td>
-      <td>183.0</td>
-      <td>64.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>183</td>
+      <td>64</td>
+      <td>0</td>
+      <td>0</td>
       <td>23.3</td>
       <td>0.672</td>
       <td>32</td>
@@ -14976,10 +14935,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>3</th>
       <td>1</td>
-      <td>89.0</td>
-      <td>66.0</td>
-      <td>23.0</td>
-      <td>94.0</td>
+      <td>89</td>
+      <td>66</td>
+      <td>23</td>
+      <td>94</td>
       <td>28.1</td>
       <td>0.167</td>
       <td>21</td>
@@ -14988,10 +14947,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>4</th>
       <td>0</td>
-      <td>137.0</td>
-      <td>40.0</td>
-      <td>35.0</td>
-      <td>168.0</td>
+      <td>137</td>
+      <td>40</td>
+      <td>35</td>
+      <td>168</td>
       <td>43.1</td>
       <td>2.288</td>
       <td>33</td>
@@ -15000,10 +14959,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>5</th>
       <td>5</td>
-      <td>116.0</td>
-      <td>74.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>116</td>
+      <td>74</td>
+      <td>0</td>
+      <td>0</td>
       <td>25.6</td>
       <td>0.201</td>
       <td>30</td>
@@ -15012,10 +14971,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>6</th>
       <td>3</td>
-      <td>78.0</td>
-      <td>50.0</td>
-      <td>32.0</td>
-      <td>88.0</td>
+      <td>78</td>
+      <td>50</td>
+      <td>32</td>
+      <td>88</td>
       <td>31.0</td>
       <td>0.248</td>
       <td>26</td>
@@ -15024,10 +14983,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>7</th>
       <td>10</td>
-      <td>115.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>115</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>35.3</td>
       <td>0.134</td>
       <td>29</td>
@@ -15036,10 +14995,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>8</th>
       <td>2</td>
-      <td>197.0</td>
-      <td>70.0</td>
-      <td>45.0</td>
-      <td>543.0</td>
+      <td>197</td>
+      <td>70</td>
+      <td>45</td>
+      <td>543</td>
       <td>30.5</td>
       <td>0.158</td>
       <td>53</td>
@@ -15048,11 +15007,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>9</th>
       <td>8</td>
-      <td>125.0</td>
-      <td>96.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>125</td>
+      <td>96</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
       <td>0.232</td>
       <td>54</td>
       <td>1</td>
@@ -15060,10 +15019,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>10</th>
       <td>4</td>
-      <td>110.0</td>
-      <td>92.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>110</td>
+      <td>92</td>
+      <td>0</td>
+      <td>0</td>
       <td>37.6</td>
       <td>0.191</td>
       <td>30</td>
@@ -15072,10 +15031,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>11</th>
       <td>10</td>
-      <td>168.0</td>
-      <td>74.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>168</td>
+      <td>74</td>
+      <td>0</td>
+      <td>0</td>
       <td>38.0</td>
       <td>0.537</td>
       <td>34</td>
@@ -15084,10 +15043,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>12</th>
       <td>10</td>
-      <td>139.0</td>
-      <td>80.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>139</td>
+      <td>80</td>
+      <td>0</td>
+      <td>0</td>
       <td>27.1</td>
       <td>1.441</td>
       <td>57</td>
@@ -15096,10 +15055,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>13</th>
       <td>1</td>
-      <td>189.0</td>
-      <td>60.0</td>
-      <td>23.0</td>
-      <td>846.0</td>
+      <td>189</td>
+      <td>60</td>
+      <td>23</td>
+      <td>846</td>
       <td>30.1</td>
       <td>0.398</td>
       <td>59</td>
@@ -15108,10 +15067,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>14</th>
       <td>5</td>
-      <td>166.0</td>
-      <td>72.0</td>
-      <td>19.0</td>
-      <td>175.0</td>
+      <td>166</td>
+      <td>72</td>
+      <td>19</td>
+      <td>175</td>
       <td>25.8</td>
       <td>0.587</td>
       <td>51</td>
@@ -15120,10 +15079,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>15</th>
       <td>7</td>
-      <td>100.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>100</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>30.0</td>
       <td>0.484</td>
       <td>32</td>
@@ -15132,10 +15091,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>16</th>
       <td>0</td>
-      <td>118.0</td>
-      <td>84.0</td>
-      <td>47.0</td>
-      <td>230.0</td>
+      <td>118</td>
+      <td>84</td>
+      <td>47</td>
+      <td>230</td>
       <td>45.8</td>
       <td>0.551</td>
       <td>31</td>
@@ -15144,10 +15103,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>17</th>
       <td>7</td>
-      <td>107.0</td>
-      <td>74.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>107</td>
+      <td>74</td>
+      <td>0</td>
+      <td>0</td>
       <td>29.6</td>
       <td>0.254</td>
       <td>31</td>
@@ -15156,10 +15115,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>18</th>
       <td>1</td>
-      <td>103.0</td>
-      <td>30.0</td>
-      <td>38.0</td>
-      <td>83.0</td>
+      <td>103</td>
+      <td>30</td>
+      <td>38</td>
+      <td>83</td>
       <td>43.3</td>
       <td>0.183</td>
       <td>33</td>
@@ -15168,10 +15127,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>19</th>
       <td>1</td>
-      <td>115.0</td>
-      <td>70.0</td>
-      <td>30.0</td>
-      <td>96.0</td>
+      <td>115</td>
+      <td>70</td>
+      <td>30</td>
+      <td>96</td>
       <td>34.6</td>
       <td>0.529</td>
       <td>32</td>
@@ -15180,10 +15139,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>20</th>
       <td>3</td>
-      <td>126.0</td>
-      <td>88.0</td>
-      <td>41.0</td>
-      <td>235.0</td>
+      <td>126</td>
+      <td>88</td>
+      <td>41</td>
+      <td>235</td>
       <td>39.3</td>
       <td>0.704</td>
       <td>27</td>
@@ -15192,10 +15151,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>21</th>
       <td>8</td>
-      <td>99.0</td>
-      <td>84.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>99</td>
+      <td>84</td>
+      <td>0</td>
+      <td>0</td>
       <td>35.4</td>
       <td>0.388</td>
       <td>50</td>
@@ -15204,10 +15163,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>22</th>
       <td>7</td>
-      <td>196.0</td>
-      <td>90.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>196</td>
+      <td>90</td>
+      <td>0</td>
+      <td>0</td>
       <td>39.8</td>
       <td>0.451</td>
       <td>41</td>
@@ -15216,10 +15175,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>23</th>
       <td>9</td>
-      <td>119.0</td>
-      <td>80.0</td>
-      <td>35.0</td>
-      <td>NaN</td>
+      <td>119</td>
+      <td>80</td>
+      <td>35</td>
+      <td>0</td>
       <td>29.0</td>
       <td>0.263</td>
       <td>29</td>
@@ -15228,10 +15187,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>24</th>
       <td>11</td>
-      <td>143.0</td>
-      <td>94.0</td>
-      <td>33.0</td>
-      <td>146.0</td>
+      <td>143</td>
+      <td>94</td>
+      <td>33</td>
+      <td>146</td>
       <td>36.6</td>
       <td>0.254</td>
       <td>51</td>
@@ -15240,10 +15199,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>25</th>
       <td>10</td>
-      <td>125.0</td>
-      <td>70.0</td>
-      <td>26.0</td>
-      <td>115.0</td>
+      <td>125</td>
+      <td>70</td>
+      <td>26</td>
+      <td>115</td>
       <td>31.1</td>
       <td>0.205</td>
       <td>41</td>
@@ -15252,10 +15211,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>26</th>
       <td>7</td>
-      <td>147.0</td>
-      <td>76.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>147</td>
+      <td>76</td>
+      <td>0</td>
+      <td>0</td>
       <td>39.4</td>
       <td>0.257</td>
       <td>43</td>
@@ -15264,10 +15223,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>27</th>
       <td>1</td>
-      <td>97.0</td>
-      <td>66.0</td>
-      <td>15.0</td>
-      <td>140.0</td>
+      <td>97</td>
+      <td>66</td>
+      <td>15</td>
+      <td>140</td>
       <td>23.2</td>
       <td>0.487</td>
       <td>22</td>
@@ -15276,10 +15235,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>28</th>
       <td>13</td>
-      <td>145.0</td>
-      <td>82.0</td>
-      <td>19.0</td>
-      <td>110.0</td>
+      <td>145</td>
+      <td>82</td>
+      <td>19</td>
+      <td>110</td>
       <td>22.2</td>
       <td>0.245</td>
       <td>57</td>
@@ -15288,10 +15247,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>29</th>
       <td>5</td>
-      <td>117.0</td>
-      <td>92.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>117</td>
+      <td>92</td>
+      <td>0</td>
+      <td>0</td>
       <td>34.1</td>
       <td>0.337</td>
       <td>38</td>
@@ -15300,10 +15259,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>30</th>
       <td>5</td>
-      <td>109.0</td>
-      <td>75.0</td>
-      <td>26.0</td>
-      <td>NaN</td>
+      <td>109</td>
+      <td>75</td>
+      <td>26</td>
+      <td>0</td>
       <td>36.0</td>
       <td>0.546</td>
       <td>60</td>
@@ -15312,10 +15271,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>31</th>
       <td>3</td>
-      <td>158.0</td>
-      <td>76.0</td>
-      <td>36.0</td>
-      <td>245.0</td>
+      <td>158</td>
+      <td>76</td>
+      <td>36</td>
+      <td>245</td>
       <td>31.6</td>
       <td>0.851</td>
       <td>28</td>
@@ -15324,10 +15283,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>32</th>
       <td>3</td>
-      <td>88.0</td>
-      <td>58.0</td>
-      <td>11.0</td>
-      <td>54.0</td>
+      <td>88</td>
+      <td>58</td>
+      <td>11</td>
+      <td>54</td>
       <td>24.8</td>
       <td>0.267</td>
       <td>22</td>
@@ -15336,10 +15295,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>33</th>
       <td>6</td>
-      <td>92.0</td>
-      <td>92.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>92</td>
+      <td>92</td>
+      <td>0</td>
+      <td>0</td>
       <td>19.9</td>
       <td>0.188</td>
       <td>28</td>
@@ -15348,10 +15307,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>34</th>
       <td>10</td>
-      <td>122.0</td>
-      <td>78.0</td>
-      <td>31.0</td>
-      <td>NaN</td>
+      <td>122</td>
+      <td>78</td>
+      <td>31</td>
+      <td>0</td>
       <td>27.6</td>
       <td>0.512</td>
       <td>45</td>
@@ -15360,10 +15319,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>35</th>
       <td>4</td>
-      <td>103.0</td>
-      <td>60.0</td>
-      <td>33.0</td>
-      <td>192.0</td>
+      <td>103</td>
+      <td>60</td>
+      <td>33</td>
+      <td>192</td>
       <td>24.0</td>
       <td>0.966</td>
       <td>33</td>
@@ -15372,10 +15331,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>36</th>
       <td>11</td>
-      <td>138.0</td>
-      <td>76.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>138</td>
+      <td>76</td>
+      <td>0</td>
+      <td>0</td>
       <td>33.2</td>
       <td>0.420</td>
       <td>35</td>
@@ -15384,10 +15343,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>37</th>
       <td>9</td>
-      <td>102.0</td>
-      <td>76.0</td>
-      <td>37.0</td>
-      <td>NaN</td>
+      <td>102</td>
+      <td>76</td>
+      <td>37</td>
+      <td>0</td>
       <td>32.9</td>
       <td>0.665</td>
       <td>46</td>
@@ -15396,10 +15355,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>38</th>
       <td>2</td>
-      <td>90.0</td>
-      <td>68.0</td>
-      <td>42.0</td>
-      <td>NaN</td>
+      <td>90</td>
+      <td>68</td>
+      <td>42</td>
+      <td>0</td>
       <td>38.2</td>
       <td>0.503</td>
       <td>27</td>
@@ -15408,10 +15367,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>39</th>
       <td>4</td>
-      <td>111.0</td>
-      <td>72.0</td>
-      <td>47.0</td>
-      <td>207.0</td>
+      <td>111</td>
+      <td>72</td>
+      <td>47</td>
+      <td>207</td>
       <td>37.1</td>
       <td>1.390</td>
       <td>56</td>
@@ -15420,10 +15379,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>40</th>
       <td>3</td>
-      <td>180.0</td>
-      <td>64.0</td>
-      <td>25.0</td>
-      <td>70.0</td>
+      <td>180</td>
+      <td>64</td>
+      <td>25</td>
+      <td>70</td>
       <td>34.0</td>
       <td>0.271</td>
       <td>26</td>
@@ -15432,10 +15391,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>41</th>
       <td>7</td>
-      <td>133.0</td>
-      <td>84.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>133</td>
+      <td>84</td>
+      <td>0</td>
+      <td>0</td>
       <td>40.2</td>
       <td>0.696</td>
       <td>37</td>
@@ -15444,10 +15403,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>42</th>
       <td>7</td>
-      <td>106.0</td>
-      <td>92.0</td>
-      <td>18.0</td>
-      <td>NaN</td>
+      <td>106</td>
+      <td>92</td>
+      <td>18</td>
+      <td>0</td>
       <td>22.7</td>
       <td>0.235</td>
       <td>48</td>
@@ -15456,10 +15415,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>43</th>
       <td>9</td>
-      <td>171.0</td>
-      <td>110.0</td>
-      <td>24.0</td>
-      <td>240.0</td>
+      <td>171</td>
+      <td>110</td>
+      <td>24</td>
+      <td>240</td>
       <td>45.4</td>
       <td>0.721</td>
       <td>54</td>
@@ -15468,10 +15427,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>44</th>
       <td>7</td>
-      <td>159.0</td>
-      <td>64.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>159</td>
+      <td>64</td>
+      <td>0</td>
+      <td>0</td>
       <td>27.4</td>
       <td>0.294</td>
       <td>40</td>
@@ -15480,10 +15439,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>45</th>
       <td>0</td>
-      <td>180.0</td>
-      <td>66.0</td>
-      <td>39.0</td>
-      <td>NaN</td>
+      <td>180</td>
+      <td>66</td>
+      <td>39</td>
+      <td>0</td>
       <td>42.0</td>
       <td>1.893</td>
       <td>25</td>
@@ -15492,10 +15451,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>46</th>
       <td>1</td>
-      <td>146.0</td>
-      <td>56.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>146</td>
+      <td>56</td>
+      <td>0</td>
+      <td>0</td>
       <td>29.7</td>
       <td>0.564</td>
       <td>29</td>
@@ -15504,10 +15463,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>47</th>
       <td>2</td>
-      <td>71.0</td>
-      <td>70.0</td>
-      <td>27.0</td>
-      <td>NaN</td>
+      <td>71</td>
+      <td>70</td>
+      <td>27</td>
+      <td>0</td>
       <td>28.0</td>
       <td>0.586</td>
       <td>22</td>
@@ -15516,10 +15475,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>48</th>
       <td>7</td>
-      <td>103.0</td>
-      <td>66.0</td>
-      <td>32.0</td>
-      <td>NaN</td>
+      <td>103</td>
+      <td>66</td>
+      <td>32</td>
+      <td>0</td>
       <td>39.1</td>
       <td>0.344</td>
       <td>31</td>
@@ -15528,11 +15487,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>49</th>
       <td>7</td>
-      <td>105.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>105</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
       <td>0.305</td>
       <td>24</td>
       <td>0</td>
@@ -15540,10 +15499,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>50</th>
       <td>1</td>
-      <td>103.0</td>
-      <td>80.0</td>
-      <td>11.0</td>
-      <td>82.0</td>
+      <td>103</td>
+      <td>80</td>
+      <td>11</td>
+      <td>82</td>
       <td>19.4</td>
       <td>0.491</td>
       <td>22</td>
@@ -15552,10 +15511,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>51</th>
       <td>1</td>
-      <td>101.0</td>
-      <td>50.0</td>
-      <td>15.0</td>
-      <td>36.0</td>
+      <td>101</td>
+      <td>50</td>
+      <td>15</td>
+      <td>36</td>
       <td>24.2</td>
       <td>0.526</td>
       <td>26</td>
@@ -15564,10 +15523,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>52</th>
       <td>5</td>
-      <td>88.0</td>
-      <td>66.0</td>
-      <td>21.0</td>
-      <td>23.0</td>
+      <td>88</td>
+      <td>66</td>
+      <td>21</td>
+      <td>23</td>
       <td>24.4</td>
       <td>0.342</td>
       <td>30</td>
@@ -15576,10 +15535,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>53</th>
       <td>8</td>
-      <td>176.0</td>
-      <td>90.0</td>
-      <td>34.0</td>
-      <td>300.0</td>
+      <td>176</td>
+      <td>90</td>
+      <td>34</td>
+      <td>300</td>
       <td>33.7</td>
       <td>0.467</td>
       <td>58</td>
@@ -15588,10 +15547,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>54</th>
       <td>7</td>
-      <td>150.0</td>
-      <td>66.0</td>
-      <td>42.0</td>
-      <td>342.0</td>
+      <td>150</td>
+      <td>66</td>
+      <td>42</td>
+      <td>342</td>
       <td>34.7</td>
       <td>0.718</td>
       <td>42</td>
@@ -15600,10 +15559,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>55</th>
       <td>1</td>
-      <td>73.0</td>
-      <td>50.0</td>
-      <td>10.0</td>
-      <td>NaN</td>
+      <td>73</td>
+      <td>50</td>
+      <td>10</td>
+      <td>0</td>
       <td>23.0</td>
       <td>0.248</td>
       <td>21</td>
@@ -15612,10 +15571,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>56</th>
       <td>7</td>
-      <td>187.0</td>
-      <td>68.0</td>
-      <td>39.0</td>
-      <td>304.0</td>
+      <td>187</td>
+      <td>68</td>
+      <td>39</td>
+      <td>304</td>
       <td>37.7</td>
       <td>0.254</td>
       <td>41</td>
@@ -15624,10 +15583,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>57</th>
       <td>0</td>
-      <td>100.0</td>
-      <td>88.0</td>
-      <td>60.0</td>
-      <td>110.0</td>
+      <td>100</td>
+      <td>88</td>
+      <td>60</td>
+      <td>110</td>
       <td>46.8</td>
       <td>0.962</td>
       <td>31</td>
@@ -15636,10 +15595,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>58</th>
       <td>0</td>
-      <td>146.0</td>
-      <td>82.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>146</td>
+      <td>82</td>
+      <td>0</td>
+      <td>0</td>
       <td>40.5</td>
       <td>1.781</td>
       <td>44</td>
@@ -15648,10 +15607,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>59</th>
       <td>0</td>
-      <td>105.0</td>
-      <td>64.0</td>
-      <td>41.0</td>
-      <td>142.0</td>
+      <td>105</td>
+      <td>64</td>
+      <td>41</td>
+      <td>142</td>
       <td>41.5</td>
       <td>0.173</td>
       <td>22</td>
@@ -15660,11 +15619,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>60</th>
       <td>2</td>
-      <td>84.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>84</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
       <td>0.304</td>
       <td>21</td>
       <td>0</td>
@@ -15672,10 +15631,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>61</th>
       <td>8</td>
-      <td>133.0</td>
-      <td>72.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>133</td>
+      <td>72</td>
+      <td>0</td>
+      <td>0</td>
       <td>32.9</td>
       <td>0.270</td>
       <td>39</td>
@@ -15684,10 +15643,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>62</th>
       <td>5</td>
-      <td>44.0</td>
-      <td>62.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>44</td>
+      <td>62</td>
+      <td>0</td>
+      <td>0</td>
       <td>25.0</td>
       <td>0.587</td>
       <td>36</td>
@@ -15696,10 +15655,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>63</th>
       <td>2</td>
-      <td>141.0</td>
-      <td>58.0</td>
-      <td>34.0</td>
-      <td>128.0</td>
+      <td>141</td>
+      <td>58</td>
+      <td>34</td>
+      <td>128</td>
       <td>25.4</td>
       <td>0.699</td>
       <td>24</td>
@@ -15708,10 +15667,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>64</th>
       <td>7</td>
-      <td>114.0</td>
-      <td>66.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>114</td>
+      <td>66</td>
+      <td>0</td>
+      <td>0</td>
       <td>32.8</td>
       <td>0.258</td>
       <td>42</td>
@@ -15720,10 +15679,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>65</th>
       <td>5</td>
-      <td>99.0</td>
-      <td>74.0</td>
-      <td>27.0</td>
-      <td>NaN</td>
+      <td>99</td>
+      <td>74</td>
+      <td>27</td>
+      <td>0</td>
       <td>29.0</td>
       <td>0.203</td>
       <td>32</td>
@@ -15732,10 +15691,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>66</th>
       <td>0</td>
-      <td>109.0</td>
-      <td>88.0</td>
-      <td>30.0</td>
-      <td>NaN</td>
+      <td>109</td>
+      <td>88</td>
+      <td>30</td>
+      <td>0</td>
       <td>32.5</td>
       <td>0.855</td>
       <td>38</td>
@@ -15744,10 +15703,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>67</th>
       <td>2</td>
-      <td>109.0</td>
-      <td>92.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>109</td>
+      <td>92</td>
+      <td>0</td>
+      <td>0</td>
       <td>42.7</td>
       <td>0.845</td>
       <td>54</td>
@@ -15756,10 +15715,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>68</th>
       <td>1</td>
-      <td>95.0</td>
-      <td>66.0</td>
-      <td>13.0</td>
-      <td>38.0</td>
+      <td>95</td>
+      <td>66</td>
+      <td>13</td>
+      <td>38</td>
       <td>19.6</td>
       <td>0.334</td>
       <td>25</td>
@@ -15768,10 +15727,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>69</th>
       <td>4</td>
-      <td>146.0</td>
-      <td>85.0</td>
-      <td>27.0</td>
-      <td>100.0</td>
+      <td>146</td>
+      <td>85</td>
+      <td>27</td>
+      <td>100</td>
       <td>28.9</td>
       <td>0.189</td>
       <td>27</td>
@@ -15780,10 +15739,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>70</th>
       <td>2</td>
-      <td>100.0</td>
-      <td>66.0</td>
-      <td>20.0</td>
-      <td>90.0</td>
+      <td>100</td>
+      <td>66</td>
+      <td>20</td>
+      <td>90</td>
       <td>32.9</td>
       <td>0.867</td>
       <td>28</td>
@@ -15792,10 +15751,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>71</th>
       <td>5</td>
-      <td>139.0</td>
-      <td>64.0</td>
-      <td>35.0</td>
-      <td>140.0</td>
+      <td>139</td>
+      <td>64</td>
+      <td>35</td>
+      <td>140</td>
       <td>28.6</td>
       <td>0.411</td>
       <td>26</td>
@@ -15804,10 +15763,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>72</th>
       <td>13</td>
-      <td>126.0</td>
-      <td>90.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>126</td>
+      <td>90</td>
+      <td>0</td>
+      <td>0</td>
       <td>43.4</td>
       <td>0.583</td>
       <td>42</td>
@@ -15816,10 +15775,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>73</th>
       <td>4</td>
-      <td>129.0</td>
-      <td>86.0</td>
-      <td>20.0</td>
-      <td>270.0</td>
+      <td>129</td>
+      <td>86</td>
+      <td>20</td>
+      <td>270</td>
       <td>35.1</td>
       <td>0.231</td>
       <td>23</td>
@@ -15828,10 +15787,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>74</th>
       <td>1</td>
-      <td>79.0</td>
-      <td>75.0</td>
-      <td>30.0</td>
-      <td>NaN</td>
+      <td>79</td>
+      <td>75</td>
+      <td>30</td>
+      <td>0</td>
       <td>32.0</td>
       <td>0.396</td>
       <td>22</td>
@@ -15840,10 +15799,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>75</th>
       <td>1</td>
-      <td>NaN</td>
-      <td>48.0</td>
-      <td>20.0</td>
-      <td>NaN</td>
+      <td>0</td>
+      <td>48</td>
+      <td>20</td>
+      <td>0</td>
       <td>24.7</td>
       <td>0.140</td>
       <td>22</td>
@@ -15852,10 +15811,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>76</th>
       <td>7</td>
-      <td>62.0</td>
-      <td>78.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>62</td>
+      <td>78</td>
+      <td>0</td>
+      <td>0</td>
       <td>32.6</td>
       <td>0.391</td>
       <td>41</td>
@@ -15864,10 +15823,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>77</th>
       <td>5</td>
-      <td>95.0</td>
-      <td>72.0</td>
-      <td>33.0</td>
-      <td>NaN</td>
+      <td>95</td>
+      <td>72</td>
+      <td>33</td>
+      <td>0</td>
       <td>37.7</td>
       <td>0.370</td>
       <td>27</td>
@@ -15876,10 +15835,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>78</th>
       <td>0</td>
-      <td>131.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>131</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>43.2</td>
       <td>0.270</td>
       <td>26</td>
@@ -15888,10 +15847,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>79</th>
       <td>2</td>
-      <td>112.0</td>
-      <td>66.0</td>
-      <td>22.0</td>
-      <td>NaN</td>
+      <td>112</td>
+      <td>66</td>
+      <td>22</td>
+      <td>0</td>
       <td>25.0</td>
       <td>0.307</td>
       <td>24</td>
@@ -15900,10 +15859,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>80</th>
       <td>3</td>
-      <td>113.0</td>
-      <td>44.0</td>
-      <td>13.0</td>
-      <td>NaN</td>
+      <td>113</td>
+      <td>44</td>
+      <td>13</td>
+      <td>0</td>
       <td>22.4</td>
       <td>0.140</td>
       <td>22</td>
@@ -15912,11 +15871,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>81</th>
       <td>2</td>
-      <td>74.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>74</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
       <td>0.102</td>
       <td>22</td>
       <td>0</td>
@@ -15924,10 +15883,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>82</th>
       <td>7</td>
-      <td>83.0</td>
-      <td>78.0</td>
-      <td>26.0</td>
-      <td>71.0</td>
+      <td>83</td>
+      <td>78</td>
+      <td>26</td>
+      <td>71</td>
       <td>29.3</td>
       <td>0.767</td>
       <td>36</td>
@@ -15936,10 +15895,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>83</th>
       <td>0</td>
-      <td>101.0</td>
-      <td>65.0</td>
-      <td>28.0</td>
-      <td>NaN</td>
+      <td>101</td>
+      <td>65</td>
+      <td>28</td>
+      <td>0</td>
       <td>24.6</td>
       <td>0.237</td>
       <td>22</td>
@@ -15948,10 +15907,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>84</th>
       <td>5</td>
-      <td>137.0</td>
-      <td>108.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>137</td>
+      <td>108</td>
+      <td>0</td>
+      <td>0</td>
       <td>48.8</td>
       <td>0.227</td>
       <td>37</td>
@@ -15960,10 +15919,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>85</th>
       <td>2</td>
-      <td>110.0</td>
-      <td>74.0</td>
-      <td>29.0</td>
-      <td>125.0</td>
+      <td>110</td>
+      <td>74</td>
+      <td>29</td>
+      <td>125</td>
       <td>32.4</td>
       <td>0.698</td>
       <td>27</td>
@@ -15972,10 +15931,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>86</th>
       <td>13</td>
-      <td>106.0</td>
-      <td>72.0</td>
-      <td>54.0</td>
-      <td>NaN</td>
+      <td>106</td>
+      <td>72</td>
+      <td>54</td>
+      <td>0</td>
       <td>36.6</td>
       <td>0.178</td>
       <td>45</td>
@@ -15984,10 +15943,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>87</th>
       <td>2</td>
-      <td>100.0</td>
-      <td>68.0</td>
-      <td>25.0</td>
-      <td>71.0</td>
+      <td>100</td>
+      <td>68</td>
+      <td>25</td>
+      <td>71</td>
       <td>38.5</td>
       <td>0.324</td>
       <td>26</td>
@@ -15996,10 +15955,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>88</th>
       <td>15</td>
-      <td>136.0</td>
-      <td>70.0</td>
-      <td>32.0</td>
-      <td>110.0</td>
+      <td>136</td>
+      <td>70</td>
+      <td>32</td>
+      <td>110</td>
       <td>37.1</td>
       <td>0.153</td>
       <td>43</td>
@@ -16008,10 +15967,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>89</th>
       <td>1</td>
-      <td>107.0</td>
-      <td>68.0</td>
-      <td>19.0</td>
-      <td>NaN</td>
+      <td>107</td>
+      <td>68</td>
+      <td>19</td>
+      <td>0</td>
       <td>26.5</td>
       <td>0.165</td>
       <td>24</td>
@@ -16020,10 +15979,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>90</th>
       <td>1</td>
-      <td>80.0</td>
-      <td>55.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>80</td>
+      <td>55</td>
+      <td>0</td>
+      <td>0</td>
       <td>19.1</td>
       <td>0.258</td>
       <td>21</td>
@@ -16032,10 +15991,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>91</th>
       <td>4</td>
-      <td>123.0</td>
-      <td>80.0</td>
-      <td>15.0</td>
-      <td>176.0</td>
+      <td>123</td>
+      <td>80</td>
+      <td>15</td>
+      <td>176</td>
       <td>32.0</td>
       <td>0.443</td>
       <td>34</td>
@@ -16044,10 +16003,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>92</th>
       <td>7</td>
-      <td>81.0</td>
-      <td>78.0</td>
-      <td>40.0</td>
-      <td>48.0</td>
+      <td>81</td>
+      <td>78</td>
+      <td>40</td>
+      <td>48</td>
       <td>46.7</td>
       <td>0.261</td>
       <td>42</td>
@@ -16056,10 +16015,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>93</th>
       <td>4</td>
-      <td>134.0</td>
-      <td>72.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>134</td>
+      <td>72</td>
+      <td>0</td>
+      <td>0</td>
       <td>23.8</td>
       <td>0.277</td>
       <td>60</td>
@@ -16068,10 +16027,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>94</th>
       <td>2</td>
-      <td>142.0</td>
-      <td>82.0</td>
-      <td>18.0</td>
-      <td>64.0</td>
+      <td>142</td>
+      <td>82</td>
+      <td>18</td>
+      <td>64</td>
       <td>24.7</td>
       <td>0.761</td>
       <td>21</td>
@@ -16080,10 +16039,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>95</th>
       <td>6</td>
-      <td>144.0</td>
-      <td>72.0</td>
-      <td>27.0</td>
-      <td>228.0</td>
+      <td>144</td>
+      <td>72</td>
+      <td>27</td>
+      <td>228</td>
       <td>33.9</td>
       <td>0.255</td>
       <td>40</td>
@@ -16092,10 +16051,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>96</th>
       <td>2</td>
-      <td>92.0</td>
-      <td>62.0</td>
-      <td>28.0</td>
-      <td>NaN</td>
+      <td>92</td>
+      <td>62</td>
+      <td>28</td>
+      <td>0</td>
       <td>31.6</td>
       <td>0.130</td>
       <td>24</td>
@@ -16104,10 +16063,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>97</th>
       <td>1</td>
-      <td>71.0</td>
-      <td>48.0</td>
-      <td>18.0</td>
-      <td>76.0</td>
+      <td>71</td>
+      <td>48</td>
+      <td>18</td>
+      <td>76</td>
       <td>20.4</td>
       <td>0.323</td>
       <td>22</td>
@@ -16116,10 +16075,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>98</th>
       <td>6</td>
-      <td>93.0</td>
-      <td>50.0</td>
-      <td>30.0</td>
-      <td>64.0</td>
+      <td>93</td>
+      <td>50</td>
+      <td>30</td>
+      <td>64</td>
       <td>28.7</td>
       <td>0.356</td>
       <td>23</td>
@@ -16128,10 +16087,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>99</th>
       <td>1</td>
-      <td>122.0</td>
-      <td>90.0</td>
-      <td>51.0</td>
-      <td>220.0</td>
+      <td>122</td>
+      <td>90</td>
+      <td>51</td>
+      <td>220</td>
       <td>49.7</td>
       <td>0.325</td>
       <td>31</td>
@@ -16140,10 +16099,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>100</th>
       <td>1</td>
-      <td>163.0</td>
-      <td>72.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>163</td>
+      <td>72</td>
+      <td>0</td>
+      <td>0</td>
       <td>39.0</td>
       <td>1.222</td>
       <td>33</td>
@@ -16152,10 +16111,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>101</th>
       <td>1</td>
-      <td>151.0</td>
-      <td>60.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>151</td>
+      <td>60</td>
+      <td>0</td>
+      <td>0</td>
       <td>26.1</td>
       <td>0.179</td>
       <td>22</td>
@@ -16164,10 +16123,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>102</th>
       <td>0</td>
-      <td>125.0</td>
-      <td>96.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>125</td>
+      <td>96</td>
+      <td>0</td>
+      <td>0</td>
       <td>22.5</td>
       <td>0.262</td>
       <td>21</td>
@@ -16176,10 +16135,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>103</th>
       <td>1</td>
-      <td>81.0</td>
-      <td>72.0</td>
-      <td>18.0</td>
-      <td>40.0</td>
+      <td>81</td>
+      <td>72</td>
+      <td>18</td>
+      <td>40</td>
       <td>26.6</td>
       <td>0.283</td>
       <td>24</td>
@@ -16188,10 +16147,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>104</th>
       <td>2</td>
-      <td>85.0</td>
-      <td>65.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>85</td>
+      <td>65</td>
+      <td>0</td>
+      <td>0</td>
       <td>39.6</td>
       <td>0.930</td>
       <td>27</td>
@@ -16200,10 +16159,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>105</th>
       <td>1</td>
-      <td>126.0</td>
-      <td>56.0</td>
-      <td>29.0</td>
-      <td>152.0</td>
+      <td>126</td>
+      <td>56</td>
+      <td>29</td>
+      <td>152</td>
       <td>28.7</td>
       <td>0.801</td>
       <td>21</td>
@@ -16212,10 +16171,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>106</th>
       <td>1</td>
-      <td>96.0</td>
-      <td>122.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>96</td>
+      <td>122</td>
+      <td>0</td>
+      <td>0</td>
       <td>22.4</td>
       <td>0.207</td>
       <td>27</td>
@@ -16224,10 +16183,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>107</th>
       <td>4</td>
-      <td>144.0</td>
-      <td>58.0</td>
-      <td>28.0</td>
-      <td>140.0</td>
+      <td>144</td>
+      <td>58</td>
+      <td>28</td>
+      <td>140</td>
       <td>29.5</td>
       <td>0.287</td>
       <td>37</td>
@@ -16236,10 +16195,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>108</th>
       <td>3</td>
-      <td>83.0</td>
-      <td>58.0</td>
-      <td>31.0</td>
-      <td>18.0</td>
+      <td>83</td>
+      <td>58</td>
+      <td>31</td>
+      <td>18</td>
       <td>34.3</td>
       <td>0.336</td>
       <td>25</td>
@@ -16248,10 +16207,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>109</th>
       <td>0</td>
-      <td>95.0</td>
-      <td>85.0</td>
-      <td>25.0</td>
-      <td>36.0</td>
+      <td>95</td>
+      <td>85</td>
+      <td>25</td>
+      <td>36</td>
       <td>37.4</td>
       <td>0.247</td>
       <td>24</td>
@@ -16260,10 +16219,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>110</th>
       <td>3</td>
-      <td>171.0</td>
-      <td>72.0</td>
-      <td>33.0</td>
-      <td>135.0</td>
+      <td>171</td>
+      <td>72</td>
+      <td>33</td>
+      <td>135</td>
       <td>33.3</td>
       <td>0.199</td>
       <td>24</td>
@@ -16272,10 +16231,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>111</th>
       <td>8</td>
-      <td>155.0</td>
-      <td>62.0</td>
-      <td>26.0</td>
-      <td>495.0</td>
+      <td>155</td>
+      <td>62</td>
+      <td>26</td>
+      <td>495</td>
       <td>34.0</td>
       <td>0.543</td>
       <td>46</td>
@@ -16284,10 +16243,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>112</th>
       <td>1</td>
-      <td>89.0</td>
-      <td>76.0</td>
-      <td>34.0</td>
-      <td>37.0</td>
+      <td>89</td>
+      <td>76</td>
+      <td>34</td>
+      <td>37</td>
       <td>31.2</td>
       <td>0.192</td>
       <td>23</td>
@@ -16296,10 +16255,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>113</th>
       <td>4</td>
-      <td>76.0</td>
-      <td>62.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>76</td>
+      <td>62</td>
+      <td>0</td>
+      <td>0</td>
       <td>34.0</td>
       <td>0.391</td>
       <td>25</td>
@@ -16308,10 +16267,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>114</th>
       <td>7</td>
-      <td>160.0</td>
-      <td>54.0</td>
-      <td>32.0</td>
-      <td>175.0</td>
+      <td>160</td>
+      <td>54</td>
+      <td>32</td>
+      <td>175</td>
       <td>30.5</td>
       <td>0.588</td>
       <td>39</td>
@@ -16320,10 +16279,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>115</th>
       <td>4</td>
-      <td>146.0</td>
-      <td>92.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>146</td>
+      <td>92</td>
+      <td>0</td>
+      <td>0</td>
       <td>31.2</td>
       <td>0.539</td>
       <td>61</td>
@@ -16332,10 +16291,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>116</th>
       <td>5</td>
-      <td>124.0</td>
-      <td>74.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>124</td>
+      <td>74</td>
+      <td>0</td>
+      <td>0</td>
       <td>34.0</td>
       <td>0.220</td>
       <td>38</td>
@@ -16344,10 +16303,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>117</th>
       <td>5</td>
-      <td>78.0</td>
-      <td>48.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>78</td>
+      <td>48</td>
+      <td>0</td>
+      <td>0</td>
       <td>33.7</td>
       <td>0.654</td>
       <td>25</td>
@@ -16356,10 +16315,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>118</th>
       <td>4</td>
-      <td>97.0</td>
-      <td>60.0</td>
-      <td>23.0</td>
-      <td>NaN</td>
+      <td>97</td>
+      <td>60</td>
+      <td>23</td>
+      <td>0</td>
       <td>28.2</td>
       <td>0.443</td>
       <td>22</td>
@@ -16368,10 +16327,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>119</th>
       <td>4</td>
-      <td>99.0</td>
-      <td>76.0</td>
-      <td>15.0</td>
-      <td>51.0</td>
+      <td>99</td>
+      <td>76</td>
+      <td>15</td>
+      <td>51</td>
       <td>23.2</td>
       <td>0.223</td>
       <td>21</td>
@@ -16380,10 +16339,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>120</th>
       <td>0</td>
-      <td>162.0</td>
-      <td>76.0</td>
-      <td>56.0</td>
-      <td>100.0</td>
+      <td>162</td>
+      <td>76</td>
+      <td>56</td>
+      <td>100</td>
       <td>53.2</td>
       <td>0.759</td>
       <td>25</td>
@@ -16392,10 +16351,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>121</th>
       <td>6</td>
-      <td>111.0</td>
-      <td>64.0</td>
-      <td>39.0</td>
-      <td>NaN</td>
+      <td>111</td>
+      <td>64</td>
+      <td>39</td>
+      <td>0</td>
       <td>34.2</td>
       <td>0.260</td>
       <td>24</td>
@@ -16404,10 +16363,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>122</th>
       <td>2</td>
-      <td>107.0</td>
-      <td>74.0</td>
-      <td>30.0</td>
-      <td>100.0</td>
+      <td>107</td>
+      <td>74</td>
+      <td>30</td>
+      <td>100</td>
       <td>33.6</td>
       <td>0.404</td>
       <td>23</td>
@@ -16416,10 +16375,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>123</th>
       <td>5</td>
-      <td>132.0</td>
-      <td>80.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>132</td>
+      <td>80</td>
+      <td>0</td>
+      <td>0</td>
       <td>26.8</td>
       <td>0.186</td>
       <td>69</td>
@@ -16428,10 +16387,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>124</th>
       <td>0</td>
-      <td>113.0</td>
-      <td>76.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>113</td>
+      <td>76</td>
+      <td>0</td>
+      <td>0</td>
       <td>33.3</td>
       <td>0.278</td>
       <td>23</td>
@@ -16440,10 +16399,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>125</th>
       <td>1</td>
-      <td>88.0</td>
-      <td>30.0</td>
-      <td>42.0</td>
-      <td>99.0</td>
+      <td>88</td>
+      <td>30</td>
+      <td>42</td>
+      <td>99</td>
       <td>55.0</td>
       <td>0.496</td>
       <td>26</td>
@@ -16452,10 +16411,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>126</th>
       <td>3</td>
-      <td>120.0</td>
-      <td>70.0</td>
-      <td>30.0</td>
-      <td>135.0</td>
+      <td>120</td>
+      <td>70</td>
+      <td>30</td>
+      <td>135</td>
       <td>42.9</td>
       <td>0.452</td>
       <td>30</td>
@@ -16464,10 +16423,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>127</th>
       <td>1</td>
-      <td>118.0</td>
-      <td>58.0</td>
-      <td>36.0</td>
-      <td>94.0</td>
+      <td>118</td>
+      <td>58</td>
+      <td>36</td>
+      <td>94</td>
       <td>33.3</td>
       <td>0.261</td>
       <td>23</td>
@@ -16476,10 +16435,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>128</th>
       <td>1</td>
-      <td>117.0</td>
-      <td>88.0</td>
-      <td>24.0</td>
-      <td>145.0</td>
+      <td>117</td>
+      <td>88</td>
+      <td>24</td>
+      <td>145</td>
       <td>34.5</td>
       <td>0.403</td>
       <td>40</td>
@@ -16488,10 +16447,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>129</th>
       <td>0</td>
-      <td>105.0</td>
-      <td>84.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>105</td>
+      <td>84</td>
+      <td>0</td>
+      <td>0</td>
       <td>27.9</td>
       <td>0.741</td>
       <td>62</td>
@@ -16500,10 +16459,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>130</th>
       <td>4</td>
-      <td>173.0</td>
-      <td>70.0</td>
-      <td>14.0</td>
-      <td>168.0</td>
+      <td>173</td>
+      <td>70</td>
+      <td>14</td>
+      <td>168</td>
       <td>29.7</td>
       <td>0.361</td>
       <td>33</td>
@@ -16512,10 +16471,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>131</th>
       <td>9</td>
-      <td>122.0</td>
-      <td>56.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>122</td>
+      <td>56</td>
+      <td>0</td>
+      <td>0</td>
       <td>33.3</td>
       <td>1.114</td>
       <td>33</td>
@@ -16524,10 +16483,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>132</th>
       <td>3</td>
-      <td>170.0</td>
-      <td>64.0</td>
-      <td>37.0</td>
-      <td>225.0</td>
+      <td>170</td>
+      <td>64</td>
+      <td>37</td>
+      <td>225</td>
       <td>34.5</td>
       <td>0.356</td>
       <td>30</td>
@@ -16536,10 +16495,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>133</th>
       <td>8</td>
-      <td>84.0</td>
-      <td>74.0</td>
-      <td>31.0</td>
-      <td>NaN</td>
+      <td>84</td>
+      <td>74</td>
+      <td>31</td>
+      <td>0</td>
       <td>38.3</td>
       <td>0.457</td>
       <td>39</td>
@@ -16548,10 +16507,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>134</th>
       <td>2</td>
-      <td>96.0</td>
-      <td>68.0</td>
-      <td>13.0</td>
-      <td>49.0</td>
+      <td>96</td>
+      <td>68</td>
+      <td>13</td>
+      <td>49</td>
       <td>21.1</td>
       <td>0.647</td>
       <td>26</td>
@@ -16560,10 +16519,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>135</th>
       <td>2</td>
-      <td>125.0</td>
-      <td>60.0</td>
-      <td>20.0</td>
-      <td>140.0</td>
+      <td>125</td>
+      <td>60</td>
+      <td>20</td>
+      <td>140</td>
       <td>33.8</td>
       <td>0.088</td>
       <td>31</td>
@@ -16572,10 +16531,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>136</th>
       <td>0</td>
-      <td>100.0</td>
-      <td>70.0</td>
-      <td>26.0</td>
-      <td>50.0</td>
+      <td>100</td>
+      <td>70</td>
+      <td>26</td>
+      <td>50</td>
       <td>30.8</td>
       <td>0.597</td>
       <td>21</td>
@@ -16584,10 +16543,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>137</th>
       <td>0</td>
-      <td>93.0</td>
-      <td>60.0</td>
-      <td>25.0</td>
-      <td>92.0</td>
+      <td>93</td>
+      <td>60</td>
+      <td>25</td>
+      <td>92</td>
       <td>28.7</td>
       <td>0.532</td>
       <td>22</td>
@@ -16596,10 +16555,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>138</th>
       <td>0</td>
-      <td>129.0</td>
-      <td>80.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>129</td>
+      <td>80</td>
+      <td>0</td>
+      <td>0</td>
       <td>31.2</td>
       <td>0.703</td>
       <td>29</td>
@@ -16608,10 +16567,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>139</th>
       <td>5</td>
-      <td>105.0</td>
-      <td>72.0</td>
-      <td>29.0</td>
-      <td>325.0</td>
+      <td>105</td>
+      <td>72</td>
+      <td>29</td>
+      <td>325</td>
       <td>36.9</td>
       <td>0.159</td>
       <td>28</td>
@@ -16620,10 +16579,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>140</th>
       <td>3</td>
-      <td>128.0</td>
-      <td>78.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>128</td>
+      <td>78</td>
+      <td>0</td>
+      <td>0</td>
       <td>21.1</td>
       <td>0.268</td>
       <td>55</td>
@@ -16632,10 +16591,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>141</th>
       <td>5</td>
-      <td>106.0</td>
-      <td>82.0</td>
-      <td>30.0</td>
-      <td>NaN</td>
+      <td>106</td>
+      <td>82</td>
+      <td>30</td>
+      <td>0</td>
       <td>39.5</td>
       <td>0.286</td>
       <td>38</td>
@@ -16644,10 +16603,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>142</th>
       <td>2</td>
-      <td>108.0</td>
-      <td>52.0</td>
-      <td>26.0</td>
-      <td>63.0</td>
+      <td>108</td>
+      <td>52</td>
+      <td>26</td>
+      <td>63</td>
       <td>32.5</td>
       <td>0.318</td>
       <td>22</td>
@@ -16656,10 +16615,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>143</th>
       <td>10</td>
-      <td>108.0</td>
-      <td>66.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>108</td>
+      <td>66</td>
+      <td>0</td>
+      <td>0</td>
       <td>32.4</td>
       <td>0.272</td>
       <td>42</td>
@@ -16668,10 +16627,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>144</th>
       <td>4</td>
-      <td>154.0</td>
-      <td>62.0</td>
-      <td>31.0</td>
-      <td>284.0</td>
+      <td>154</td>
+      <td>62</td>
+      <td>31</td>
+      <td>284</td>
       <td>32.8</td>
       <td>0.237</td>
       <td>23</td>
@@ -16680,11 +16639,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>145</th>
       <td>0</td>
-      <td>102.0</td>
-      <td>75.0</td>
-      <td>23.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>102</td>
+      <td>75</td>
+      <td>23</td>
+      <td>0</td>
+      <td>0.0</td>
       <td>0.572</td>
       <td>21</td>
       <td>0</td>
@@ -16692,10 +16651,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>146</th>
       <td>9</td>
-      <td>57.0</td>
-      <td>80.0</td>
-      <td>37.0</td>
-      <td>NaN</td>
+      <td>57</td>
+      <td>80</td>
+      <td>37</td>
+      <td>0</td>
       <td>32.8</td>
       <td>0.096</td>
       <td>41</td>
@@ -16704,10 +16663,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>147</th>
       <td>2</td>
-      <td>106.0</td>
-      <td>64.0</td>
-      <td>35.0</td>
-      <td>119.0</td>
+      <td>106</td>
+      <td>64</td>
+      <td>35</td>
+      <td>119</td>
       <td>30.5</td>
       <td>1.400</td>
       <td>34</td>
@@ -16716,10 +16675,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>148</th>
       <td>5</td>
-      <td>147.0</td>
-      <td>78.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>147</td>
+      <td>78</td>
+      <td>0</td>
+      <td>0</td>
       <td>33.7</td>
       <td>0.218</td>
       <td>65</td>
@@ -16728,10 +16687,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>149</th>
       <td>2</td>
-      <td>90.0</td>
-      <td>70.0</td>
-      <td>17.0</td>
-      <td>NaN</td>
+      <td>90</td>
+      <td>70</td>
+      <td>17</td>
+      <td>0</td>
       <td>27.3</td>
       <td>0.085</td>
       <td>22</td>
@@ -16740,10 +16699,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>150</th>
       <td>1</td>
-      <td>136.0</td>
-      <td>74.0</td>
-      <td>50.0</td>
-      <td>204.0</td>
+      <td>136</td>
+      <td>74</td>
+      <td>50</td>
+      <td>204</td>
       <td>37.4</td>
       <td>0.399</td>
       <td>24</td>
@@ -16752,10 +16711,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>151</th>
       <td>4</td>
-      <td>114.0</td>
-      <td>65.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>114</td>
+      <td>65</td>
+      <td>0</td>
+      <td>0</td>
       <td>21.9</td>
       <td>0.432</td>
       <td>37</td>
@@ -16764,10 +16723,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>152</th>
       <td>9</td>
-      <td>156.0</td>
-      <td>86.0</td>
-      <td>28.0</td>
-      <td>155.0</td>
+      <td>156</td>
+      <td>86</td>
+      <td>28</td>
+      <td>155</td>
       <td>34.3</td>
       <td>1.189</td>
       <td>42</td>
@@ -16776,10 +16735,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>153</th>
       <td>1</td>
-      <td>153.0</td>
-      <td>82.0</td>
-      <td>42.0</td>
-      <td>485.0</td>
+      <td>153</td>
+      <td>82</td>
+      <td>42</td>
+      <td>485</td>
       <td>40.6</td>
       <td>0.687</td>
       <td>23</td>
@@ -16788,10 +16747,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>154</th>
       <td>8</td>
-      <td>188.0</td>
-      <td>78.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>188</td>
+      <td>78</td>
+      <td>0</td>
+      <td>0</td>
       <td>47.9</td>
       <td>0.137</td>
       <td>43</td>
@@ -16800,10 +16759,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>155</th>
       <td>7</td>
-      <td>152.0</td>
-      <td>88.0</td>
-      <td>44.0</td>
-      <td>NaN</td>
+      <td>152</td>
+      <td>88</td>
+      <td>44</td>
+      <td>0</td>
       <td>50.0</td>
       <td>0.337</td>
       <td>36</td>
@@ -16812,10 +16771,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>156</th>
       <td>2</td>
-      <td>99.0</td>
-      <td>52.0</td>
-      <td>15.0</td>
-      <td>94.0</td>
+      <td>99</td>
+      <td>52</td>
+      <td>15</td>
+      <td>94</td>
       <td>24.6</td>
       <td>0.637</td>
       <td>21</td>
@@ -16824,10 +16783,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>157</th>
       <td>1</td>
-      <td>109.0</td>
-      <td>56.0</td>
-      <td>21.0</td>
-      <td>135.0</td>
+      <td>109</td>
+      <td>56</td>
+      <td>21</td>
+      <td>135</td>
       <td>25.2</td>
       <td>0.833</td>
       <td>23</td>
@@ -16836,10 +16795,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>158</th>
       <td>2</td>
-      <td>88.0</td>
-      <td>74.0</td>
-      <td>19.0</td>
-      <td>53.0</td>
+      <td>88</td>
+      <td>74</td>
+      <td>19</td>
+      <td>53</td>
       <td>29.0</td>
       <td>0.229</td>
       <td>22</td>
@@ -16848,10 +16807,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>159</th>
       <td>17</td>
-      <td>163.0</td>
-      <td>72.0</td>
-      <td>41.0</td>
-      <td>114.0</td>
+      <td>163</td>
+      <td>72</td>
+      <td>41</td>
+      <td>114</td>
       <td>40.9</td>
       <td>0.817</td>
       <td>47</td>
@@ -16860,10 +16819,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>160</th>
       <td>4</td>
-      <td>151.0</td>
-      <td>90.0</td>
-      <td>38.0</td>
-      <td>NaN</td>
+      <td>151</td>
+      <td>90</td>
+      <td>38</td>
+      <td>0</td>
       <td>29.7</td>
       <td>0.294</td>
       <td>36</td>
@@ -16872,10 +16831,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>161</th>
       <td>7</td>
-      <td>102.0</td>
-      <td>74.0</td>
-      <td>40.0</td>
-      <td>105.0</td>
+      <td>102</td>
+      <td>74</td>
+      <td>40</td>
+      <td>105</td>
       <td>37.2</td>
       <td>0.204</td>
       <td>45</td>
@@ -16884,10 +16843,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>162</th>
       <td>0</td>
-      <td>114.0</td>
-      <td>80.0</td>
-      <td>34.0</td>
-      <td>285.0</td>
+      <td>114</td>
+      <td>80</td>
+      <td>34</td>
+      <td>285</td>
       <td>44.2</td>
       <td>0.167</td>
       <td>27</td>
@@ -16896,10 +16855,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>163</th>
       <td>2</td>
-      <td>100.0</td>
-      <td>64.0</td>
-      <td>23.0</td>
-      <td>NaN</td>
+      <td>100</td>
+      <td>64</td>
+      <td>23</td>
+      <td>0</td>
       <td>29.7</td>
       <td>0.368</td>
       <td>21</td>
@@ -16908,10 +16867,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>164</th>
       <td>0</td>
-      <td>131.0</td>
-      <td>88.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>131</td>
+      <td>88</td>
+      <td>0</td>
+      <td>0</td>
       <td>31.6</td>
       <td>0.743</td>
       <td>32</td>
@@ -16920,10 +16879,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>165</th>
       <td>6</td>
-      <td>104.0</td>
-      <td>74.0</td>
-      <td>18.0</td>
-      <td>156.0</td>
+      <td>104</td>
+      <td>74</td>
+      <td>18</td>
+      <td>156</td>
       <td>29.9</td>
       <td>0.722</td>
       <td>41</td>
@@ -16932,10 +16891,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>166</th>
       <td>3</td>
-      <td>148.0</td>
-      <td>66.0</td>
-      <td>25.0</td>
-      <td>NaN</td>
+      <td>148</td>
+      <td>66</td>
+      <td>25</td>
+      <td>0</td>
       <td>32.5</td>
       <td>0.256</td>
       <td>22</td>
@@ -16944,10 +16903,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>167</th>
       <td>4</td>
-      <td>120.0</td>
-      <td>68.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>120</td>
+      <td>68</td>
+      <td>0</td>
+      <td>0</td>
       <td>29.6</td>
       <td>0.709</td>
       <td>34</td>
@@ -16956,10 +16915,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>168</th>
       <td>4</td>
-      <td>110.0</td>
-      <td>66.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>110</td>
+      <td>66</td>
+      <td>0</td>
+      <td>0</td>
       <td>31.9</td>
       <td>0.471</td>
       <td>29</td>
@@ -16968,10 +16927,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>169</th>
       <td>3</td>
-      <td>111.0</td>
-      <td>90.0</td>
-      <td>12.0</td>
-      <td>78.0</td>
+      <td>111</td>
+      <td>90</td>
+      <td>12</td>
+      <td>78</td>
       <td>28.4</td>
       <td>0.495</td>
       <td>29</td>
@@ -16980,10 +16939,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>170</th>
       <td>6</td>
-      <td>102.0</td>
-      <td>82.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>102</td>
+      <td>82</td>
+      <td>0</td>
+      <td>0</td>
       <td>30.8</td>
       <td>0.180</td>
       <td>36</td>
@@ -16992,10 +16951,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>171</th>
       <td>6</td>
-      <td>134.0</td>
-      <td>70.0</td>
-      <td>23.0</td>
-      <td>130.0</td>
+      <td>134</td>
+      <td>70</td>
+      <td>23</td>
+      <td>130</td>
       <td>35.4</td>
       <td>0.542</td>
       <td>29</td>
@@ -17004,10 +16963,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>172</th>
       <td>2</td>
-      <td>87.0</td>
-      <td>NaN</td>
-      <td>23.0</td>
-      <td>NaN</td>
+      <td>87</td>
+      <td>0</td>
+      <td>23</td>
+      <td>0</td>
       <td>28.9</td>
       <td>0.773</td>
       <td>25</td>
@@ -17016,10 +16975,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>173</th>
       <td>1</td>
-      <td>79.0</td>
-      <td>60.0</td>
-      <td>42.0</td>
-      <td>48.0</td>
+      <td>79</td>
+      <td>60</td>
+      <td>42</td>
+      <td>48</td>
       <td>43.5</td>
       <td>0.678</td>
       <td>23</td>
@@ -17028,10 +16987,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>174</th>
       <td>2</td>
-      <td>75.0</td>
-      <td>64.0</td>
-      <td>24.0</td>
-      <td>55.0</td>
+      <td>75</td>
+      <td>64</td>
+      <td>24</td>
+      <td>55</td>
       <td>29.7</td>
       <td>0.370</td>
       <td>33</td>
@@ -17040,10 +16999,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>175</th>
       <td>8</td>
-      <td>179.0</td>
-      <td>72.0</td>
-      <td>42.0</td>
-      <td>130.0</td>
+      <td>179</td>
+      <td>72</td>
+      <td>42</td>
+      <td>130</td>
       <td>32.7</td>
       <td>0.719</td>
       <td>36</td>
@@ -17052,10 +17011,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>176</th>
       <td>6</td>
-      <td>85.0</td>
-      <td>78.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>85</td>
+      <td>78</td>
+      <td>0</td>
+      <td>0</td>
       <td>31.2</td>
       <td>0.382</td>
       <td>42</td>
@@ -17064,10 +17023,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>177</th>
       <td>0</td>
-      <td>129.0</td>
-      <td>110.0</td>
-      <td>46.0</td>
-      <td>130.0</td>
+      <td>129</td>
+      <td>110</td>
+      <td>46</td>
+      <td>130</td>
       <td>67.1</td>
       <td>0.319</td>
       <td>26</td>
@@ -17076,10 +17035,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>178</th>
       <td>5</td>
-      <td>143.0</td>
-      <td>78.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>143</td>
+      <td>78</td>
+      <td>0</td>
+      <td>0</td>
       <td>45.0</td>
       <td>0.190</td>
       <td>47</td>
@@ -17088,10 +17047,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>179</th>
       <td>5</td>
-      <td>130.0</td>
-      <td>82.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>130</td>
+      <td>82</td>
+      <td>0</td>
+      <td>0</td>
       <td>39.1</td>
       <td>0.956</td>
       <td>37</td>
@@ -17100,10 +17059,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>180</th>
       <td>6</td>
-      <td>87.0</td>
-      <td>80.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>87</td>
+      <td>80</td>
+      <td>0</td>
+      <td>0</td>
       <td>23.2</td>
       <td>0.084</td>
       <td>32</td>
@@ -17112,10 +17071,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>181</th>
       <td>0</td>
-      <td>119.0</td>
-      <td>64.0</td>
-      <td>18.0</td>
-      <td>92.0</td>
+      <td>119</td>
+      <td>64</td>
+      <td>18</td>
+      <td>92</td>
       <td>34.9</td>
       <td>0.725</td>
       <td>23</td>
@@ -17124,10 +17083,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>182</th>
       <td>1</td>
-      <td>NaN</td>
-      <td>74.0</td>
-      <td>20.0</td>
-      <td>23.0</td>
+      <td>0</td>
+      <td>74</td>
+      <td>20</td>
+      <td>23</td>
       <td>27.7</td>
       <td>0.299</td>
       <td>21</td>
@@ -17136,10 +17095,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>183</th>
       <td>5</td>
-      <td>73.0</td>
-      <td>60.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>73</td>
+      <td>60</td>
+      <td>0</td>
+      <td>0</td>
       <td>26.8</td>
       <td>0.268</td>
       <td>27</td>
@@ -17148,10 +17107,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>184</th>
       <td>4</td>
-      <td>141.0</td>
-      <td>74.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>141</td>
+      <td>74</td>
+      <td>0</td>
+      <td>0</td>
       <td>27.6</td>
       <td>0.244</td>
       <td>40</td>
@@ -17160,10 +17119,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>185</th>
       <td>7</td>
-      <td>194.0</td>
-      <td>68.0</td>
-      <td>28.0</td>
-      <td>NaN</td>
+      <td>194</td>
+      <td>68</td>
+      <td>28</td>
+      <td>0</td>
       <td>35.9</td>
       <td>0.745</td>
       <td>41</td>
@@ -17172,10 +17131,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>186</th>
       <td>8</td>
-      <td>181.0</td>
-      <td>68.0</td>
-      <td>36.0</td>
-      <td>495.0</td>
+      <td>181</td>
+      <td>68</td>
+      <td>36</td>
+      <td>495</td>
       <td>30.1</td>
       <td>0.615</td>
       <td>60</td>
@@ -17184,10 +17143,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>187</th>
       <td>1</td>
-      <td>128.0</td>
-      <td>98.0</td>
-      <td>41.0</td>
-      <td>58.0</td>
+      <td>128</td>
+      <td>98</td>
+      <td>41</td>
+      <td>58</td>
       <td>32.0</td>
       <td>1.321</td>
       <td>33</td>
@@ -17196,10 +17155,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>188</th>
       <td>8</td>
-      <td>109.0</td>
-      <td>76.0</td>
-      <td>39.0</td>
-      <td>114.0</td>
+      <td>109</td>
+      <td>76</td>
+      <td>39</td>
+      <td>114</td>
       <td>27.9</td>
       <td>0.640</td>
       <td>31</td>
@@ -17208,10 +17167,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>189</th>
       <td>5</td>
-      <td>139.0</td>
-      <td>80.0</td>
-      <td>35.0</td>
-      <td>160.0</td>
+      <td>139</td>
+      <td>80</td>
+      <td>35</td>
+      <td>160</td>
       <td>31.6</td>
       <td>0.361</td>
       <td>25</td>
@@ -17220,10 +17179,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>190</th>
       <td>3</td>
-      <td>111.0</td>
-      <td>62.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>111</td>
+      <td>62</td>
+      <td>0</td>
+      <td>0</td>
       <td>22.6</td>
       <td>0.142</td>
       <td>21</td>
@@ -17232,10 +17191,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>191</th>
       <td>9</td>
-      <td>123.0</td>
-      <td>70.0</td>
-      <td>44.0</td>
-      <td>94.0</td>
+      <td>123</td>
+      <td>70</td>
+      <td>44</td>
+      <td>94</td>
       <td>33.1</td>
       <td>0.374</td>
       <td>40</td>
@@ -17244,10 +17203,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>192</th>
       <td>7</td>
-      <td>159.0</td>
-      <td>66.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>159</td>
+      <td>66</td>
+      <td>0</td>
+      <td>0</td>
       <td>30.4</td>
       <td>0.383</td>
       <td>36</td>
@@ -17256,10 +17215,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>193</th>
       <td>11</td>
-      <td>135.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>135</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>52.3</td>
       <td>0.578</td>
       <td>40</td>
@@ -17268,10 +17227,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>194</th>
       <td>8</td>
-      <td>85.0</td>
-      <td>55.0</td>
-      <td>20.0</td>
-      <td>NaN</td>
+      <td>85</td>
+      <td>55</td>
+      <td>20</td>
+      <td>0</td>
       <td>24.4</td>
       <td>0.136</td>
       <td>42</td>
@@ -17280,10 +17239,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>195</th>
       <td>5</td>
-      <td>158.0</td>
-      <td>84.0</td>
-      <td>41.0</td>
-      <td>210.0</td>
+      <td>158</td>
+      <td>84</td>
+      <td>41</td>
+      <td>210</td>
       <td>39.4</td>
       <td>0.395</td>
       <td>29</td>
@@ -17292,10 +17251,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>196</th>
       <td>1</td>
-      <td>105.0</td>
-      <td>58.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>105</td>
+      <td>58</td>
+      <td>0</td>
+      <td>0</td>
       <td>24.3</td>
       <td>0.187</td>
       <td>21</td>
@@ -17304,10 +17263,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>197</th>
       <td>3</td>
-      <td>107.0</td>
-      <td>62.0</td>
-      <td>13.0</td>
-      <td>48.0</td>
+      <td>107</td>
+      <td>62</td>
+      <td>13</td>
+      <td>48</td>
       <td>22.9</td>
       <td>0.678</td>
       <td>23</td>
@@ -17316,10 +17275,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>198</th>
       <td>4</td>
-      <td>109.0</td>
-      <td>64.0</td>
-      <td>44.0</td>
-      <td>99.0</td>
+      <td>109</td>
+      <td>64</td>
+      <td>44</td>
+      <td>99</td>
       <td>34.8</td>
       <td>0.905</td>
       <td>26</td>
@@ -17328,10 +17287,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>199</th>
       <td>4</td>
-      <td>148.0</td>
-      <td>60.0</td>
-      <td>27.0</td>
-      <td>318.0</td>
+      <td>148</td>
+      <td>60</td>
+      <td>27</td>
+      <td>318</td>
       <td>30.9</td>
       <td>0.150</td>
       <td>29</td>
@@ -17340,10 +17299,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>200</th>
       <td>0</td>
-      <td>113.0</td>
-      <td>80.0</td>
-      <td>16.0</td>
-      <td>NaN</td>
+      <td>113</td>
+      <td>80</td>
+      <td>16</td>
+      <td>0</td>
       <td>31.0</td>
       <td>0.874</td>
       <td>21</td>
@@ -17352,10 +17311,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>201</th>
       <td>1</td>
-      <td>138.0</td>
-      <td>82.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>138</td>
+      <td>82</td>
+      <td>0</td>
+      <td>0</td>
       <td>40.1</td>
       <td>0.236</td>
       <td>28</td>
@@ -17364,10 +17323,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>202</th>
       <td>0</td>
-      <td>108.0</td>
-      <td>68.0</td>
-      <td>20.0</td>
-      <td>NaN</td>
+      <td>108</td>
+      <td>68</td>
+      <td>20</td>
+      <td>0</td>
       <td>27.3</td>
       <td>0.787</td>
       <td>32</td>
@@ -17376,10 +17335,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>203</th>
       <td>2</td>
-      <td>99.0</td>
-      <td>70.0</td>
-      <td>16.0</td>
-      <td>44.0</td>
+      <td>99</td>
+      <td>70</td>
+      <td>16</td>
+      <td>44</td>
       <td>20.4</td>
       <td>0.235</td>
       <td>27</td>
@@ -17388,10 +17347,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>204</th>
       <td>6</td>
-      <td>103.0</td>
-      <td>72.0</td>
-      <td>32.0</td>
-      <td>190.0</td>
+      <td>103</td>
+      <td>72</td>
+      <td>32</td>
+      <td>190</td>
       <td>37.7</td>
       <td>0.324</td>
       <td>55</td>
@@ -17400,10 +17359,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>205</th>
       <td>5</td>
-      <td>111.0</td>
-      <td>72.0</td>
-      <td>28.0</td>
-      <td>NaN</td>
+      <td>111</td>
+      <td>72</td>
+      <td>28</td>
+      <td>0</td>
       <td>23.9</td>
       <td>0.407</td>
       <td>27</td>
@@ -17412,10 +17371,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>206</th>
       <td>8</td>
-      <td>196.0</td>
-      <td>76.0</td>
-      <td>29.0</td>
-      <td>280.0</td>
+      <td>196</td>
+      <td>76</td>
+      <td>29</td>
+      <td>280</td>
       <td>37.5</td>
       <td>0.605</td>
       <td>57</td>
@@ -17424,10 +17383,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>207</th>
       <td>5</td>
-      <td>162.0</td>
-      <td>104.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>162</td>
+      <td>104</td>
+      <td>0</td>
+      <td>0</td>
       <td>37.7</td>
       <td>0.151</td>
       <td>52</td>
@@ -17436,10 +17395,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>208</th>
       <td>1</td>
-      <td>96.0</td>
-      <td>64.0</td>
-      <td>27.0</td>
-      <td>87.0</td>
+      <td>96</td>
+      <td>64</td>
+      <td>27</td>
+      <td>87</td>
       <td>33.2</td>
       <td>0.289</td>
       <td>21</td>
@@ -17448,10 +17407,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>209</th>
       <td>7</td>
-      <td>184.0</td>
-      <td>84.0</td>
-      <td>33.0</td>
-      <td>NaN</td>
+      <td>184</td>
+      <td>84</td>
+      <td>33</td>
+      <td>0</td>
       <td>35.5</td>
       <td>0.355</td>
       <td>41</td>
@@ -17460,10 +17419,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>210</th>
       <td>2</td>
-      <td>81.0</td>
-      <td>60.0</td>
-      <td>22.0</td>
-      <td>NaN</td>
+      <td>81</td>
+      <td>60</td>
+      <td>22</td>
+      <td>0</td>
       <td>27.7</td>
       <td>0.290</td>
       <td>25</td>
@@ -17472,10 +17431,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>211</th>
       <td>0</td>
-      <td>147.0</td>
-      <td>85.0</td>
-      <td>54.0</td>
-      <td>NaN</td>
+      <td>147</td>
+      <td>85</td>
+      <td>54</td>
+      <td>0</td>
       <td>42.8</td>
       <td>0.375</td>
       <td>24</td>
@@ -17484,10 +17443,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>212</th>
       <td>7</td>
-      <td>179.0</td>
-      <td>95.0</td>
-      <td>31.0</td>
-      <td>NaN</td>
+      <td>179</td>
+      <td>95</td>
+      <td>31</td>
+      <td>0</td>
       <td>34.2</td>
       <td>0.164</td>
       <td>60</td>
@@ -17496,10 +17455,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>213</th>
       <td>0</td>
-      <td>140.0</td>
-      <td>65.0</td>
-      <td>26.0</td>
-      <td>130.0</td>
+      <td>140</td>
+      <td>65</td>
+      <td>26</td>
+      <td>130</td>
       <td>42.6</td>
       <td>0.431</td>
       <td>24</td>
@@ -17508,10 +17467,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>214</th>
       <td>9</td>
-      <td>112.0</td>
-      <td>82.0</td>
-      <td>32.0</td>
-      <td>175.0</td>
+      <td>112</td>
+      <td>82</td>
+      <td>32</td>
+      <td>175</td>
       <td>34.2</td>
       <td>0.260</td>
       <td>36</td>
@@ -17520,10 +17479,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>215</th>
       <td>12</td>
-      <td>151.0</td>
-      <td>70.0</td>
-      <td>40.0</td>
-      <td>271.0</td>
+      <td>151</td>
+      <td>70</td>
+      <td>40</td>
+      <td>271</td>
       <td>41.8</td>
       <td>0.742</td>
       <td>38</td>
@@ -17532,10 +17491,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>216</th>
       <td>5</td>
-      <td>109.0</td>
-      <td>62.0</td>
-      <td>41.0</td>
-      <td>129.0</td>
+      <td>109</td>
+      <td>62</td>
+      <td>41</td>
+      <td>129</td>
       <td>35.8</td>
       <td>0.514</td>
       <td>25</td>
@@ -17544,10 +17503,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>217</th>
       <td>6</td>
-      <td>125.0</td>
-      <td>68.0</td>
-      <td>30.0</td>
-      <td>120.0</td>
+      <td>125</td>
+      <td>68</td>
+      <td>30</td>
+      <td>120</td>
       <td>30.0</td>
       <td>0.464</td>
       <td>32</td>
@@ -17556,10 +17515,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>218</th>
       <td>5</td>
-      <td>85.0</td>
-      <td>74.0</td>
-      <td>22.0</td>
-      <td>NaN</td>
+      <td>85</td>
+      <td>74</td>
+      <td>22</td>
+      <td>0</td>
       <td>29.0</td>
       <td>1.224</td>
       <td>32</td>
@@ -17568,10 +17527,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>219</th>
       <td>5</td>
-      <td>112.0</td>
-      <td>66.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>112</td>
+      <td>66</td>
+      <td>0</td>
+      <td>0</td>
       <td>37.8</td>
       <td>0.261</td>
       <td>41</td>
@@ -17580,10 +17539,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>220</th>
       <td>0</td>
-      <td>177.0</td>
-      <td>60.0</td>
-      <td>29.0</td>
-      <td>478.0</td>
+      <td>177</td>
+      <td>60</td>
+      <td>29</td>
+      <td>478</td>
       <td>34.6</td>
       <td>1.072</td>
       <td>21</td>
@@ -17592,10 +17551,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>221</th>
       <td>2</td>
-      <td>158.0</td>
-      <td>90.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>158</td>
+      <td>90</td>
+      <td>0</td>
+      <td>0</td>
       <td>31.6</td>
       <td>0.805</td>
       <td>66</td>
@@ -17604,10 +17563,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>222</th>
       <td>7</td>
-      <td>119.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>119</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>25.2</td>
       <td>0.209</td>
       <td>37</td>
@@ -17616,10 +17575,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>223</th>
       <td>7</td>
-      <td>142.0</td>
-      <td>60.0</td>
-      <td>33.0</td>
-      <td>190.0</td>
+      <td>142</td>
+      <td>60</td>
+      <td>33</td>
+      <td>190</td>
       <td>28.8</td>
       <td>0.687</td>
       <td>61</td>
@@ -17628,10 +17587,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>224</th>
       <td>1</td>
-      <td>100.0</td>
-      <td>66.0</td>
-      <td>15.0</td>
-      <td>56.0</td>
+      <td>100</td>
+      <td>66</td>
+      <td>15</td>
+      <td>56</td>
       <td>23.6</td>
       <td>0.666</td>
       <td>26</td>
@@ -17640,10 +17599,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>225</th>
       <td>1</td>
-      <td>87.0</td>
-      <td>78.0</td>
-      <td>27.0</td>
-      <td>32.0</td>
+      <td>87</td>
+      <td>78</td>
+      <td>27</td>
+      <td>32</td>
       <td>34.6</td>
       <td>0.101</td>
       <td>22</td>
@@ -17652,10 +17611,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>226</th>
       <td>0</td>
-      <td>101.0</td>
-      <td>76.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>101</td>
+      <td>76</td>
+      <td>0</td>
+      <td>0</td>
       <td>35.7</td>
       <td>0.198</td>
       <td>26</td>
@@ -17664,10 +17623,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>227</th>
       <td>3</td>
-      <td>162.0</td>
-      <td>52.0</td>
-      <td>38.0</td>
-      <td>NaN</td>
+      <td>162</td>
+      <td>52</td>
+      <td>38</td>
+      <td>0</td>
       <td>37.2</td>
       <td>0.652</td>
       <td>24</td>
@@ -17676,10 +17635,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>228</th>
       <td>4</td>
-      <td>197.0</td>
-      <td>70.0</td>
-      <td>39.0</td>
-      <td>744.0</td>
+      <td>197</td>
+      <td>70</td>
+      <td>39</td>
+      <td>744</td>
       <td>36.7</td>
       <td>2.329</td>
       <td>31</td>
@@ -17688,10 +17647,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>229</th>
       <td>0</td>
-      <td>117.0</td>
-      <td>80.0</td>
-      <td>31.0</td>
-      <td>53.0</td>
+      <td>117</td>
+      <td>80</td>
+      <td>31</td>
+      <td>53</td>
       <td>45.2</td>
       <td>0.089</td>
       <td>24</td>
@@ -17700,10 +17659,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>230</th>
       <td>4</td>
-      <td>142.0</td>
-      <td>86.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>142</td>
+      <td>86</td>
+      <td>0</td>
+      <td>0</td>
       <td>44.0</td>
       <td>0.645</td>
       <td>22</td>
@@ -17712,10 +17671,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>231</th>
       <td>6</td>
-      <td>134.0</td>
-      <td>80.0</td>
-      <td>37.0</td>
-      <td>370.0</td>
+      <td>134</td>
+      <td>80</td>
+      <td>37</td>
+      <td>370</td>
       <td>46.2</td>
       <td>0.238</td>
       <td>46</td>
@@ -17724,10 +17683,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>232</th>
       <td>1</td>
-      <td>79.0</td>
-      <td>80.0</td>
-      <td>25.0</td>
-      <td>37.0</td>
+      <td>79</td>
+      <td>80</td>
+      <td>25</td>
+      <td>37</td>
       <td>25.4</td>
       <td>0.583</td>
       <td>22</td>
@@ -17736,10 +17695,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>233</th>
       <td>4</td>
-      <td>122.0</td>
-      <td>68.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>122</td>
+      <td>68</td>
+      <td>0</td>
+      <td>0</td>
       <td>35.0</td>
       <td>0.394</td>
       <td>29</td>
@@ -17748,10 +17707,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>234</th>
       <td>3</td>
-      <td>74.0</td>
-      <td>68.0</td>
-      <td>28.0</td>
-      <td>45.0</td>
+      <td>74</td>
+      <td>68</td>
+      <td>28</td>
+      <td>45</td>
       <td>29.7</td>
       <td>0.293</td>
       <td>23</td>
@@ -17760,10 +17719,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>235</th>
       <td>4</td>
-      <td>171.0</td>
-      <td>72.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>171</td>
+      <td>72</td>
+      <td>0</td>
+      <td>0</td>
       <td>43.6</td>
       <td>0.479</td>
       <td>26</td>
@@ -17772,10 +17731,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>236</th>
       <td>7</td>
-      <td>181.0</td>
-      <td>84.0</td>
-      <td>21.0</td>
-      <td>192.0</td>
+      <td>181</td>
+      <td>84</td>
+      <td>21</td>
+      <td>192</td>
       <td>35.9</td>
       <td>0.586</td>
       <td>51</td>
@@ -17784,10 +17743,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>237</th>
       <td>0</td>
-      <td>179.0</td>
-      <td>90.0</td>
-      <td>27.0</td>
-      <td>NaN</td>
+      <td>179</td>
+      <td>90</td>
+      <td>27</td>
+      <td>0</td>
       <td>44.1</td>
       <td>0.686</td>
       <td>23</td>
@@ -17796,10 +17755,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>238</th>
       <td>9</td>
-      <td>164.0</td>
-      <td>84.0</td>
-      <td>21.0</td>
-      <td>NaN</td>
+      <td>164</td>
+      <td>84</td>
+      <td>21</td>
+      <td>0</td>
       <td>30.8</td>
       <td>0.831</td>
       <td>32</td>
@@ -17808,10 +17767,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>239</th>
       <td>0</td>
-      <td>104.0</td>
-      <td>76.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>104</td>
+      <td>76</td>
+      <td>0</td>
+      <td>0</td>
       <td>18.4</td>
       <td>0.582</td>
       <td>27</td>
@@ -17820,10 +17779,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>240</th>
       <td>1</td>
-      <td>91.0</td>
-      <td>64.0</td>
-      <td>24.0</td>
-      <td>NaN</td>
+      <td>91</td>
+      <td>64</td>
+      <td>24</td>
+      <td>0</td>
       <td>29.2</td>
       <td>0.192</td>
       <td>21</td>
@@ -17832,10 +17791,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>241</th>
       <td>4</td>
-      <td>91.0</td>
-      <td>70.0</td>
-      <td>32.0</td>
-      <td>88.0</td>
+      <td>91</td>
+      <td>70</td>
+      <td>32</td>
+      <td>88</td>
       <td>33.1</td>
       <td>0.446</td>
       <td>22</td>
@@ -17844,10 +17803,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>242</th>
       <td>3</td>
-      <td>139.0</td>
-      <td>54.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>139</td>
+      <td>54</td>
+      <td>0</td>
+      <td>0</td>
       <td>25.6</td>
       <td>0.402</td>
       <td>22</td>
@@ -17856,10 +17815,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>243</th>
       <td>6</td>
-      <td>119.0</td>
-      <td>50.0</td>
-      <td>22.0</td>
-      <td>176.0</td>
+      <td>119</td>
+      <td>50</td>
+      <td>22</td>
+      <td>176</td>
       <td>27.1</td>
       <td>1.318</td>
       <td>33</td>
@@ -17868,10 +17827,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>244</th>
       <td>2</td>
-      <td>146.0</td>
-      <td>76.0</td>
-      <td>35.0</td>
-      <td>194.0</td>
+      <td>146</td>
+      <td>76</td>
+      <td>35</td>
+      <td>194</td>
       <td>38.2</td>
       <td>0.329</td>
       <td>29</td>
@@ -17880,10 +17839,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>245</th>
       <td>9</td>
-      <td>184.0</td>
-      <td>85.0</td>
-      <td>15.0</td>
-      <td>NaN</td>
+      <td>184</td>
+      <td>85</td>
+      <td>15</td>
+      <td>0</td>
       <td>30.0</td>
       <td>1.213</td>
       <td>49</td>
@@ -17892,10 +17851,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>246</th>
       <td>10</td>
-      <td>122.0</td>
-      <td>68.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>122</td>
+      <td>68</td>
+      <td>0</td>
+      <td>0</td>
       <td>31.2</td>
       <td>0.258</td>
       <td>41</td>
@@ -17904,10 +17863,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>247</th>
       <td>0</td>
-      <td>165.0</td>
-      <td>90.0</td>
-      <td>33.0</td>
-      <td>680.0</td>
+      <td>165</td>
+      <td>90</td>
+      <td>33</td>
+      <td>680</td>
       <td>52.3</td>
       <td>0.427</td>
       <td>23</td>
@@ -17916,10 +17875,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>248</th>
       <td>9</td>
-      <td>124.0</td>
-      <td>70.0</td>
-      <td>33.0</td>
-      <td>402.0</td>
+      <td>124</td>
+      <td>70</td>
+      <td>33</td>
+      <td>402</td>
       <td>35.4</td>
       <td>0.282</td>
       <td>34</td>
@@ -17928,10 +17887,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>249</th>
       <td>1</td>
-      <td>111.0</td>
-      <td>86.0</td>
-      <td>19.0</td>
-      <td>NaN</td>
+      <td>111</td>
+      <td>86</td>
+      <td>19</td>
+      <td>0</td>
       <td>30.1</td>
       <td>0.143</td>
       <td>23</td>
@@ -17940,10 +17899,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>250</th>
       <td>9</td>
-      <td>106.0</td>
-      <td>52.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>106</td>
+      <td>52</td>
+      <td>0</td>
+      <td>0</td>
       <td>31.2</td>
       <td>0.380</td>
       <td>42</td>
@@ -17952,10 +17911,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>251</th>
       <td>2</td>
-      <td>129.0</td>
-      <td>84.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>129</td>
+      <td>84</td>
+      <td>0</td>
+      <td>0</td>
       <td>28.0</td>
       <td>0.284</td>
       <td>27</td>
@@ -17964,10 +17923,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>252</th>
       <td>2</td>
-      <td>90.0</td>
-      <td>80.0</td>
-      <td>14.0</td>
-      <td>55.0</td>
+      <td>90</td>
+      <td>80</td>
+      <td>14</td>
+      <td>55</td>
       <td>24.4</td>
       <td>0.249</td>
       <td>24</td>
@@ -17976,10 +17935,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>253</th>
       <td>0</td>
-      <td>86.0</td>
-      <td>68.0</td>
-      <td>32.0</td>
-      <td>NaN</td>
+      <td>86</td>
+      <td>68</td>
+      <td>32</td>
+      <td>0</td>
       <td>35.8</td>
       <td>0.238</td>
       <td>25</td>
@@ -17988,10 +17947,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>254</th>
       <td>12</td>
-      <td>92.0</td>
-      <td>62.0</td>
-      <td>7.0</td>
-      <td>258.0</td>
+      <td>92</td>
+      <td>62</td>
+      <td>7</td>
+      <td>258</td>
       <td>27.6</td>
       <td>0.926</td>
       <td>44</td>
@@ -18000,10 +17959,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>255</th>
       <td>1</td>
-      <td>113.0</td>
-      <td>64.0</td>
-      <td>35.0</td>
-      <td>NaN</td>
+      <td>113</td>
+      <td>64</td>
+      <td>35</td>
+      <td>0</td>
       <td>33.6</td>
       <td>0.543</td>
       <td>21</td>
@@ -18012,10 +17971,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>256</th>
       <td>3</td>
-      <td>111.0</td>
-      <td>56.0</td>
-      <td>39.0</td>
-      <td>NaN</td>
+      <td>111</td>
+      <td>56</td>
+      <td>39</td>
+      <td>0</td>
       <td>30.1</td>
       <td>0.557</td>
       <td>30</td>
@@ -18024,10 +17983,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>257</th>
       <td>2</td>
-      <td>114.0</td>
-      <td>68.0</td>
-      <td>22.0</td>
-      <td>NaN</td>
+      <td>114</td>
+      <td>68</td>
+      <td>22</td>
+      <td>0</td>
       <td>28.7</td>
       <td>0.092</td>
       <td>25</td>
@@ -18036,10 +17995,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>258</th>
       <td>1</td>
-      <td>193.0</td>
-      <td>50.0</td>
-      <td>16.0</td>
-      <td>375.0</td>
+      <td>193</td>
+      <td>50</td>
+      <td>16</td>
+      <td>375</td>
       <td>25.9</td>
       <td>0.655</td>
       <td>24</td>
@@ -18048,10 +18007,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>259</th>
       <td>11</td>
-      <td>155.0</td>
-      <td>76.0</td>
-      <td>28.0</td>
-      <td>150.0</td>
+      <td>155</td>
+      <td>76</td>
+      <td>28</td>
+      <td>150</td>
       <td>33.3</td>
       <td>1.353</td>
       <td>51</td>
@@ -18060,10 +18019,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>260</th>
       <td>3</td>
-      <td>191.0</td>
-      <td>68.0</td>
-      <td>15.0</td>
-      <td>130.0</td>
+      <td>191</td>
+      <td>68</td>
+      <td>15</td>
+      <td>130</td>
       <td>30.9</td>
       <td>0.299</td>
       <td>34</td>
@@ -18072,10 +18031,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>261</th>
       <td>3</td>
-      <td>141.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>141</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>30.0</td>
       <td>0.761</td>
       <td>27</td>
@@ -18084,10 +18043,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>262</th>
       <td>4</td>
-      <td>95.0</td>
-      <td>70.0</td>
-      <td>32.0</td>
-      <td>NaN</td>
+      <td>95</td>
+      <td>70</td>
+      <td>32</td>
+      <td>0</td>
       <td>32.1</td>
       <td>0.612</td>
       <td>24</td>
@@ -18096,10 +18055,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>263</th>
       <td>3</td>
-      <td>142.0</td>
-      <td>80.0</td>
-      <td>15.0</td>
-      <td>NaN</td>
+      <td>142</td>
+      <td>80</td>
+      <td>15</td>
+      <td>0</td>
       <td>32.4</td>
       <td>0.200</td>
       <td>63</td>
@@ -18108,10 +18067,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>264</th>
       <td>4</td>
-      <td>123.0</td>
-      <td>62.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>123</td>
+      <td>62</td>
+      <td>0</td>
+      <td>0</td>
       <td>32.0</td>
       <td>0.226</td>
       <td>35</td>
@@ -18120,10 +18079,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>265</th>
       <td>5</td>
-      <td>96.0</td>
-      <td>74.0</td>
-      <td>18.0</td>
-      <td>67.0</td>
+      <td>96</td>
+      <td>74</td>
+      <td>18</td>
+      <td>67</td>
       <td>33.6</td>
       <td>0.997</td>
       <td>43</td>
@@ -18132,10 +18091,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>266</th>
       <td>0</td>
-      <td>138.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>138</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>36.3</td>
       <td>0.933</td>
       <td>25</td>
@@ -18144,10 +18103,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>267</th>
       <td>2</td>
-      <td>128.0</td>
-      <td>64.0</td>
-      <td>42.0</td>
-      <td>NaN</td>
+      <td>128</td>
+      <td>64</td>
+      <td>42</td>
+      <td>0</td>
       <td>40.0</td>
       <td>1.101</td>
       <td>24</td>
@@ -18156,10 +18115,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>268</th>
       <td>0</td>
-      <td>102.0</td>
-      <td>52.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>102</td>
+      <td>52</td>
+      <td>0</td>
+      <td>0</td>
       <td>25.1</td>
       <td>0.078</td>
       <td>21</td>
@@ -18168,10 +18127,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>269</th>
       <td>2</td>
-      <td>146.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>146</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>27.5</td>
       <td>0.240</td>
       <td>28</td>
@@ -18180,10 +18139,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>270</th>
       <td>10</td>
-      <td>101.0</td>
-      <td>86.0</td>
-      <td>37.0</td>
-      <td>NaN</td>
+      <td>101</td>
+      <td>86</td>
+      <td>37</td>
+      <td>0</td>
       <td>45.6</td>
       <td>1.136</td>
       <td>38</td>
@@ -18192,10 +18151,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>271</th>
       <td>2</td>
-      <td>108.0</td>
-      <td>62.0</td>
-      <td>32.0</td>
-      <td>56.0</td>
+      <td>108</td>
+      <td>62</td>
+      <td>32</td>
+      <td>56</td>
       <td>25.2</td>
       <td>0.128</td>
       <td>21</td>
@@ -18204,10 +18163,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>272</th>
       <td>3</td>
-      <td>122.0</td>
-      <td>78.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>122</td>
+      <td>78</td>
+      <td>0</td>
+      <td>0</td>
       <td>23.0</td>
       <td>0.254</td>
       <td>40</td>
@@ -18216,10 +18175,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>273</th>
       <td>1</td>
-      <td>71.0</td>
-      <td>78.0</td>
-      <td>50.0</td>
-      <td>45.0</td>
+      <td>71</td>
+      <td>78</td>
+      <td>50</td>
+      <td>45</td>
       <td>33.2</td>
       <td>0.422</td>
       <td>21</td>
@@ -18228,10 +18187,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>274</th>
       <td>13</td>
-      <td>106.0</td>
-      <td>70.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>106</td>
+      <td>70</td>
+      <td>0</td>
+      <td>0</td>
       <td>34.2</td>
       <td>0.251</td>
       <td>52</td>
@@ -18240,10 +18199,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>275</th>
       <td>2</td>
-      <td>100.0</td>
-      <td>70.0</td>
-      <td>52.0</td>
-      <td>57.0</td>
+      <td>100</td>
+      <td>70</td>
+      <td>52</td>
+      <td>57</td>
       <td>40.5</td>
       <td>0.677</td>
       <td>25</td>
@@ -18252,10 +18211,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>276</th>
       <td>7</td>
-      <td>106.0</td>
-      <td>60.0</td>
-      <td>24.0</td>
-      <td>NaN</td>
+      <td>106</td>
+      <td>60</td>
+      <td>24</td>
+      <td>0</td>
       <td>26.5</td>
       <td>0.296</td>
       <td>29</td>
@@ -18264,10 +18223,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>277</th>
       <td>0</td>
-      <td>104.0</td>
-      <td>64.0</td>
-      <td>23.0</td>
-      <td>116.0</td>
+      <td>104</td>
+      <td>64</td>
+      <td>23</td>
+      <td>116</td>
       <td>27.8</td>
       <td>0.454</td>
       <td>23</td>
@@ -18276,10 +18235,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>278</th>
       <td>5</td>
-      <td>114.0</td>
-      <td>74.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>114</td>
+      <td>74</td>
+      <td>0</td>
+      <td>0</td>
       <td>24.9</td>
       <td>0.744</td>
       <td>57</td>
@@ -18288,10 +18247,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>279</th>
       <td>2</td>
-      <td>108.0</td>
-      <td>62.0</td>
-      <td>10.0</td>
-      <td>278.0</td>
+      <td>108</td>
+      <td>62</td>
+      <td>10</td>
+      <td>278</td>
       <td>25.3</td>
       <td>0.881</td>
       <td>22</td>
@@ -18300,10 +18259,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>280</th>
       <td>0</td>
-      <td>146.0</td>
-      <td>70.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>146</td>
+      <td>70</td>
+      <td>0</td>
+      <td>0</td>
       <td>37.9</td>
       <td>0.334</td>
       <td>28</td>
@@ -18312,10 +18271,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>281</th>
       <td>10</td>
-      <td>129.0</td>
-      <td>76.0</td>
-      <td>28.0</td>
-      <td>122.0</td>
+      <td>129</td>
+      <td>76</td>
+      <td>28</td>
+      <td>122</td>
       <td>35.9</td>
       <td>0.280</td>
       <td>39</td>
@@ -18324,10 +18283,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>282</th>
       <td>7</td>
-      <td>133.0</td>
-      <td>88.0</td>
-      <td>15.0</td>
-      <td>155.0</td>
+      <td>133</td>
+      <td>88</td>
+      <td>15</td>
+      <td>155</td>
       <td>32.4</td>
       <td>0.262</td>
       <td>37</td>
@@ -18336,10 +18295,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>283</th>
       <td>7</td>
-      <td>161.0</td>
-      <td>86.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>161</td>
+      <td>86</td>
+      <td>0</td>
+      <td>0</td>
       <td>30.4</td>
       <td>0.165</td>
       <td>47</td>
@@ -18348,10 +18307,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>284</th>
       <td>2</td>
-      <td>108.0</td>
-      <td>80.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>108</td>
+      <td>80</td>
+      <td>0</td>
+      <td>0</td>
       <td>27.0</td>
       <td>0.259</td>
       <td>52</td>
@@ -18360,10 +18319,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>285</th>
       <td>7</td>
-      <td>136.0</td>
-      <td>74.0</td>
-      <td>26.0</td>
-      <td>135.0</td>
+      <td>136</td>
+      <td>74</td>
+      <td>26</td>
+      <td>135</td>
       <td>26.0</td>
       <td>0.647</td>
       <td>51</td>
@@ -18372,10 +18331,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>286</th>
       <td>5</td>
-      <td>155.0</td>
-      <td>84.0</td>
-      <td>44.0</td>
-      <td>545.0</td>
+      <td>155</td>
+      <td>84</td>
+      <td>44</td>
+      <td>545</td>
       <td>38.7</td>
       <td>0.619</td>
       <td>34</td>
@@ -18384,10 +18343,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>287</th>
       <td>1</td>
-      <td>119.0</td>
-      <td>86.0</td>
-      <td>39.0</td>
-      <td>220.0</td>
+      <td>119</td>
+      <td>86</td>
+      <td>39</td>
+      <td>220</td>
       <td>45.6</td>
       <td>0.808</td>
       <td>29</td>
@@ -18396,10 +18355,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>288</th>
       <td>4</td>
-      <td>96.0</td>
-      <td>56.0</td>
-      <td>17.0</td>
-      <td>49.0</td>
+      <td>96</td>
+      <td>56</td>
+      <td>17</td>
+      <td>49</td>
       <td>20.8</td>
       <td>0.340</td>
       <td>26</td>
@@ -18408,10 +18367,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>289</th>
       <td>5</td>
-      <td>108.0</td>
-      <td>72.0</td>
-      <td>43.0</td>
-      <td>75.0</td>
+      <td>108</td>
+      <td>72</td>
+      <td>43</td>
+      <td>75</td>
       <td>36.1</td>
       <td>0.263</td>
       <td>33</td>
@@ -18420,10 +18379,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>290</th>
       <td>0</td>
-      <td>78.0</td>
-      <td>88.0</td>
-      <td>29.0</td>
-      <td>40.0</td>
+      <td>78</td>
+      <td>88</td>
+      <td>29</td>
+      <td>40</td>
       <td>36.9</td>
       <td>0.434</td>
       <td>21</td>
@@ -18432,10 +18391,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>291</th>
       <td>0</td>
-      <td>107.0</td>
-      <td>62.0</td>
-      <td>30.0</td>
-      <td>74.0</td>
+      <td>107</td>
+      <td>62</td>
+      <td>30</td>
+      <td>74</td>
       <td>36.6</td>
       <td>0.757</td>
       <td>25</td>
@@ -18444,10 +18403,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>292</th>
       <td>2</td>
-      <td>128.0</td>
-      <td>78.0</td>
-      <td>37.0</td>
-      <td>182.0</td>
+      <td>128</td>
+      <td>78</td>
+      <td>37</td>
+      <td>182</td>
       <td>43.3</td>
       <td>1.224</td>
       <td>31</td>
@@ -18456,10 +18415,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>293</th>
       <td>1</td>
-      <td>128.0</td>
-      <td>48.0</td>
-      <td>45.0</td>
-      <td>194.0</td>
+      <td>128</td>
+      <td>48</td>
+      <td>45</td>
+      <td>194</td>
       <td>40.5</td>
       <td>0.613</td>
       <td>24</td>
@@ -18468,10 +18427,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>294</th>
       <td>0</td>
-      <td>161.0</td>
-      <td>50.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>161</td>
+      <td>50</td>
+      <td>0</td>
+      <td>0</td>
       <td>21.9</td>
       <td>0.254</td>
       <td>65</td>
@@ -18480,10 +18439,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>295</th>
       <td>6</td>
-      <td>151.0</td>
-      <td>62.0</td>
-      <td>31.0</td>
-      <td>120.0</td>
+      <td>151</td>
+      <td>62</td>
+      <td>31</td>
+      <td>120</td>
       <td>35.5</td>
       <td>0.692</td>
       <td>28</td>
@@ -18492,10 +18451,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>296</th>
       <td>2</td>
-      <td>146.0</td>
-      <td>70.0</td>
-      <td>38.0</td>
-      <td>360.0</td>
+      <td>146</td>
+      <td>70</td>
+      <td>38</td>
+      <td>360</td>
       <td>28.0</td>
       <td>0.337</td>
       <td>29</td>
@@ -18504,10 +18463,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>297</th>
       <td>0</td>
-      <td>126.0</td>
-      <td>84.0</td>
-      <td>29.0</td>
-      <td>215.0</td>
+      <td>126</td>
+      <td>84</td>
+      <td>29</td>
+      <td>215</td>
       <td>30.7</td>
       <td>0.520</td>
       <td>24</td>
@@ -18516,10 +18475,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>298</th>
       <td>14</td>
-      <td>100.0</td>
-      <td>78.0</td>
-      <td>25.0</td>
-      <td>184.0</td>
+      <td>100</td>
+      <td>78</td>
+      <td>25</td>
+      <td>184</td>
       <td>36.6</td>
       <td>0.412</td>
       <td>46</td>
@@ -18528,10 +18487,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>299</th>
       <td>8</td>
-      <td>112.0</td>
-      <td>72.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>112</td>
+      <td>72</td>
+      <td>0</td>
+      <td>0</td>
       <td>23.6</td>
       <td>0.840</td>
       <td>58</td>
@@ -18540,10 +18499,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>300</th>
       <td>0</td>
-      <td>167.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>167</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>32.3</td>
       <td>0.839</td>
       <td>30</td>
@@ -18552,10 +18511,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>301</th>
       <td>2</td>
-      <td>144.0</td>
-      <td>58.0</td>
-      <td>33.0</td>
-      <td>135.0</td>
+      <td>144</td>
+      <td>58</td>
+      <td>33</td>
+      <td>135</td>
       <td>31.6</td>
       <td>0.422</td>
       <td>25</td>
@@ -18564,10 +18523,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>302</th>
       <td>5</td>
-      <td>77.0</td>
-      <td>82.0</td>
-      <td>41.0</td>
-      <td>42.0</td>
+      <td>77</td>
+      <td>82</td>
+      <td>41</td>
+      <td>42</td>
       <td>35.8</td>
       <td>0.156</td>
       <td>35</td>
@@ -18576,10 +18535,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>303</th>
       <td>5</td>
-      <td>115.0</td>
-      <td>98.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>115</td>
+      <td>98</td>
+      <td>0</td>
+      <td>0</td>
       <td>52.9</td>
       <td>0.209</td>
       <td>28</td>
@@ -18588,10 +18547,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>304</th>
       <td>3</td>
-      <td>150.0</td>
-      <td>76.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>150</td>
+      <td>76</td>
+      <td>0</td>
+      <td>0</td>
       <td>21.0</td>
       <td>0.207</td>
       <td>37</td>
@@ -18600,10 +18559,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>305</th>
       <td>2</td>
-      <td>120.0</td>
-      <td>76.0</td>
-      <td>37.0</td>
-      <td>105.0</td>
+      <td>120</td>
+      <td>76</td>
+      <td>37</td>
+      <td>105</td>
       <td>39.7</td>
       <td>0.215</td>
       <td>29</td>
@@ -18612,10 +18571,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>306</th>
       <td>10</td>
-      <td>161.0</td>
-      <td>68.0</td>
-      <td>23.0</td>
-      <td>132.0</td>
+      <td>161</td>
+      <td>68</td>
+      <td>23</td>
+      <td>132</td>
       <td>25.5</td>
       <td>0.326</td>
       <td>47</td>
@@ -18624,10 +18583,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>307</th>
       <td>0</td>
-      <td>137.0</td>
-      <td>68.0</td>
-      <td>14.0</td>
-      <td>148.0</td>
+      <td>137</td>
+      <td>68</td>
+      <td>14</td>
+      <td>148</td>
       <td>24.8</td>
       <td>0.143</td>
       <td>21</td>
@@ -18636,10 +18595,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>308</th>
       <td>0</td>
-      <td>128.0</td>
-      <td>68.0</td>
-      <td>19.0</td>
-      <td>180.0</td>
+      <td>128</td>
+      <td>68</td>
+      <td>19</td>
+      <td>180</td>
       <td>30.5</td>
       <td>1.391</td>
       <td>25</td>
@@ -18648,10 +18607,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>309</th>
       <td>2</td>
-      <td>124.0</td>
-      <td>68.0</td>
-      <td>28.0</td>
-      <td>205.0</td>
+      <td>124</td>
+      <td>68</td>
+      <td>28</td>
+      <td>205</td>
       <td>32.9</td>
       <td>0.875</td>
       <td>30</td>
@@ -18660,10 +18619,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>310</th>
       <td>6</td>
-      <td>80.0</td>
-      <td>66.0</td>
-      <td>30.0</td>
-      <td>NaN</td>
+      <td>80</td>
+      <td>66</td>
+      <td>30</td>
+      <td>0</td>
       <td>26.2</td>
       <td>0.313</td>
       <td>41</td>
@@ -18672,10 +18631,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>311</th>
       <td>0</td>
-      <td>106.0</td>
-      <td>70.0</td>
-      <td>37.0</td>
-      <td>148.0</td>
+      <td>106</td>
+      <td>70</td>
+      <td>37</td>
+      <td>148</td>
       <td>39.4</td>
       <td>0.605</td>
       <td>22</td>
@@ -18684,10 +18643,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>312</th>
       <td>2</td>
-      <td>155.0</td>
-      <td>74.0</td>
-      <td>17.0</td>
-      <td>96.0</td>
+      <td>155</td>
+      <td>74</td>
+      <td>17</td>
+      <td>96</td>
       <td>26.6</td>
       <td>0.433</td>
       <td>27</td>
@@ -18696,10 +18655,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>313</th>
       <td>3</td>
-      <td>113.0</td>
-      <td>50.0</td>
-      <td>10.0</td>
-      <td>85.0</td>
+      <td>113</td>
+      <td>50</td>
+      <td>10</td>
+      <td>85</td>
       <td>29.5</td>
       <td>0.626</td>
       <td>25</td>
@@ -18708,10 +18667,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>314</th>
       <td>7</td>
-      <td>109.0</td>
-      <td>80.0</td>
-      <td>31.0</td>
-      <td>NaN</td>
+      <td>109</td>
+      <td>80</td>
+      <td>31</td>
+      <td>0</td>
       <td>35.9</td>
       <td>1.127</td>
       <td>43</td>
@@ -18720,10 +18679,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>315</th>
       <td>2</td>
-      <td>112.0</td>
-      <td>68.0</td>
-      <td>22.0</td>
-      <td>94.0</td>
+      <td>112</td>
+      <td>68</td>
+      <td>22</td>
+      <td>94</td>
       <td>34.1</td>
       <td>0.315</td>
       <td>26</td>
@@ -18732,10 +18691,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>316</th>
       <td>3</td>
-      <td>99.0</td>
-      <td>80.0</td>
-      <td>11.0</td>
-      <td>64.0</td>
+      <td>99</td>
+      <td>80</td>
+      <td>11</td>
+      <td>64</td>
       <td>19.3</td>
       <td>0.284</td>
       <td>30</td>
@@ -18744,10 +18703,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>317</th>
       <td>3</td>
-      <td>182.0</td>
-      <td>74.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>182</td>
+      <td>74</td>
+      <td>0</td>
+      <td>0</td>
       <td>30.5</td>
       <td>0.345</td>
       <td>29</td>
@@ -18756,10 +18715,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>318</th>
       <td>3</td>
-      <td>115.0</td>
-      <td>66.0</td>
-      <td>39.0</td>
-      <td>140.0</td>
+      <td>115</td>
+      <td>66</td>
+      <td>39</td>
+      <td>140</td>
       <td>38.1</td>
       <td>0.150</td>
       <td>28</td>
@@ -18768,10 +18727,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>319</th>
       <td>6</td>
-      <td>194.0</td>
-      <td>78.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>194</td>
+      <td>78</td>
+      <td>0</td>
+      <td>0</td>
       <td>23.5</td>
       <td>0.129</td>
       <td>59</td>
@@ -18780,10 +18739,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>320</th>
       <td>4</td>
-      <td>129.0</td>
-      <td>60.0</td>
-      <td>12.0</td>
-      <td>231.0</td>
+      <td>129</td>
+      <td>60</td>
+      <td>12</td>
+      <td>231</td>
       <td>27.5</td>
       <td>0.527</td>
       <td>31</td>
@@ -18792,10 +18751,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>321</th>
       <td>3</td>
-      <td>112.0</td>
-      <td>74.0</td>
-      <td>30.0</td>
-      <td>NaN</td>
+      <td>112</td>
+      <td>74</td>
+      <td>30</td>
+      <td>0</td>
       <td>31.6</td>
       <td>0.197</td>
       <td>25</td>
@@ -18804,10 +18763,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>322</th>
       <td>0</td>
-      <td>124.0</td>
-      <td>70.0</td>
-      <td>20.0</td>
-      <td>NaN</td>
+      <td>124</td>
+      <td>70</td>
+      <td>20</td>
+      <td>0</td>
       <td>27.4</td>
       <td>0.254</td>
       <td>36</td>
@@ -18816,10 +18775,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>323</th>
       <td>13</td>
-      <td>152.0</td>
-      <td>90.0</td>
-      <td>33.0</td>
-      <td>29.0</td>
+      <td>152</td>
+      <td>90</td>
+      <td>33</td>
+      <td>29</td>
       <td>26.8</td>
       <td>0.731</td>
       <td>43</td>
@@ -18828,10 +18787,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>324</th>
       <td>2</td>
-      <td>112.0</td>
-      <td>75.0</td>
-      <td>32.0</td>
-      <td>NaN</td>
+      <td>112</td>
+      <td>75</td>
+      <td>32</td>
+      <td>0</td>
       <td>35.7</td>
       <td>0.148</td>
       <td>21</td>
@@ -18840,10 +18799,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>325</th>
       <td>1</td>
-      <td>157.0</td>
-      <td>72.0</td>
-      <td>21.0</td>
-      <td>168.0</td>
+      <td>157</td>
+      <td>72</td>
+      <td>21</td>
+      <td>168</td>
       <td>25.6</td>
       <td>0.123</td>
       <td>24</td>
@@ -18852,10 +18811,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>326</th>
       <td>1</td>
-      <td>122.0</td>
-      <td>64.0</td>
-      <td>32.0</td>
-      <td>156.0</td>
+      <td>122</td>
+      <td>64</td>
+      <td>32</td>
+      <td>156</td>
       <td>35.1</td>
       <td>0.692</td>
       <td>30</td>
@@ -18864,10 +18823,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>327</th>
       <td>10</td>
-      <td>179.0</td>
-      <td>70.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>179</td>
+      <td>70</td>
+      <td>0</td>
+      <td>0</td>
       <td>35.1</td>
       <td>0.200</td>
       <td>37</td>
@@ -18876,10 +18835,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>328</th>
       <td>2</td>
-      <td>102.0</td>
-      <td>86.0</td>
-      <td>36.0</td>
-      <td>120.0</td>
+      <td>102</td>
+      <td>86</td>
+      <td>36</td>
+      <td>120</td>
       <td>45.5</td>
       <td>0.127</td>
       <td>23</td>
@@ -18888,10 +18847,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>329</th>
       <td>6</td>
-      <td>105.0</td>
-      <td>70.0</td>
-      <td>32.0</td>
-      <td>68.0</td>
+      <td>105</td>
+      <td>70</td>
+      <td>32</td>
+      <td>68</td>
       <td>30.8</td>
       <td>0.122</td>
       <td>37</td>
@@ -18900,10 +18859,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>330</th>
       <td>8</td>
-      <td>118.0</td>
-      <td>72.0</td>
-      <td>19.0</td>
-      <td>NaN</td>
+      <td>118</td>
+      <td>72</td>
+      <td>19</td>
+      <td>0</td>
       <td>23.1</td>
       <td>1.476</td>
       <td>46</td>
@@ -18912,10 +18871,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>331</th>
       <td>2</td>
-      <td>87.0</td>
-      <td>58.0</td>
-      <td>16.0</td>
-      <td>52.0</td>
+      <td>87</td>
+      <td>58</td>
+      <td>16</td>
+      <td>52</td>
       <td>32.7</td>
       <td>0.166</td>
       <td>25</td>
@@ -18924,10 +18883,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>332</th>
       <td>1</td>
-      <td>180.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>180</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>43.3</td>
       <td>0.282</td>
       <td>41</td>
@@ -18936,10 +18895,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>333</th>
       <td>12</td>
-      <td>106.0</td>
-      <td>80.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>106</td>
+      <td>80</td>
+      <td>0</td>
+      <td>0</td>
       <td>23.6</td>
       <td>0.137</td>
       <td>44</td>
@@ -18948,10 +18907,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>334</th>
       <td>1</td>
-      <td>95.0</td>
-      <td>60.0</td>
-      <td>18.0</td>
-      <td>58.0</td>
+      <td>95</td>
+      <td>60</td>
+      <td>18</td>
+      <td>58</td>
       <td>23.9</td>
       <td>0.260</td>
       <td>22</td>
@@ -18960,10 +18919,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>335</th>
       <td>0</td>
-      <td>165.0</td>
-      <td>76.0</td>
-      <td>43.0</td>
-      <td>255.0</td>
+      <td>165</td>
+      <td>76</td>
+      <td>43</td>
+      <td>255</td>
       <td>47.9</td>
       <td>0.259</td>
       <td>26</td>
@@ -18972,10 +18931,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>336</th>
       <td>0</td>
-      <td>117.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>117</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>33.8</td>
       <td>0.932</td>
       <td>44</td>
@@ -18984,10 +18943,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>337</th>
       <td>5</td>
-      <td>115.0</td>
-      <td>76.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>115</td>
+      <td>76</td>
+      <td>0</td>
+      <td>0</td>
       <td>31.2</td>
       <td>0.343</td>
       <td>44</td>
@@ -18996,10 +18955,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>338</th>
       <td>9</td>
-      <td>152.0</td>
-      <td>78.0</td>
-      <td>34.0</td>
-      <td>171.0</td>
+      <td>152</td>
+      <td>78</td>
+      <td>34</td>
+      <td>171</td>
       <td>34.2</td>
       <td>0.893</td>
       <td>33</td>
@@ -19008,10 +18967,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>339</th>
       <td>7</td>
-      <td>178.0</td>
-      <td>84.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>178</td>
+      <td>84</td>
+      <td>0</td>
+      <td>0</td>
       <td>39.9</td>
       <td>0.331</td>
       <td>41</td>
@@ -19020,10 +18979,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>340</th>
       <td>1</td>
-      <td>130.0</td>
-      <td>70.0</td>
-      <td>13.0</td>
-      <td>105.0</td>
+      <td>130</td>
+      <td>70</td>
+      <td>13</td>
+      <td>105</td>
       <td>25.9</td>
       <td>0.472</td>
       <td>22</td>
@@ -19032,10 +18991,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>341</th>
       <td>1</td>
-      <td>95.0</td>
-      <td>74.0</td>
-      <td>21.0</td>
-      <td>73.0</td>
+      <td>95</td>
+      <td>74</td>
+      <td>21</td>
+      <td>73</td>
       <td>25.9</td>
       <td>0.673</td>
       <td>36</td>
@@ -19044,10 +19003,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>342</th>
       <td>1</td>
-      <td>NaN</td>
-      <td>68.0</td>
-      <td>35.0</td>
-      <td>NaN</td>
+      <td>0</td>
+      <td>68</td>
+      <td>35</td>
+      <td>0</td>
       <td>32.0</td>
       <td>0.389</td>
       <td>22</td>
@@ -19056,10 +19015,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>343</th>
       <td>5</td>
-      <td>122.0</td>
-      <td>86.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>122</td>
+      <td>86</td>
+      <td>0</td>
+      <td>0</td>
       <td>34.7</td>
       <td>0.290</td>
       <td>33</td>
@@ -19068,10 +19027,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>344</th>
       <td>8</td>
-      <td>95.0</td>
-      <td>72.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>95</td>
+      <td>72</td>
+      <td>0</td>
+      <td>0</td>
       <td>36.8</td>
       <td>0.485</td>
       <td>57</td>
@@ -19080,10 +19039,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>345</th>
       <td>8</td>
-      <td>126.0</td>
-      <td>88.0</td>
-      <td>36.0</td>
-      <td>108.0</td>
+      <td>126</td>
+      <td>88</td>
+      <td>36</td>
+      <td>108</td>
       <td>38.5</td>
       <td>0.349</td>
       <td>49</td>
@@ -19092,10 +19051,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>346</th>
       <td>1</td>
-      <td>139.0</td>
-      <td>46.0</td>
-      <td>19.0</td>
-      <td>83.0</td>
+      <td>139</td>
+      <td>46</td>
+      <td>19</td>
+      <td>83</td>
       <td>28.7</td>
       <td>0.654</td>
       <td>22</td>
@@ -19104,10 +19063,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>347</th>
       <td>3</td>
-      <td>116.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>116</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>23.5</td>
       <td>0.187</td>
       <td>23</td>
@@ -19116,10 +19075,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>348</th>
       <td>3</td>
-      <td>99.0</td>
-      <td>62.0</td>
-      <td>19.0</td>
-      <td>74.0</td>
+      <td>99</td>
+      <td>62</td>
+      <td>19</td>
+      <td>74</td>
       <td>21.8</td>
       <td>0.279</td>
       <td>26</td>
@@ -19128,10 +19087,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>349</th>
       <td>5</td>
-      <td>NaN</td>
-      <td>80.0</td>
-      <td>32.0</td>
-      <td>NaN</td>
+      <td>0</td>
+      <td>80</td>
+      <td>32</td>
+      <td>0</td>
       <td>41.0</td>
       <td>0.346</td>
       <td>37</td>
@@ -19140,10 +19099,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>350</th>
       <td>4</td>
-      <td>92.0</td>
-      <td>80.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>92</td>
+      <td>80</td>
+      <td>0</td>
+      <td>0</td>
       <td>42.2</td>
       <td>0.237</td>
       <td>29</td>
@@ -19152,10 +19111,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>351</th>
       <td>4</td>
-      <td>137.0</td>
-      <td>84.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>137</td>
+      <td>84</td>
+      <td>0</td>
+      <td>0</td>
       <td>31.2</td>
       <td>0.252</td>
       <td>30</td>
@@ -19164,10 +19123,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>352</th>
       <td>3</td>
-      <td>61.0</td>
-      <td>82.0</td>
-      <td>28.0</td>
-      <td>NaN</td>
+      <td>61</td>
+      <td>82</td>
+      <td>28</td>
+      <td>0</td>
       <td>34.4</td>
       <td>0.243</td>
       <td>46</td>
@@ -19176,10 +19135,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>353</th>
       <td>1</td>
-      <td>90.0</td>
-      <td>62.0</td>
-      <td>12.0</td>
-      <td>43.0</td>
+      <td>90</td>
+      <td>62</td>
+      <td>12</td>
+      <td>43</td>
       <td>27.2</td>
       <td>0.580</td>
       <td>24</td>
@@ -19188,10 +19147,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>354</th>
       <td>3</td>
-      <td>90.0</td>
-      <td>78.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>90</td>
+      <td>78</td>
+      <td>0</td>
+      <td>0</td>
       <td>42.7</td>
       <td>0.559</td>
       <td>21</td>
@@ -19200,10 +19159,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>355</th>
       <td>9</td>
-      <td>165.0</td>
-      <td>88.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>165</td>
+      <td>88</td>
+      <td>0</td>
+      <td>0</td>
       <td>30.4</td>
       <td>0.302</td>
       <td>49</td>
@@ -19212,10 +19171,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>356</th>
       <td>1</td>
-      <td>125.0</td>
-      <td>50.0</td>
-      <td>40.0</td>
-      <td>167.0</td>
+      <td>125</td>
+      <td>50</td>
+      <td>40</td>
+      <td>167</td>
       <td>33.3</td>
       <td>0.962</td>
       <td>28</td>
@@ -19224,10 +19183,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>357</th>
       <td>13</td>
-      <td>129.0</td>
-      <td>NaN</td>
-      <td>30.0</td>
-      <td>NaN</td>
+      <td>129</td>
+      <td>0</td>
+      <td>30</td>
+      <td>0</td>
       <td>39.9</td>
       <td>0.569</td>
       <td>44</td>
@@ -19236,10 +19195,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>358</th>
       <td>12</td>
-      <td>88.0</td>
-      <td>74.0</td>
-      <td>40.0</td>
-      <td>54.0</td>
+      <td>88</td>
+      <td>74</td>
+      <td>40</td>
+      <td>54</td>
       <td>35.3</td>
       <td>0.378</td>
       <td>48</td>
@@ -19248,10 +19207,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>359</th>
       <td>1</td>
-      <td>196.0</td>
-      <td>76.0</td>
-      <td>36.0</td>
-      <td>249.0</td>
+      <td>196</td>
+      <td>76</td>
+      <td>36</td>
+      <td>249</td>
       <td>36.5</td>
       <td>0.875</td>
       <td>29</td>
@@ -19260,10 +19219,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>360</th>
       <td>5</td>
-      <td>189.0</td>
-      <td>64.0</td>
-      <td>33.0</td>
-      <td>325.0</td>
+      <td>189</td>
+      <td>64</td>
+      <td>33</td>
+      <td>325</td>
       <td>31.2</td>
       <td>0.583</td>
       <td>29</td>
@@ -19272,10 +19231,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>361</th>
       <td>5</td>
-      <td>158.0</td>
-      <td>70.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>158</td>
+      <td>70</td>
+      <td>0</td>
+      <td>0</td>
       <td>29.8</td>
       <td>0.207</td>
       <td>63</td>
@@ -19284,10 +19243,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>362</th>
       <td>5</td>
-      <td>103.0</td>
-      <td>108.0</td>
-      <td>37.0</td>
-      <td>NaN</td>
+      <td>103</td>
+      <td>108</td>
+      <td>37</td>
+      <td>0</td>
       <td>39.2</td>
       <td>0.305</td>
       <td>65</td>
@@ -19296,10 +19255,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>363</th>
       <td>4</td>
-      <td>146.0</td>
-      <td>78.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>146</td>
+      <td>78</td>
+      <td>0</td>
+      <td>0</td>
       <td>38.5</td>
       <td>0.520</td>
       <td>67</td>
@@ -19308,10 +19267,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>364</th>
       <td>4</td>
-      <td>147.0</td>
-      <td>74.0</td>
-      <td>25.0</td>
-      <td>293.0</td>
+      <td>147</td>
+      <td>74</td>
+      <td>25</td>
+      <td>293</td>
       <td>34.9</td>
       <td>0.385</td>
       <td>30</td>
@@ -19320,10 +19279,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>365</th>
       <td>5</td>
-      <td>99.0</td>
-      <td>54.0</td>
-      <td>28.0</td>
-      <td>83.0</td>
+      <td>99</td>
+      <td>54</td>
+      <td>28</td>
+      <td>83</td>
       <td>34.0</td>
       <td>0.499</td>
       <td>30</td>
@@ -19332,10 +19291,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>366</th>
       <td>6</td>
-      <td>124.0</td>
-      <td>72.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>124</td>
+      <td>72</td>
+      <td>0</td>
+      <td>0</td>
       <td>27.6</td>
       <td>0.368</td>
       <td>29</td>
@@ -19344,10 +19303,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>367</th>
       <td>0</td>
-      <td>101.0</td>
-      <td>64.0</td>
-      <td>17.0</td>
-      <td>NaN</td>
+      <td>101</td>
+      <td>64</td>
+      <td>17</td>
+      <td>0</td>
       <td>21.0</td>
       <td>0.252</td>
       <td>21</td>
@@ -19356,10 +19315,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>368</th>
       <td>3</td>
-      <td>81.0</td>
-      <td>86.0</td>
-      <td>16.0</td>
-      <td>66.0</td>
+      <td>81</td>
+      <td>86</td>
+      <td>16</td>
+      <td>66</td>
       <td>27.5</td>
       <td>0.306</td>
       <td>22</td>
@@ -19368,10 +19327,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>369</th>
       <td>1</td>
-      <td>133.0</td>
-      <td>102.0</td>
-      <td>28.0</td>
-      <td>140.0</td>
+      <td>133</td>
+      <td>102</td>
+      <td>28</td>
+      <td>140</td>
       <td>32.8</td>
       <td>0.234</td>
       <td>45</td>
@@ -19380,10 +19339,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>370</th>
       <td>3</td>
-      <td>173.0</td>
-      <td>82.0</td>
-      <td>48.0</td>
-      <td>465.0</td>
+      <td>173</td>
+      <td>82</td>
+      <td>48</td>
+      <td>465</td>
       <td>38.4</td>
       <td>2.137</td>
       <td>25</td>
@@ -19392,11 +19351,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>371</th>
       <td>0</td>
-      <td>118.0</td>
-      <td>64.0</td>
-      <td>23.0</td>
-      <td>89.0</td>
-      <td>NaN</td>
+      <td>118</td>
+      <td>64</td>
+      <td>23</td>
+      <td>89</td>
+      <td>0.0</td>
       <td>1.731</td>
       <td>21</td>
       <td>0</td>
@@ -19404,10 +19363,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>372</th>
       <td>0</td>
-      <td>84.0</td>
-      <td>64.0</td>
-      <td>22.0</td>
-      <td>66.0</td>
+      <td>84</td>
+      <td>64</td>
+      <td>22</td>
+      <td>66</td>
       <td>35.8</td>
       <td>0.545</td>
       <td>21</td>
@@ -19416,10 +19375,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>373</th>
       <td>2</td>
-      <td>105.0</td>
-      <td>58.0</td>
-      <td>40.0</td>
-      <td>94.0</td>
+      <td>105</td>
+      <td>58</td>
+      <td>40</td>
+      <td>94</td>
       <td>34.9</td>
       <td>0.225</td>
       <td>25</td>
@@ -19428,10 +19387,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>374</th>
       <td>2</td>
-      <td>122.0</td>
-      <td>52.0</td>
-      <td>43.0</td>
-      <td>158.0</td>
+      <td>122</td>
+      <td>52</td>
+      <td>43</td>
+      <td>158</td>
       <td>36.2</td>
       <td>0.816</td>
       <td>28</td>
@@ -19440,10 +19399,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>375</th>
       <td>12</td>
-      <td>140.0</td>
-      <td>82.0</td>
-      <td>43.0</td>
-      <td>325.0</td>
+      <td>140</td>
+      <td>82</td>
+      <td>43</td>
+      <td>325</td>
       <td>39.2</td>
       <td>0.528</td>
       <td>58</td>
@@ -19452,10 +19411,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>376</th>
       <td>0</td>
-      <td>98.0</td>
-      <td>82.0</td>
-      <td>15.0</td>
-      <td>84.0</td>
+      <td>98</td>
+      <td>82</td>
+      <td>15</td>
+      <td>84</td>
       <td>25.2</td>
       <td>0.299</td>
       <td>22</td>
@@ -19464,10 +19423,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>377</th>
       <td>1</td>
-      <td>87.0</td>
-      <td>60.0</td>
-      <td>37.0</td>
-      <td>75.0</td>
+      <td>87</td>
+      <td>60</td>
+      <td>37</td>
+      <td>75</td>
       <td>37.2</td>
       <td>0.509</td>
       <td>22</td>
@@ -19476,10 +19435,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>378</th>
       <td>4</td>
-      <td>156.0</td>
-      <td>75.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>156</td>
+      <td>75</td>
+      <td>0</td>
+      <td>0</td>
       <td>48.3</td>
       <td>0.238</td>
       <td>32</td>
@@ -19488,10 +19447,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>379</th>
       <td>0</td>
-      <td>93.0</td>
-      <td>100.0</td>
-      <td>39.0</td>
-      <td>72.0</td>
+      <td>93</td>
+      <td>100</td>
+      <td>39</td>
+      <td>72</td>
       <td>43.4</td>
       <td>1.021</td>
       <td>35</td>
@@ -19500,10 +19459,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>380</th>
       <td>1</td>
-      <td>107.0</td>
-      <td>72.0</td>
-      <td>30.0</td>
-      <td>82.0</td>
+      <td>107</td>
+      <td>72</td>
+      <td>30</td>
+      <td>82</td>
       <td>30.8</td>
       <td>0.821</td>
       <td>24</td>
@@ -19512,10 +19471,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>381</th>
       <td>0</td>
-      <td>105.0</td>
-      <td>68.0</td>
-      <td>22.0</td>
-      <td>NaN</td>
+      <td>105</td>
+      <td>68</td>
+      <td>22</td>
+      <td>0</td>
       <td>20.0</td>
       <td>0.236</td>
       <td>22</td>
@@ -19524,10 +19483,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>382</th>
       <td>1</td>
-      <td>109.0</td>
-      <td>60.0</td>
-      <td>8.0</td>
-      <td>182.0</td>
+      <td>109</td>
+      <td>60</td>
+      <td>8</td>
+      <td>182</td>
       <td>25.4</td>
       <td>0.947</td>
       <td>21</td>
@@ -19536,10 +19495,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>383</th>
       <td>1</td>
-      <td>90.0</td>
-      <td>62.0</td>
-      <td>18.0</td>
-      <td>59.0</td>
+      <td>90</td>
+      <td>62</td>
+      <td>18</td>
+      <td>59</td>
       <td>25.1</td>
       <td>1.268</td>
       <td>25</td>
@@ -19548,10 +19507,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>384</th>
       <td>1</td>
-      <td>125.0</td>
-      <td>70.0</td>
-      <td>24.0</td>
-      <td>110.0</td>
+      <td>125</td>
+      <td>70</td>
+      <td>24</td>
+      <td>110</td>
       <td>24.3</td>
       <td>0.221</td>
       <td>25</td>
@@ -19560,10 +19519,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>385</th>
       <td>1</td>
-      <td>119.0</td>
-      <td>54.0</td>
-      <td>13.0</td>
-      <td>50.0</td>
+      <td>119</td>
+      <td>54</td>
+      <td>13</td>
+      <td>50</td>
       <td>22.3</td>
       <td>0.205</td>
       <td>24</td>
@@ -19572,10 +19531,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>386</th>
       <td>5</td>
-      <td>116.0</td>
-      <td>74.0</td>
-      <td>29.0</td>
-      <td>NaN</td>
+      <td>116</td>
+      <td>74</td>
+      <td>29</td>
+      <td>0</td>
       <td>32.3</td>
       <td>0.660</td>
       <td>35</td>
@@ -19584,10 +19543,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>387</th>
       <td>8</td>
-      <td>105.0</td>
-      <td>100.0</td>
-      <td>36.0</td>
-      <td>NaN</td>
+      <td>105</td>
+      <td>100</td>
+      <td>36</td>
+      <td>0</td>
       <td>43.3</td>
       <td>0.239</td>
       <td>45</td>
@@ -19596,10 +19555,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>388</th>
       <td>5</td>
-      <td>144.0</td>
-      <td>82.0</td>
-      <td>26.0</td>
-      <td>285.0</td>
+      <td>144</td>
+      <td>82</td>
+      <td>26</td>
+      <td>285</td>
       <td>32.0</td>
       <td>0.452</td>
       <td>58</td>
@@ -19608,10 +19567,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>389</th>
       <td>3</td>
-      <td>100.0</td>
-      <td>68.0</td>
-      <td>23.0</td>
-      <td>81.0</td>
+      <td>100</td>
+      <td>68</td>
+      <td>23</td>
+      <td>81</td>
       <td>31.6</td>
       <td>0.949</td>
       <td>28</td>
@@ -19620,10 +19579,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>390</th>
       <td>1</td>
-      <td>100.0</td>
-      <td>66.0</td>
-      <td>29.0</td>
-      <td>196.0</td>
+      <td>100</td>
+      <td>66</td>
+      <td>29</td>
+      <td>196</td>
       <td>32.0</td>
       <td>0.444</td>
       <td>42</td>
@@ -19632,10 +19591,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>391</th>
       <td>5</td>
-      <td>166.0</td>
-      <td>76.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>166</td>
+      <td>76</td>
+      <td>0</td>
+      <td>0</td>
       <td>45.7</td>
       <td>0.340</td>
       <td>27</td>
@@ -19644,10 +19603,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>392</th>
       <td>1</td>
-      <td>131.0</td>
-      <td>64.0</td>
-      <td>14.0</td>
-      <td>415.0</td>
+      <td>131</td>
+      <td>64</td>
+      <td>14</td>
+      <td>415</td>
       <td>23.7</td>
       <td>0.389</td>
       <td>21</td>
@@ -19656,10 +19615,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>393</th>
       <td>4</td>
-      <td>116.0</td>
-      <td>72.0</td>
-      <td>12.0</td>
-      <td>87.0</td>
+      <td>116</td>
+      <td>72</td>
+      <td>12</td>
+      <td>87</td>
       <td>22.1</td>
       <td>0.463</td>
       <td>37</td>
@@ -19668,10 +19627,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>394</th>
       <td>4</td>
-      <td>158.0</td>
-      <td>78.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>158</td>
+      <td>78</td>
+      <td>0</td>
+      <td>0</td>
       <td>32.9</td>
       <td>0.803</td>
       <td>31</td>
@@ -19680,10 +19639,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>395</th>
       <td>2</td>
-      <td>127.0</td>
-      <td>58.0</td>
-      <td>24.0</td>
-      <td>275.0</td>
+      <td>127</td>
+      <td>58</td>
+      <td>24</td>
+      <td>275</td>
       <td>27.7</td>
       <td>1.600</td>
       <td>25</td>
@@ -19692,10 +19651,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>396</th>
       <td>3</td>
-      <td>96.0</td>
-      <td>56.0</td>
-      <td>34.0</td>
-      <td>115.0</td>
+      <td>96</td>
+      <td>56</td>
+      <td>34</td>
+      <td>115</td>
       <td>24.7</td>
       <td>0.944</td>
       <td>39</td>
@@ -19704,10 +19663,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>397</th>
       <td>0</td>
-      <td>131.0</td>
-      <td>66.0</td>
-      <td>40.0</td>
-      <td>NaN</td>
+      <td>131</td>
+      <td>66</td>
+      <td>40</td>
+      <td>0</td>
       <td>34.3</td>
       <td>0.196</td>
       <td>22</td>
@@ -19716,10 +19675,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>398</th>
       <td>3</td>
-      <td>82.0</td>
-      <td>70.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>82</td>
+      <td>70</td>
+      <td>0</td>
+      <td>0</td>
       <td>21.1</td>
       <td>0.389</td>
       <td>25</td>
@@ -19728,10 +19687,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>399</th>
       <td>3</td>
-      <td>193.0</td>
-      <td>70.0</td>
-      <td>31.0</td>
-      <td>NaN</td>
+      <td>193</td>
+      <td>70</td>
+      <td>31</td>
+      <td>0</td>
       <td>34.9</td>
       <td>0.241</td>
       <td>25</td>
@@ -19740,10 +19699,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>400</th>
       <td>4</td>
-      <td>95.0</td>
-      <td>64.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>95</td>
+      <td>64</td>
+      <td>0</td>
+      <td>0</td>
       <td>32.0</td>
       <td>0.161</td>
       <td>31</td>
@@ -19752,10 +19711,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>401</th>
       <td>6</td>
-      <td>137.0</td>
-      <td>61.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>137</td>
+      <td>61</td>
+      <td>0</td>
+      <td>0</td>
       <td>24.2</td>
       <td>0.151</td>
       <td>55</td>
@@ -19764,10 +19723,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>402</th>
       <td>5</td>
-      <td>136.0</td>
-      <td>84.0</td>
-      <td>41.0</td>
-      <td>88.0</td>
+      <td>136</td>
+      <td>84</td>
+      <td>41</td>
+      <td>88</td>
       <td>35.0</td>
       <td>0.286</td>
       <td>35</td>
@@ -19776,10 +19735,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>403</th>
       <td>9</td>
-      <td>72.0</td>
-      <td>78.0</td>
-      <td>25.0</td>
-      <td>NaN</td>
+      <td>72</td>
+      <td>78</td>
+      <td>25</td>
+      <td>0</td>
       <td>31.6</td>
       <td>0.280</td>
       <td>38</td>
@@ -19788,10 +19747,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>404</th>
       <td>5</td>
-      <td>168.0</td>
-      <td>64.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>168</td>
+      <td>64</td>
+      <td>0</td>
+      <td>0</td>
       <td>32.9</td>
       <td>0.135</td>
       <td>41</td>
@@ -19800,10 +19759,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>405</th>
       <td>2</td>
-      <td>123.0</td>
-      <td>48.0</td>
-      <td>32.0</td>
-      <td>165.0</td>
+      <td>123</td>
+      <td>48</td>
+      <td>32</td>
+      <td>165</td>
       <td>42.1</td>
       <td>0.520</td>
       <td>26</td>
@@ -19812,10 +19771,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>406</th>
       <td>4</td>
-      <td>115.0</td>
-      <td>72.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>115</td>
+      <td>72</td>
+      <td>0</td>
+      <td>0</td>
       <td>28.9</td>
       <td>0.376</td>
       <td>46</td>
@@ -19824,10 +19783,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>407</th>
       <td>0</td>
-      <td>101.0</td>
-      <td>62.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>101</td>
+      <td>62</td>
+      <td>0</td>
+      <td>0</td>
       <td>21.9</td>
       <td>0.336</td>
       <td>25</td>
@@ -19836,10 +19795,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>408</th>
       <td>8</td>
-      <td>197.0</td>
-      <td>74.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>197</td>
+      <td>74</td>
+      <td>0</td>
+      <td>0</td>
       <td>25.9</td>
       <td>1.191</td>
       <td>39</td>
@@ -19848,10 +19807,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>409</th>
       <td>1</td>
-      <td>172.0</td>
-      <td>68.0</td>
-      <td>49.0</td>
-      <td>579.0</td>
+      <td>172</td>
+      <td>68</td>
+      <td>49</td>
+      <td>579</td>
       <td>42.4</td>
       <td>0.702</td>
       <td>28</td>
@@ -19860,10 +19819,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>410</th>
       <td>6</td>
-      <td>102.0</td>
-      <td>90.0</td>
-      <td>39.0</td>
-      <td>NaN</td>
+      <td>102</td>
+      <td>90</td>
+      <td>39</td>
+      <td>0</td>
       <td>35.7</td>
       <td>0.674</td>
       <td>28</td>
@@ -19872,10 +19831,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>411</th>
       <td>1</td>
-      <td>112.0</td>
-      <td>72.0</td>
-      <td>30.0</td>
-      <td>176.0</td>
+      <td>112</td>
+      <td>72</td>
+      <td>30</td>
+      <td>176</td>
       <td>34.4</td>
       <td>0.528</td>
       <td>25</td>
@@ -19884,10 +19843,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>412</th>
       <td>1</td>
-      <td>143.0</td>
-      <td>84.0</td>
-      <td>23.0</td>
-      <td>310.0</td>
+      <td>143</td>
+      <td>84</td>
+      <td>23</td>
+      <td>310</td>
       <td>42.4</td>
       <td>1.076</td>
       <td>22</td>
@@ -19896,10 +19855,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>413</th>
       <td>1</td>
-      <td>143.0</td>
-      <td>74.0</td>
-      <td>22.0</td>
-      <td>61.0</td>
+      <td>143</td>
+      <td>74</td>
+      <td>22</td>
+      <td>61</td>
       <td>26.2</td>
       <td>0.256</td>
       <td>21</td>
@@ -19908,10 +19867,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>414</th>
       <td>0</td>
-      <td>138.0</td>
-      <td>60.0</td>
-      <td>35.0</td>
-      <td>167.0</td>
+      <td>138</td>
+      <td>60</td>
+      <td>35</td>
+      <td>167</td>
       <td>34.6</td>
       <td>0.534</td>
       <td>21</td>
@@ -19920,10 +19879,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>415</th>
       <td>3</td>
-      <td>173.0</td>
-      <td>84.0</td>
-      <td>33.0</td>
-      <td>474.0</td>
+      <td>173</td>
+      <td>84</td>
+      <td>33</td>
+      <td>474</td>
       <td>35.7</td>
       <td>0.258</td>
       <td>22</td>
@@ -19932,10 +19891,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>416</th>
       <td>1</td>
-      <td>97.0</td>
-      <td>68.0</td>
-      <td>21.0</td>
-      <td>NaN</td>
+      <td>97</td>
+      <td>68</td>
+      <td>21</td>
+      <td>0</td>
       <td>27.2</td>
       <td>1.095</td>
       <td>22</td>
@@ -19944,10 +19903,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>417</th>
       <td>4</td>
-      <td>144.0</td>
-      <td>82.0</td>
-      <td>32.0</td>
-      <td>NaN</td>
+      <td>144</td>
+      <td>82</td>
+      <td>32</td>
+      <td>0</td>
       <td>38.5</td>
       <td>0.554</td>
       <td>37</td>
@@ -19956,10 +19915,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>418</th>
       <td>1</td>
-      <td>83.0</td>
-      <td>68.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>83</td>
+      <td>68</td>
+      <td>0</td>
+      <td>0</td>
       <td>18.2</td>
       <td>0.624</td>
       <td>27</td>
@@ -19968,10 +19927,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>419</th>
       <td>3</td>
-      <td>129.0</td>
-      <td>64.0</td>
-      <td>29.0</td>
-      <td>115.0</td>
+      <td>129</td>
+      <td>64</td>
+      <td>29</td>
+      <td>115</td>
       <td>26.4</td>
       <td>0.219</td>
       <td>28</td>
@@ -19980,10 +19939,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>420</th>
       <td>1</td>
-      <td>119.0</td>
-      <td>88.0</td>
-      <td>41.0</td>
-      <td>170.0</td>
+      <td>119</td>
+      <td>88</td>
+      <td>41</td>
+      <td>170</td>
       <td>45.3</td>
       <td>0.507</td>
       <td>26</td>
@@ -19992,10 +19951,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>421</th>
       <td>2</td>
-      <td>94.0</td>
-      <td>68.0</td>
-      <td>18.0</td>
-      <td>76.0</td>
+      <td>94</td>
+      <td>68</td>
+      <td>18</td>
+      <td>76</td>
       <td>26.0</td>
       <td>0.561</td>
       <td>21</td>
@@ -20004,10 +19963,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>422</th>
       <td>0</td>
-      <td>102.0</td>
-      <td>64.0</td>
-      <td>46.0</td>
-      <td>78.0</td>
+      <td>102</td>
+      <td>64</td>
+      <td>46</td>
+      <td>78</td>
       <td>40.6</td>
       <td>0.496</td>
       <td>21</td>
@@ -20016,10 +19975,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>423</th>
       <td>2</td>
-      <td>115.0</td>
-      <td>64.0</td>
-      <td>22.0</td>
-      <td>NaN</td>
+      <td>115</td>
+      <td>64</td>
+      <td>22</td>
+      <td>0</td>
       <td>30.8</td>
       <td>0.421</td>
       <td>21</td>
@@ -20028,10 +19987,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>424</th>
       <td>8</td>
-      <td>151.0</td>
-      <td>78.0</td>
-      <td>32.0</td>
-      <td>210.0</td>
+      <td>151</td>
+      <td>78</td>
+      <td>32</td>
+      <td>210</td>
       <td>42.9</td>
       <td>0.516</td>
       <td>36</td>
@@ -20040,10 +19999,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>425</th>
       <td>4</td>
-      <td>184.0</td>
-      <td>78.0</td>
-      <td>39.0</td>
-      <td>277.0</td>
+      <td>184</td>
+      <td>78</td>
+      <td>39</td>
+      <td>277</td>
       <td>37.0</td>
       <td>0.264</td>
       <td>31</td>
@@ -20052,11 +20011,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>426</th>
       <td>0</td>
-      <td>94.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>94</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
       <td>0.256</td>
       <td>25</td>
       <td>0</td>
@@ -20064,10 +20023,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>427</th>
       <td>1</td>
-      <td>181.0</td>
-      <td>64.0</td>
-      <td>30.0</td>
-      <td>180.0</td>
+      <td>181</td>
+      <td>64</td>
+      <td>30</td>
+      <td>180</td>
       <td>34.1</td>
       <td>0.328</td>
       <td>38</td>
@@ -20076,10 +20035,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>428</th>
       <td>0</td>
-      <td>135.0</td>
-      <td>94.0</td>
-      <td>46.0</td>
-      <td>145.0</td>
+      <td>135</td>
+      <td>94</td>
+      <td>46</td>
+      <td>145</td>
       <td>40.6</td>
       <td>0.284</td>
       <td>26</td>
@@ -20088,10 +20047,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>429</th>
       <td>1</td>
-      <td>95.0</td>
-      <td>82.0</td>
-      <td>25.0</td>
-      <td>180.0</td>
+      <td>95</td>
+      <td>82</td>
+      <td>25</td>
+      <td>180</td>
       <td>35.0</td>
       <td>0.233</td>
       <td>43</td>
@@ -20100,10 +20059,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>430</th>
       <td>2</td>
-      <td>99.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>99</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>22.2</td>
       <td>0.108</td>
       <td>23</td>
@@ -20112,10 +20071,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>431</th>
       <td>3</td>
-      <td>89.0</td>
-      <td>74.0</td>
-      <td>16.0</td>
-      <td>85.0</td>
+      <td>89</td>
+      <td>74</td>
+      <td>16</td>
+      <td>85</td>
       <td>30.4</td>
       <td>0.551</td>
       <td>38</td>
@@ -20124,10 +20083,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>432</th>
       <td>1</td>
-      <td>80.0</td>
-      <td>74.0</td>
-      <td>11.0</td>
-      <td>60.0</td>
+      <td>80</td>
+      <td>74</td>
+      <td>11</td>
+      <td>60</td>
       <td>30.0</td>
       <td>0.527</td>
       <td>22</td>
@@ -20136,10 +20095,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>433</th>
       <td>2</td>
-      <td>139.0</td>
-      <td>75.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>139</td>
+      <td>75</td>
+      <td>0</td>
+      <td>0</td>
       <td>25.6</td>
       <td>0.167</td>
       <td>29</td>
@@ -20148,10 +20107,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>434</th>
       <td>1</td>
-      <td>90.0</td>
-      <td>68.0</td>
-      <td>8.0</td>
-      <td>NaN</td>
+      <td>90</td>
+      <td>68</td>
+      <td>8</td>
+      <td>0</td>
       <td>24.5</td>
       <td>1.138</td>
       <td>36</td>
@@ -20160,10 +20119,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>435</th>
       <td>0</td>
-      <td>141.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>141</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>42.4</td>
       <td>0.205</td>
       <td>29</td>
@@ -20172,10 +20131,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>436</th>
       <td>12</td>
-      <td>140.0</td>
-      <td>85.0</td>
-      <td>33.0</td>
-      <td>NaN</td>
+      <td>140</td>
+      <td>85</td>
+      <td>33</td>
+      <td>0</td>
       <td>37.4</td>
       <td>0.244</td>
       <td>41</td>
@@ -20184,10 +20143,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>437</th>
       <td>5</td>
-      <td>147.0</td>
-      <td>75.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>147</td>
+      <td>75</td>
+      <td>0</td>
+      <td>0</td>
       <td>29.9</td>
       <td>0.434</td>
       <td>28</td>
@@ -20196,10 +20155,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>438</th>
       <td>1</td>
-      <td>97.0</td>
-      <td>70.0</td>
-      <td>15.0</td>
-      <td>NaN</td>
+      <td>97</td>
+      <td>70</td>
+      <td>15</td>
+      <td>0</td>
       <td>18.2</td>
       <td>0.147</td>
       <td>21</td>
@@ -20208,10 +20167,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>439</th>
       <td>6</td>
-      <td>107.0</td>
-      <td>88.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>107</td>
+      <td>88</td>
+      <td>0</td>
+      <td>0</td>
       <td>36.8</td>
       <td>0.727</td>
       <td>31</td>
@@ -20220,10 +20179,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>440</th>
       <td>0</td>
-      <td>189.0</td>
-      <td>104.0</td>
-      <td>25.0</td>
-      <td>NaN</td>
+      <td>189</td>
+      <td>104</td>
+      <td>25</td>
+      <td>0</td>
       <td>34.3</td>
       <td>0.435</td>
       <td>41</td>
@@ -20232,10 +20191,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>441</th>
       <td>2</td>
-      <td>83.0</td>
-      <td>66.0</td>
-      <td>23.0</td>
-      <td>50.0</td>
+      <td>83</td>
+      <td>66</td>
+      <td>23</td>
+      <td>50</td>
       <td>32.2</td>
       <td>0.497</td>
       <td>22</td>
@@ -20244,10 +20203,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>442</th>
       <td>4</td>
-      <td>117.0</td>
-      <td>64.0</td>
-      <td>27.0</td>
-      <td>120.0</td>
+      <td>117</td>
+      <td>64</td>
+      <td>27</td>
+      <td>120</td>
       <td>33.2</td>
       <td>0.230</td>
       <td>24</td>
@@ -20256,10 +20215,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>443</th>
       <td>8</td>
-      <td>108.0</td>
-      <td>70.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>108</td>
+      <td>70</td>
+      <td>0</td>
+      <td>0</td>
       <td>30.5</td>
       <td>0.955</td>
       <td>33</td>
@@ -20268,10 +20227,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>444</th>
       <td>4</td>
-      <td>117.0</td>
-      <td>62.0</td>
-      <td>12.0</td>
-      <td>NaN</td>
+      <td>117</td>
+      <td>62</td>
+      <td>12</td>
+      <td>0</td>
       <td>29.7</td>
       <td>0.380</td>
       <td>30</td>
@@ -20280,10 +20239,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>445</th>
       <td>0</td>
-      <td>180.0</td>
-      <td>78.0</td>
-      <td>63.0</td>
-      <td>14.0</td>
+      <td>180</td>
+      <td>78</td>
+      <td>63</td>
+      <td>14</td>
       <td>59.4</td>
       <td>2.420</td>
       <td>25</td>
@@ -20292,10 +20251,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>446</th>
       <td>1</td>
-      <td>100.0</td>
-      <td>72.0</td>
-      <td>12.0</td>
-      <td>70.0</td>
+      <td>100</td>
+      <td>72</td>
+      <td>12</td>
+      <td>70</td>
       <td>25.3</td>
       <td>0.658</td>
       <td>28</td>
@@ -20304,10 +20263,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>447</th>
       <td>0</td>
-      <td>95.0</td>
-      <td>80.0</td>
-      <td>45.0</td>
-      <td>92.0</td>
+      <td>95</td>
+      <td>80</td>
+      <td>45</td>
+      <td>92</td>
       <td>36.5</td>
       <td>0.330</td>
       <td>26</td>
@@ -20316,10 +20275,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>448</th>
       <td>0</td>
-      <td>104.0</td>
-      <td>64.0</td>
-      <td>37.0</td>
-      <td>64.0</td>
+      <td>104</td>
+      <td>64</td>
+      <td>37</td>
+      <td>64</td>
       <td>33.6</td>
       <td>0.510</td>
       <td>22</td>
@@ -20328,10 +20287,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>449</th>
       <td>0</td>
-      <td>120.0</td>
-      <td>74.0</td>
-      <td>18.0</td>
-      <td>63.0</td>
+      <td>120</td>
+      <td>74</td>
+      <td>18</td>
+      <td>63</td>
       <td>30.5</td>
       <td>0.285</td>
       <td>26</td>
@@ -20340,10 +20299,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>450</th>
       <td>1</td>
-      <td>82.0</td>
-      <td>64.0</td>
-      <td>13.0</td>
-      <td>95.0</td>
+      <td>82</td>
+      <td>64</td>
+      <td>13</td>
+      <td>95</td>
       <td>21.2</td>
       <td>0.415</td>
       <td>23</td>
@@ -20352,10 +20311,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>451</th>
       <td>2</td>
-      <td>134.0</td>
-      <td>70.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>134</td>
+      <td>70</td>
+      <td>0</td>
+      <td>0</td>
       <td>28.9</td>
       <td>0.542</td>
       <td>23</td>
@@ -20364,10 +20323,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>452</th>
       <td>0</td>
-      <td>91.0</td>
-      <td>68.0</td>
-      <td>32.0</td>
-      <td>210.0</td>
+      <td>91</td>
+      <td>68</td>
+      <td>32</td>
+      <td>210</td>
       <td>39.9</td>
       <td>0.381</td>
       <td>25</td>
@@ -20376,10 +20335,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>453</th>
       <td>2</td>
-      <td>119.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>119</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>19.6</td>
       <td>0.832</td>
       <td>72</td>
@@ -20388,10 +20347,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>454</th>
       <td>2</td>
-      <td>100.0</td>
-      <td>54.0</td>
-      <td>28.0</td>
-      <td>105.0</td>
+      <td>100</td>
+      <td>54</td>
+      <td>28</td>
+      <td>105</td>
       <td>37.8</td>
       <td>0.498</td>
       <td>24</td>
@@ -20400,10 +20359,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>455</th>
       <td>14</td>
-      <td>175.0</td>
-      <td>62.0</td>
-      <td>30.0</td>
-      <td>NaN</td>
+      <td>175</td>
+      <td>62</td>
+      <td>30</td>
+      <td>0</td>
       <td>33.6</td>
       <td>0.212</td>
       <td>38</td>
@@ -20412,10 +20371,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>456</th>
       <td>1</td>
-      <td>135.0</td>
-      <td>54.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>135</td>
+      <td>54</td>
+      <td>0</td>
+      <td>0</td>
       <td>26.7</td>
       <td>0.687</td>
       <td>62</td>
@@ -20424,10 +20383,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>457</th>
       <td>5</td>
-      <td>86.0</td>
-      <td>68.0</td>
-      <td>28.0</td>
-      <td>71.0</td>
+      <td>86</td>
+      <td>68</td>
+      <td>28</td>
+      <td>71</td>
       <td>30.2</td>
       <td>0.364</td>
       <td>24</td>
@@ -20436,10 +20395,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>458</th>
       <td>10</td>
-      <td>148.0</td>
-      <td>84.0</td>
-      <td>48.0</td>
-      <td>237.0</td>
+      <td>148</td>
+      <td>84</td>
+      <td>48</td>
+      <td>237</td>
       <td>37.6</td>
       <td>1.001</td>
       <td>51</td>
@@ -20448,10 +20407,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>459</th>
       <td>9</td>
-      <td>134.0</td>
-      <td>74.0</td>
-      <td>33.0</td>
-      <td>60.0</td>
+      <td>134</td>
+      <td>74</td>
+      <td>33</td>
+      <td>60</td>
       <td>25.9</td>
       <td>0.460</td>
       <td>81</td>
@@ -20460,10 +20419,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>460</th>
       <td>9</td>
-      <td>120.0</td>
-      <td>72.0</td>
-      <td>22.0</td>
-      <td>56.0</td>
+      <td>120</td>
+      <td>72</td>
+      <td>22</td>
+      <td>56</td>
       <td>20.8</td>
       <td>0.733</td>
       <td>48</td>
@@ -20472,10 +20431,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>461</th>
       <td>1</td>
-      <td>71.0</td>
-      <td>62.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>71</td>
+      <td>62</td>
+      <td>0</td>
+      <td>0</td>
       <td>21.8</td>
       <td>0.416</td>
       <td>26</td>
@@ -20484,10 +20443,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>462</th>
       <td>8</td>
-      <td>74.0</td>
-      <td>70.0</td>
-      <td>40.0</td>
-      <td>49.0</td>
+      <td>74</td>
+      <td>70</td>
+      <td>40</td>
+      <td>49</td>
       <td>35.3</td>
       <td>0.705</td>
       <td>39</td>
@@ -20496,10 +20455,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>463</th>
       <td>5</td>
-      <td>88.0</td>
-      <td>78.0</td>
-      <td>30.0</td>
-      <td>NaN</td>
+      <td>88</td>
+      <td>78</td>
+      <td>30</td>
+      <td>0</td>
       <td>27.6</td>
       <td>0.258</td>
       <td>37</td>
@@ -20508,10 +20467,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>464</th>
       <td>10</td>
-      <td>115.0</td>
-      <td>98.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>115</td>
+      <td>98</td>
+      <td>0</td>
+      <td>0</td>
       <td>24.0</td>
       <td>1.022</td>
       <td>34</td>
@@ -20520,10 +20479,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>465</th>
       <td>0</td>
-      <td>124.0</td>
-      <td>56.0</td>
-      <td>13.0</td>
-      <td>105.0</td>
+      <td>124</td>
+      <td>56</td>
+      <td>13</td>
+      <td>105</td>
       <td>21.8</td>
       <td>0.452</td>
       <td>21</td>
@@ -20532,10 +20491,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>466</th>
       <td>0</td>
-      <td>74.0</td>
-      <td>52.0</td>
-      <td>10.0</td>
-      <td>36.0</td>
+      <td>74</td>
+      <td>52</td>
+      <td>10</td>
+      <td>36</td>
       <td>27.8</td>
       <td>0.269</td>
       <td>22</td>
@@ -20544,10 +20503,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>467</th>
       <td>0</td>
-      <td>97.0</td>
-      <td>64.0</td>
-      <td>36.0</td>
-      <td>100.0</td>
+      <td>97</td>
+      <td>64</td>
+      <td>36</td>
+      <td>100</td>
       <td>36.8</td>
       <td>0.600</td>
       <td>25</td>
@@ -20556,10 +20515,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>468</th>
       <td>8</td>
-      <td>120.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>120</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>30.0</td>
       <td>0.183</td>
       <td>38</td>
@@ -20568,10 +20527,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>469</th>
       <td>6</td>
-      <td>154.0</td>
-      <td>78.0</td>
-      <td>41.0</td>
-      <td>140.0</td>
+      <td>154</td>
+      <td>78</td>
+      <td>41</td>
+      <td>140</td>
       <td>46.1</td>
       <td>0.571</td>
       <td>27</td>
@@ -20580,10 +20539,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>470</th>
       <td>1</td>
-      <td>144.0</td>
-      <td>82.0</td>
-      <td>40.0</td>
-      <td>NaN</td>
+      <td>144</td>
+      <td>82</td>
+      <td>40</td>
+      <td>0</td>
       <td>41.3</td>
       <td>0.607</td>
       <td>28</td>
@@ -20592,10 +20551,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>471</th>
       <td>0</td>
-      <td>137.0</td>
-      <td>70.0</td>
-      <td>38.0</td>
-      <td>NaN</td>
+      <td>137</td>
+      <td>70</td>
+      <td>38</td>
+      <td>0</td>
       <td>33.2</td>
       <td>0.170</td>
       <td>22</td>
@@ -20604,10 +20563,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>472</th>
       <td>0</td>
-      <td>119.0</td>
-      <td>66.0</td>
-      <td>27.0</td>
-      <td>NaN</td>
+      <td>119</td>
+      <td>66</td>
+      <td>27</td>
+      <td>0</td>
       <td>38.8</td>
       <td>0.259</td>
       <td>22</td>
@@ -20616,10 +20575,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>473</th>
       <td>7</td>
-      <td>136.0</td>
-      <td>90.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>136</td>
+      <td>90</td>
+      <td>0</td>
+      <td>0</td>
       <td>29.9</td>
       <td>0.210</td>
       <td>50</td>
@@ -20628,10 +20587,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>474</th>
       <td>4</td>
-      <td>114.0</td>
-      <td>64.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>114</td>
+      <td>64</td>
+      <td>0</td>
+      <td>0</td>
       <td>28.9</td>
       <td>0.126</td>
       <td>24</td>
@@ -20640,10 +20599,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>475</th>
       <td>0</td>
-      <td>137.0</td>
-      <td>84.0</td>
-      <td>27.0</td>
-      <td>NaN</td>
+      <td>137</td>
+      <td>84</td>
+      <td>27</td>
+      <td>0</td>
       <td>27.3</td>
       <td>0.231</td>
       <td>59</td>
@@ -20652,10 +20611,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>476</th>
       <td>2</td>
-      <td>105.0</td>
-      <td>80.0</td>
-      <td>45.0</td>
-      <td>191.0</td>
+      <td>105</td>
+      <td>80</td>
+      <td>45</td>
+      <td>191</td>
       <td>33.7</td>
       <td>0.711</td>
       <td>29</td>
@@ -20664,10 +20623,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>477</th>
       <td>7</td>
-      <td>114.0</td>
-      <td>76.0</td>
-      <td>17.0</td>
-      <td>110.0</td>
+      <td>114</td>
+      <td>76</td>
+      <td>17</td>
+      <td>110</td>
       <td>23.8</td>
       <td>0.466</td>
       <td>31</td>
@@ -20676,10 +20635,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>478</th>
       <td>8</td>
-      <td>126.0</td>
-      <td>74.0</td>
-      <td>38.0</td>
-      <td>75.0</td>
+      <td>126</td>
+      <td>74</td>
+      <td>38</td>
+      <td>75</td>
       <td>25.9</td>
       <td>0.162</td>
       <td>39</td>
@@ -20688,10 +20647,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>479</th>
       <td>4</td>
-      <td>132.0</td>
-      <td>86.0</td>
-      <td>31.0</td>
-      <td>NaN</td>
+      <td>132</td>
+      <td>86</td>
+      <td>31</td>
+      <td>0</td>
       <td>28.0</td>
       <td>0.419</td>
       <td>63</td>
@@ -20700,10 +20659,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>480</th>
       <td>3</td>
-      <td>158.0</td>
-      <td>70.0</td>
-      <td>30.0</td>
-      <td>328.0</td>
+      <td>158</td>
+      <td>70</td>
+      <td>30</td>
+      <td>328</td>
       <td>35.5</td>
       <td>0.344</td>
       <td>35</td>
@@ -20712,10 +20671,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>481</th>
       <td>0</td>
-      <td>123.0</td>
-      <td>88.0</td>
-      <td>37.0</td>
-      <td>NaN</td>
+      <td>123</td>
+      <td>88</td>
+      <td>37</td>
+      <td>0</td>
       <td>35.2</td>
       <td>0.197</td>
       <td>29</td>
@@ -20724,10 +20683,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>482</th>
       <td>4</td>
-      <td>85.0</td>
-      <td>58.0</td>
-      <td>22.0</td>
-      <td>49.0</td>
+      <td>85</td>
+      <td>58</td>
+      <td>22</td>
+      <td>49</td>
       <td>27.8</td>
       <td>0.306</td>
       <td>28</td>
@@ -20736,10 +20695,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>483</th>
       <td>0</td>
-      <td>84.0</td>
-      <td>82.0</td>
-      <td>31.0</td>
-      <td>125.0</td>
+      <td>84</td>
+      <td>82</td>
+      <td>31</td>
+      <td>125</td>
       <td>38.2</td>
       <td>0.233</td>
       <td>23</td>
@@ -20748,10 +20707,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>484</th>
       <td>0</td>
-      <td>145.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>145</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>44.2</td>
       <td>0.630</td>
       <td>31</td>
@@ -20760,10 +20719,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>485</th>
       <td>0</td>
-      <td>135.0</td>
-      <td>68.0</td>
-      <td>42.0</td>
-      <td>250.0</td>
+      <td>135</td>
+      <td>68</td>
+      <td>42</td>
+      <td>250</td>
       <td>42.3</td>
       <td>0.365</td>
       <td>24</td>
@@ -20772,10 +20731,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>486</th>
       <td>1</td>
-      <td>139.0</td>
-      <td>62.0</td>
-      <td>41.0</td>
-      <td>480.0</td>
+      <td>139</td>
+      <td>62</td>
+      <td>41</td>
+      <td>480</td>
       <td>40.7</td>
       <td>0.536</td>
       <td>21</td>
@@ -20784,10 +20743,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>487</th>
       <td>0</td>
-      <td>173.0</td>
-      <td>78.0</td>
-      <td>32.0</td>
-      <td>265.0</td>
+      <td>173</td>
+      <td>78</td>
+      <td>32</td>
+      <td>265</td>
       <td>46.5</td>
       <td>1.159</td>
       <td>58</td>
@@ -20796,10 +20755,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>488</th>
       <td>4</td>
-      <td>99.0</td>
-      <td>72.0</td>
-      <td>17.0</td>
-      <td>NaN</td>
+      <td>99</td>
+      <td>72</td>
+      <td>17</td>
+      <td>0</td>
       <td>25.6</td>
       <td>0.294</td>
       <td>28</td>
@@ -20808,10 +20767,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>489</th>
       <td>8</td>
-      <td>194.0</td>
-      <td>80.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>194</td>
+      <td>80</td>
+      <td>0</td>
+      <td>0</td>
       <td>26.1</td>
       <td>0.551</td>
       <td>67</td>
@@ -20820,10 +20779,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>490</th>
       <td>2</td>
-      <td>83.0</td>
-      <td>65.0</td>
-      <td>28.0</td>
-      <td>66.0</td>
+      <td>83</td>
+      <td>65</td>
+      <td>28</td>
+      <td>66</td>
       <td>36.8</td>
       <td>0.629</td>
       <td>24</td>
@@ -20832,10 +20791,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>491</th>
       <td>2</td>
-      <td>89.0</td>
-      <td>90.0</td>
-      <td>30.0</td>
-      <td>NaN</td>
+      <td>89</td>
+      <td>90</td>
+      <td>30</td>
+      <td>0</td>
       <td>33.5</td>
       <td>0.292</td>
       <td>42</td>
@@ -20844,10 +20803,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>492</th>
       <td>4</td>
-      <td>99.0</td>
-      <td>68.0</td>
-      <td>38.0</td>
-      <td>NaN</td>
+      <td>99</td>
+      <td>68</td>
+      <td>38</td>
+      <td>0</td>
       <td>32.8</td>
       <td>0.145</td>
       <td>33</td>
@@ -20856,10 +20815,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>493</th>
       <td>4</td>
-      <td>125.0</td>
-      <td>70.0</td>
-      <td>18.0</td>
-      <td>122.0</td>
+      <td>125</td>
+      <td>70</td>
+      <td>18</td>
+      <td>122</td>
       <td>28.9</td>
       <td>1.144</td>
       <td>45</td>
@@ -20868,11 +20827,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>494</th>
       <td>3</td>
-      <td>80.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>80</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
       <td>0.174</td>
       <td>22</td>
       <td>0</td>
@@ -20880,10 +20839,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>495</th>
       <td>6</td>
-      <td>166.0</td>
-      <td>74.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>166</td>
+      <td>74</td>
+      <td>0</td>
+      <td>0</td>
       <td>26.6</td>
       <td>0.304</td>
       <td>66</td>
@@ -20892,10 +20851,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>496</th>
       <td>5</td>
-      <td>110.0</td>
-      <td>68.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>110</td>
+      <td>68</td>
+      <td>0</td>
+      <td>0</td>
       <td>26.0</td>
       <td>0.292</td>
       <td>30</td>
@@ -20904,10 +20863,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>497</th>
       <td>2</td>
-      <td>81.0</td>
-      <td>72.0</td>
-      <td>15.0</td>
-      <td>76.0</td>
+      <td>81</td>
+      <td>72</td>
+      <td>15</td>
+      <td>76</td>
       <td>30.1</td>
       <td>0.547</td>
       <td>25</td>
@@ -20916,10 +20875,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>498</th>
       <td>7</td>
-      <td>195.0</td>
-      <td>70.0</td>
-      <td>33.0</td>
-      <td>145.0</td>
+      <td>195</td>
+      <td>70</td>
+      <td>33</td>
+      <td>145</td>
       <td>25.1</td>
       <td>0.163</td>
       <td>55</td>
@@ -20928,10 +20887,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>499</th>
       <td>6</td>
-      <td>154.0</td>
-      <td>74.0</td>
-      <td>32.0</td>
-      <td>193.0</td>
+      <td>154</td>
+      <td>74</td>
+      <td>32</td>
+      <td>193</td>
       <td>29.3</td>
       <td>0.839</td>
       <td>39</td>
@@ -20940,10 +20899,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>500</th>
       <td>2</td>
-      <td>117.0</td>
-      <td>90.0</td>
-      <td>19.0</td>
-      <td>71.0</td>
+      <td>117</td>
+      <td>90</td>
+      <td>19</td>
+      <td>71</td>
       <td>25.2</td>
       <td>0.313</td>
       <td>21</td>
@@ -20952,10 +20911,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>501</th>
       <td>3</td>
-      <td>84.0</td>
-      <td>72.0</td>
-      <td>32.0</td>
-      <td>NaN</td>
+      <td>84</td>
+      <td>72</td>
+      <td>32</td>
+      <td>0</td>
       <td>37.2</td>
       <td>0.267</td>
       <td>28</td>
@@ -20964,10 +20923,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>502</th>
       <td>6</td>
-      <td>NaN</td>
-      <td>68.0</td>
-      <td>41.0</td>
-      <td>NaN</td>
+      <td>0</td>
+      <td>68</td>
+      <td>41</td>
+      <td>0</td>
       <td>39.0</td>
       <td>0.727</td>
       <td>41</td>
@@ -20976,10 +20935,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>503</th>
       <td>7</td>
-      <td>94.0</td>
-      <td>64.0</td>
-      <td>25.0</td>
-      <td>79.0</td>
+      <td>94</td>
+      <td>64</td>
+      <td>25</td>
+      <td>79</td>
       <td>33.3</td>
       <td>0.738</td>
       <td>41</td>
@@ -20988,10 +20947,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>504</th>
       <td>3</td>
-      <td>96.0</td>
-      <td>78.0</td>
-      <td>39.0</td>
-      <td>NaN</td>
+      <td>96</td>
+      <td>78</td>
+      <td>39</td>
+      <td>0</td>
       <td>37.3</td>
       <td>0.238</td>
       <td>40</td>
@@ -21000,10 +20959,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>505</th>
       <td>10</td>
-      <td>75.0</td>
-      <td>82.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>75</td>
+      <td>82</td>
+      <td>0</td>
+      <td>0</td>
       <td>33.3</td>
       <td>0.263</td>
       <td>38</td>
@@ -21012,10 +20971,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>506</th>
       <td>0</td>
-      <td>180.0</td>
-      <td>90.0</td>
-      <td>26.0</td>
-      <td>90.0</td>
+      <td>180</td>
+      <td>90</td>
+      <td>26</td>
+      <td>90</td>
       <td>36.5</td>
       <td>0.314</td>
       <td>35</td>
@@ -21024,10 +20983,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>507</th>
       <td>1</td>
-      <td>130.0</td>
-      <td>60.0</td>
-      <td>23.0</td>
-      <td>170.0</td>
+      <td>130</td>
+      <td>60</td>
+      <td>23</td>
+      <td>170</td>
       <td>28.6</td>
       <td>0.692</td>
       <td>21</td>
@@ -21036,10 +20995,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>508</th>
       <td>2</td>
-      <td>84.0</td>
-      <td>50.0</td>
-      <td>23.0</td>
-      <td>76.0</td>
+      <td>84</td>
+      <td>50</td>
+      <td>23</td>
+      <td>76</td>
       <td>30.4</td>
       <td>0.968</td>
       <td>21</td>
@@ -21048,10 +21007,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>509</th>
       <td>8</td>
-      <td>120.0</td>
-      <td>78.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>120</td>
+      <td>78</td>
+      <td>0</td>
+      <td>0</td>
       <td>25.0</td>
       <td>0.409</td>
       <td>64</td>
@@ -21060,10 +21019,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>510</th>
       <td>12</td>
-      <td>84.0</td>
-      <td>72.0</td>
-      <td>31.0</td>
-      <td>NaN</td>
+      <td>84</td>
+      <td>72</td>
+      <td>31</td>
+      <td>0</td>
       <td>29.7</td>
       <td>0.297</td>
       <td>46</td>
@@ -21072,10 +21031,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>511</th>
       <td>0</td>
-      <td>139.0</td>
-      <td>62.0</td>
-      <td>17.0</td>
-      <td>210.0</td>
+      <td>139</td>
+      <td>62</td>
+      <td>17</td>
+      <td>210</td>
       <td>22.1</td>
       <td>0.207</td>
       <td>21</td>
@@ -21084,10 +21043,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>512</th>
       <td>9</td>
-      <td>91.0</td>
-      <td>68.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>91</td>
+      <td>68</td>
+      <td>0</td>
+      <td>0</td>
       <td>24.2</td>
       <td>0.200</td>
       <td>58</td>
@@ -21096,10 +21055,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>513</th>
       <td>2</td>
-      <td>91.0</td>
-      <td>62.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>91</td>
+      <td>62</td>
+      <td>0</td>
+      <td>0</td>
       <td>27.3</td>
       <td>0.525</td>
       <td>22</td>
@@ -21108,10 +21067,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>514</th>
       <td>3</td>
-      <td>99.0</td>
-      <td>54.0</td>
-      <td>19.0</td>
-      <td>86.0</td>
+      <td>99</td>
+      <td>54</td>
+      <td>19</td>
+      <td>86</td>
       <td>25.6</td>
       <td>0.154</td>
       <td>24</td>
@@ -21120,10 +21079,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>515</th>
       <td>3</td>
-      <td>163.0</td>
-      <td>70.0</td>
-      <td>18.0</td>
-      <td>105.0</td>
+      <td>163</td>
+      <td>70</td>
+      <td>18</td>
+      <td>105</td>
       <td>31.6</td>
       <td>0.268</td>
       <td>28</td>
@@ -21132,10 +21091,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>516</th>
       <td>9</td>
-      <td>145.0</td>
-      <td>88.0</td>
-      <td>34.0</td>
-      <td>165.0</td>
+      <td>145</td>
+      <td>88</td>
+      <td>34</td>
+      <td>165</td>
       <td>30.3</td>
       <td>0.771</td>
       <td>53</td>
@@ -21144,10 +21103,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>517</th>
       <td>7</td>
-      <td>125.0</td>
-      <td>86.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>125</td>
+      <td>86</td>
+      <td>0</td>
+      <td>0</td>
       <td>37.6</td>
       <td>0.304</td>
       <td>51</td>
@@ -21156,10 +21115,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>518</th>
       <td>13</td>
-      <td>76.0</td>
-      <td>60.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>76</td>
+      <td>60</td>
+      <td>0</td>
+      <td>0</td>
       <td>32.8</td>
       <td>0.180</td>
       <td>41</td>
@@ -21168,10 +21127,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>519</th>
       <td>6</td>
-      <td>129.0</td>
-      <td>90.0</td>
-      <td>7.0</td>
-      <td>326.0</td>
+      <td>129</td>
+      <td>90</td>
+      <td>7</td>
+      <td>326</td>
       <td>19.6</td>
       <td>0.582</td>
       <td>60</td>
@@ -21180,10 +21139,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>520</th>
       <td>2</td>
-      <td>68.0</td>
-      <td>70.0</td>
-      <td>32.0</td>
-      <td>66.0</td>
+      <td>68</td>
+      <td>70</td>
+      <td>32</td>
+      <td>66</td>
       <td>25.0</td>
       <td>0.187</td>
       <td>25</td>
@@ -21192,10 +21151,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>521</th>
       <td>3</td>
-      <td>124.0</td>
-      <td>80.0</td>
-      <td>33.0</td>
-      <td>130.0</td>
+      <td>124</td>
+      <td>80</td>
+      <td>33</td>
+      <td>130</td>
       <td>33.2</td>
       <td>0.305</td>
       <td>26</td>
@@ -21204,11 +21163,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>522</th>
       <td>6</td>
-      <td>114.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>114</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
       <td>0.189</td>
       <td>26</td>
       <td>0</td>
@@ -21216,10 +21175,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>523</th>
       <td>9</td>
-      <td>130.0</td>
-      <td>70.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>130</td>
+      <td>70</td>
+      <td>0</td>
+      <td>0</td>
       <td>34.2</td>
       <td>0.652</td>
       <td>45</td>
@@ -21228,10 +21187,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>524</th>
       <td>3</td>
-      <td>125.0</td>
-      <td>58.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>125</td>
+      <td>58</td>
+      <td>0</td>
+      <td>0</td>
       <td>31.6</td>
       <td>0.151</td>
       <td>24</td>
@@ -21240,10 +21199,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>525</th>
       <td>3</td>
-      <td>87.0</td>
-      <td>60.0</td>
-      <td>18.0</td>
-      <td>NaN</td>
+      <td>87</td>
+      <td>60</td>
+      <td>18</td>
+      <td>0</td>
       <td>21.8</td>
       <td>0.444</td>
       <td>21</td>
@@ -21252,10 +21211,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>526</th>
       <td>1</td>
-      <td>97.0</td>
-      <td>64.0</td>
-      <td>19.0</td>
-      <td>82.0</td>
+      <td>97</td>
+      <td>64</td>
+      <td>19</td>
+      <td>82</td>
       <td>18.2</td>
       <td>0.299</td>
       <td>21</td>
@@ -21264,10 +21223,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>527</th>
       <td>3</td>
-      <td>116.0</td>
-      <td>74.0</td>
-      <td>15.0</td>
-      <td>105.0</td>
+      <td>116</td>
+      <td>74</td>
+      <td>15</td>
+      <td>105</td>
       <td>26.3</td>
       <td>0.107</td>
       <td>24</td>
@@ -21276,10 +21235,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>528</th>
       <td>0</td>
-      <td>117.0</td>
-      <td>66.0</td>
-      <td>31.0</td>
-      <td>188.0</td>
+      <td>117</td>
+      <td>66</td>
+      <td>31</td>
+      <td>188</td>
       <td>30.8</td>
       <td>0.493</td>
       <td>22</td>
@@ -21288,10 +21247,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>529</th>
       <td>0</td>
-      <td>111.0</td>
-      <td>65.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>111</td>
+      <td>65</td>
+      <td>0</td>
+      <td>0</td>
       <td>24.6</td>
       <td>0.660</td>
       <td>31</td>
@@ -21300,10 +21259,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>530</th>
       <td>2</td>
-      <td>122.0</td>
-      <td>60.0</td>
-      <td>18.0</td>
-      <td>106.0</td>
+      <td>122</td>
+      <td>60</td>
+      <td>18</td>
+      <td>106</td>
       <td>29.8</td>
       <td>0.717</td>
       <td>22</td>
@@ -21312,10 +21271,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>531</th>
       <td>0</td>
-      <td>107.0</td>
-      <td>76.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>107</td>
+      <td>76</td>
+      <td>0</td>
+      <td>0</td>
       <td>45.3</td>
       <td>0.686</td>
       <td>24</td>
@@ -21324,10 +21283,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>532</th>
       <td>1</td>
-      <td>86.0</td>
-      <td>66.0</td>
-      <td>52.0</td>
-      <td>65.0</td>
+      <td>86</td>
+      <td>66</td>
+      <td>52</td>
+      <td>65</td>
       <td>41.3</td>
       <td>0.917</td>
       <td>29</td>
@@ -21336,10 +21295,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>533</th>
       <td>6</td>
-      <td>91.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>91</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>29.8</td>
       <td>0.501</td>
       <td>31</td>
@@ -21348,10 +21307,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>534</th>
       <td>1</td>
-      <td>77.0</td>
-      <td>56.0</td>
-      <td>30.0</td>
-      <td>56.0</td>
+      <td>77</td>
+      <td>56</td>
+      <td>30</td>
+      <td>56</td>
       <td>33.3</td>
       <td>1.251</td>
       <td>24</td>
@@ -21360,10 +21319,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>535</th>
       <td>4</td>
-      <td>132.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>132</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>32.9</td>
       <td>0.302</td>
       <td>23</td>
@@ -21372,10 +21331,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>536</th>
       <td>0</td>
-      <td>105.0</td>
-      <td>90.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>105</td>
+      <td>90</td>
+      <td>0</td>
+      <td>0</td>
       <td>29.6</td>
       <td>0.197</td>
       <td>46</td>
@@ -21384,10 +21343,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>537</th>
       <td>0</td>
-      <td>57.0</td>
-      <td>60.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>57</td>
+      <td>60</td>
+      <td>0</td>
+      <td>0</td>
       <td>21.7</td>
       <td>0.735</td>
       <td>67</td>
@@ -21396,10 +21355,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>538</th>
       <td>0</td>
-      <td>127.0</td>
-      <td>80.0</td>
-      <td>37.0</td>
-      <td>210.0</td>
+      <td>127</td>
+      <td>80</td>
+      <td>37</td>
+      <td>210</td>
       <td>36.3</td>
       <td>0.804</td>
       <td>23</td>
@@ -21408,10 +21367,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>539</th>
       <td>3</td>
-      <td>129.0</td>
-      <td>92.0</td>
-      <td>49.0</td>
-      <td>155.0</td>
+      <td>129</td>
+      <td>92</td>
+      <td>49</td>
+      <td>155</td>
       <td>36.4</td>
       <td>0.968</td>
       <td>32</td>
@@ -21420,10 +21379,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>540</th>
       <td>8</td>
-      <td>100.0</td>
-      <td>74.0</td>
-      <td>40.0</td>
-      <td>215.0</td>
+      <td>100</td>
+      <td>74</td>
+      <td>40</td>
+      <td>215</td>
       <td>39.4</td>
       <td>0.661</td>
       <td>43</td>
@@ -21432,10 +21391,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>541</th>
       <td>3</td>
-      <td>128.0</td>
-      <td>72.0</td>
-      <td>25.0</td>
-      <td>190.0</td>
+      <td>128</td>
+      <td>72</td>
+      <td>25</td>
+      <td>190</td>
       <td>32.4</td>
       <td>0.549</td>
       <td>27</td>
@@ -21444,10 +21403,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>542</th>
       <td>10</td>
-      <td>90.0</td>
-      <td>85.0</td>
-      <td>32.0</td>
-      <td>NaN</td>
+      <td>90</td>
+      <td>85</td>
+      <td>32</td>
+      <td>0</td>
       <td>34.9</td>
       <td>0.825</td>
       <td>56</td>
@@ -21456,10 +21415,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>543</th>
       <td>4</td>
-      <td>84.0</td>
-      <td>90.0</td>
-      <td>23.0</td>
-      <td>56.0</td>
+      <td>84</td>
+      <td>90</td>
+      <td>23</td>
+      <td>56</td>
       <td>39.5</td>
       <td>0.159</td>
       <td>25</td>
@@ -21468,10 +21427,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>544</th>
       <td>1</td>
-      <td>88.0</td>
-      <td>78.0</td>
-      <td>29.0</td>
-      <td>76.0</td>
+      <td>88</td>
+      <td>78</td>
+      <td>29</td>
+      <td>76</td>
       <td>32.0</td>
       <td>0.365</td>
       <td>29</td>
@@ -21480,10 +21439,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>545</th>
       <td>8</td>
-      <td>186.0</td>
-      <td>90.0</td>
-      <td>35.0</td>
-      <td>225.0</td>
+      <td>186</td>
+      <td>90</td>
+      <td>35</td>
+      <td>225</td>
       <td>34.5</td>
       <td>0.423</td>
       <td>37</td>
@@ -21492,10 +21451,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>546</th>
       <td>5</td>
-      <td>187.0</td>
-      <td>76.0</td>
-      <td>27.0</td>
-      <td>207.0</td>
+      <td>187</td>
+      <td>76</td>
+      <td>27</td>
+      <td>207</td>
       <td>43.6</td>
       <td>1.034</td>
       <td>53</td>
@@ -21504,10 +21463,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>547</th>
       <td>4</td>
-      <td>131.0</td>
-      <td>68.0</td>
-      <td>21.0</td>
-      <td>166.0</td>
+      <td>131</td>
+      <td>68</td>
+      <td>21</td>
+      <td>166</td>
       <td>33.1</td>
       <td>0.160</td>
       <td>28</td>
@@ -21516,10 +21475,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>548</th>
       <td>1</td>
-      <td>164.0</td>
-      <td>82.0</td>
-      <td>43.0</td>
-      <td>67.0</td>
+      <td>164</td>
+      <td>82</td>
+      <td>43</td>
+      <td>67</td>
       <td>32.8</td>
       <td>0.341</td>
       <td>50</td>
@@ -21528,10 +21487,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>549</th>
       <td>4</td>
-      <td>189.0</td>
-      <td>110.0</td>
-      <td>31.0</td>
-      <td>NaN</td>
+      <td>189</td>
+      <td>110</td>
+      <td>31</td>
+      <td>0</td>
       <td>28.5</td>
       <td>0.680</td>
       <td>37</td>
@@ -21540,10 +21499,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>550</th>
       <td>1</td>
-      <td>116.0</td>
-      <td>70.0</td>
-      <td>28.0</td>
-      <td>NaN</td>
+      <td>116</td>
+      <td>70</td>
+      <td>28</td>
+      <td>0</td>
       <td>27.4</td>
       <td>0.204</td>
       <td>21</td>
@@ -21552,10 +21511,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>551</th>
       <td>3</td>
-      <td>84.0</td>
-      <td>68.0</td>
-      <td>30.0</td>
-      <td>106.0</td>
+      <td>84</td>
+      <td>68</td>
+      <td>30</td>
+      <td>106</td>
       <td>31.9</td>
       <td>0.591</td>
       <td>25</td>
@@ -21564,10 +21523,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>552</th>
       <td>6</td>
-      <td>114.0</td>
-      <td>88.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>114</td>
+      <td>88</td>
+      <td>0</td>
+      <td>0</td>
       <td>27.8</td>
       <td>0.247</td>
       <td>66</td>
@@ -21576,10 +21535,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>553</th>
       <td>1</td>
-      <td>88.0</td>
-      <td>62.0</td>
-      <td>24.0</td>
-      <td>44.0</td>
+      <td>88</td>
+      <td>62</td>
+      <td>24</td>
+      <td>44</td>
       <td>29.9</td>
       <td>0.422</td>
       <td>23</td>
@@ -21588,10 +21547,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>554</th>
       <td>1</td>
-      <td>84.0</td>
-      <td>64.0</td>
-      <td>23.0</td>
-      <td>115.0</td>
+      <td>84</td>
+      <td>64</td>
+      <td>23</td>
+      <td>115</td>
       <td>36.9</td>
       <td>0.471</td>
       <td>28</td>
@@ -21600,10 +21559,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>555</th>
       <td>7</td>
-      <td>124.0</td>
-      <td>70.0</td>
-      <td>33.0</td>
-      <td>215.0</td>
+      <td>124</td>
+      <td>70</td>
+      <td>33</td>
+      <td>215</td>
       <td>25.5</td>
       <td>0.161</td>
       <td>37</td>
@@ -21612,10 +21571,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>556</th>
       <td>1</td>
-      <td>97.0</td>
-      <td>70.0</td>
-      <td>40.0</td>
-      <td>NaN</td>
+      <td>97</td>
+      <td>70</td>
+      <td>40</td>
+      <td>0</td>
       <td>38.1</td>
       <td>0.218</td>
       <td>30</td>
@@ -21624,10 +21583,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>557</th>
       <td>8</td>
-      <td>110.0</td>
-      <td>76.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>110</td>
+      <td>76</td>
+      <td>0</td>
+      <td>0</td>
       <td>27.8</td>
       <td>0.237</td>
       <td>58</td>
@@ -21636,10 +21595,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>558</th>
       <td>11</td>
-      <td>103.0</td>
-      <td>68.0</td>
-      <td>40.0</td>
-      <td>NaN</td>
+      <td>103</td>
+      <td>68</td>
+      <td>40</td>
+      <td>0</td>
       <td>46.2</td>
       <td>0.126</td>
       <td>42</td>
@@ -21648,10 +21607,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>559</th>
       <td>11</td>
-      <td>85.0</td>
-      <td>74.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>85</td>
+      <td>74</td>
+      <td>0</td>
+      <td>0</td>
       <td>30.1</td>
       <td>0.300</td>
       <td>35</td>
@@ -21660,10 +21619,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>560</th>
       <td>6</td>
-      <td>125.0</td>
-      <td>76.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>125</td>
+      <td>76</td>
+      <td>0</td>
+      <td>0</td>
       <td>33.8</td>
       <td>0.121</td>
       <td>54</td>
@@ -21672,10 +21631,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>561</th>
       <td>0</td>
-      <td>198.0</td>
-      <td>66.0</td>
-      <td>32.0</td>
-      <td>274.0</td>
+      <td>198</td>
+      <td>66</td>
+      <td>32</td>
+      <td>274</td>
       <td>41.3</td>
       <td>0.502</td>
       <td>28</td>
@@ -21684,10 +21643,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>562</th>
       <td>1</td>
-      <td>87.0</td>
-      <td>68.0</td>
-      <td>34.0</td>
-      <td>77.0</td>
+      <td>87</td>
+      <td>68</td>
+      <td>34</td>
+      <td>77</td>
       <td>37.6</td>
       <td>0.401</td>
       <td>24</td>
@@ -21696,10 +21655,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>563</th>
       <td>6</td>
-      <td>99.0</td>
-      <td>60.0</td>
-      <td>19.0</td>
-      <td>54.0</td>
+      <td>99</td>
+      <td>60</td>
+      <td>19</td>
+      <td>54</td>
       <td>26.9</td>
       <td>0.497</td>
       <td>32</td>
@@ -21708,10 +21667,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>564</th>
       <td>0</td>
-      <td>91.0</td>
-      <td>80.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>91</td>
+      <td>80</td>
+      <td>0</td>
+      <td>0</td>
       <td>32.4</td>
       <td>0.601</td>
       <td>27</td>
@@ -21720,10 +21679,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>565</th>
       <td>2</td>
-      <td>95.0</td>
-      <td>54.0</td>
-      <td>14.0</td>
-      <td>88.0</td>
+      <td>95</td>
+      <td>54</td>
+      <td>14</td>
+      <td>88</td>
       <td>26.1</td>
       <td>0.748</td>
       <td>22</td>
@@ -21732,10 +21691,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>566</th>
       <td>1</td>
-      <td>99.0</td>
-      <td>72.0</td>
-      <td>30.0</td>
-      <td>18.0</td>
+      <td>99</td>
+      <td>72</td>
+      <td>30</td>
+      <td>18</td>
       <td>38.6</td>
       <td>0.412</td>
       <td>21</td>
@@ -21744,10 +21703,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>567</th>
       <td>6</td>
-      <td>92.0</td>
-      <td>62.0</td>
-      <td>32.0</td>
-      <td>126.0</td>
+      <td>92</td>
+      <td>62</td>
+      <td>32</td>
+      <td>126</td>
       <td>32.0</td>
       <td>0.085</td>
       <td>46</td>
@@ -21756,10 +21715,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>568</th>
       <td>4</td>
-      <td>154.0</td>
-      <td>72.0</td>
-      <td>29.0</td>
-      <td>126.0</td>
+      <td>154</td>
+      <td>72</td>
+      <td>29</td>
+      <td>126</td>
       <td>31.3</td>
       <td>0.338</td>
       <td>37</td>
@@ -21768,10 +21727,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>569</th>
       <td>0</td>
-      <td>121.0</td>
-      <td>66.0</td>
-      <td>30.0</td>
-      <td>165.0</td>
+      <td>121</td>
+      <td>66</td>
+      <td>30</td>
+      <td>165</td>
       <td>34.3</td>
       <td>0.203</td>
       <td>33</td>
@@ -21780,10 +21739,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>570</th>
       <td>3</td>
-      <td>78.0</td>
-      <td>70.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>78</td>
+      <td>70</td>
+      <td>0</td>
+      <td>0</td>
       <td>32.5</td>
       <td>0.270</td>
       <td>39</td>
@@ -21792,10 +21751,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>571</th>
       <td>2</td>
-      <td>130.0</td>
-      <td>96.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>130</td>
+      <td>96</td>
+      <td>0</td>
+      <td>0</td>
       <td>22.6</td>
       <td>0.268</td>
       <td>21</td>
@@ -21804,10 +21763,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>572</th>
       <td>3</td>
-      <td>111.0</td>
-      <td>58.0</td>
-      <td>31.0</td>
-      <td>44.0</td>
+      <td>111</td>
+      <td>58</td>
+      <td>31</td>
+      <td>44</td>
       <td>29.5</td>
       <td>0.430</td>
       <td>22</td>
@@ -21816,10 +21775,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>573</th>
       <td>2</td>
-      <td>98.0</td>
-      <td>60.0</td>
-      <td>17.0</td>
-      <td>120.0</td>
+      <td>98</td>
+      <td>60</td>
+      <td>17</td>
+      <td>120</td>
       <td>34.7</td>
       <td>0.198</td>
       <td>22</td>
@@ -21828,10 +21787,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>574</th>
       <td>1</td>
-      <td>143.0</td>
-      <td>86.0</td>
-      <td>30.0</td>
-      <td>330.0</td>
+      <td>143</td>
+      <td>86</td>
+      <td>30</td>
+      <td>330</td>
       <td>30.1</td>
       <td>0.892</td>
       <td>23</td>
@@ -21840,10 +21799,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>575</th>
       <td>1</td>
-      <td>119.0</td>
-      <td>44.0</td>
-      <td>47.0</td>
-      <td>63.0</td>
+      <td>119</td>
+      <td>44</td>
+      <td>47</td>
+      <td>63</td>
       <td>35.5</td>
       <td>0.280</td>
       <td>25</td>
@@ -21852,10 +21811,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>576</th>
       <td>6</td>
-      <td>108.0</td>
-      <td>44.0</td>
-      <td>20.0</td>
-      <td>130.0</td>
+      <td>108</td>
+      <td>44</td>
+      <td>20</td>
+      <td>130</td>
       <td>24.0</td>
       <td>0.813</td>
       <td>35</td>
@@ -21864,10 +21823,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>577</th>
       <td>2</td>
-      <td>118.0</td>
-      <td>80.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>118</td>
+      <td>80</td>
+      <td>0</td>
+      <td>0</td>
       <td>42.9</td>
       <td>0.693</td>
       <td>21</td>
@@ -21876,10 +21835,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>578</th>
       <td>10</td>
-      <td>133.0</td>
-      <td>68.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>133</td>
+      <td>68</td>
+      <td>0</td>
+      <td>0</td>
       <td>27.0</td>
       <td>0.245</td>
       <td>36</td>
@@ -21888,10 +21847,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>579</th>
       <td>2</td>
-      <td>197.0</td>
-      <td>70.0</td>
-      <td>99.0</td>
-      <td>NaN</td>
+      <td>197</td>
+      <td>70</td>
+      <td>99</td>
+      <td>0</td>
       <td>34.7</td>
       <td>0.575</td>
       <td>62</td>
@@ -21900,10 +21859,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>580</th>
       <td>0</td>
-      <td>151.0</td>
-      <td>90.0</td>
-      <td>46.0</td>
-      <td>NaN</td>
+      <td>151</td>
+      <td>90</td>
+      <td>46</td>
+      <td>0</td>
       <td>42.1</td>
       <td>0.371</td>
       <td>21</td>
@@ -21912,10 +21871,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>581</th>
       <td>6</td>
-      <td>109.0</td>
-      <td>60.0</td>
-      <td>27.0</td>
-      <td>NaN</td>
+      <td>109</td>
+      <td>60</td>
+      <td>27</td>
+      <td>0</td>
       <td>25.0</td>
       <td>0.206</td>
       <td>27</td>
@@ -21924,10 +21883,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>582</th>
       <td>12</td>
-      <td>121.0</td>
-      <td>78.0</td>
-      <td>17.0</td>
-      <td>NaN</td>
+      <td>121</td>
+      <td>78</td>
+      <td>17</td>
+      <td>0</td>
       <td>26.5</td>
       <td>0.259</td>
       <td>62</td>
@@ -21936,10 +21895,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>583</th>
       <td>8</td>
-      <td>100.0</td>
-      <td>76.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>100</td>
+      <td>76</td>
+      <td>0</td>
+      <td>0</td>
       <td>38.7</td>
       <td>0.190</td>
       <td>42</td>
@@ -21948,10 +21907,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>584</th>
       <td>8</td>
-      <td>124.0</td>
-      <td>76.0</td>
-      <td>24.0</td>
-      <td>600.0</td>
+      <td>124</td>
+      <td>76</td>
+      <td>24</td>
+      <td>600</td>
       <td>28.7</td>
       <td>0.687</td>
       <td>52</td>
@@ -21960,10 +21919,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>585</th>
       <td>1</td>
-      <td>93.0</td>
-      <td>56.0</td>
-      <td>11.0</td>
-      <td>NaN</td>
+      <td>93</td>
+      <td>56</td>
+      <td>11</td>
+      <td>0</td>
       <td>22.5</td>
       <td>0.417</td>
       <td>22</td>
@@ -21972,10 +21931,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>586</th>
       <td>8</td>
-      <td>143.0</td>
-      <td>66.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>143</td>
+      <td>66</td>
+      <td>0</td>
+      <td>0</td>
       <td>34.9</td>
       <td>0.129</td>
       <td>41</td>
@@ -21984,10 +21943,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>587</th>
       <td>6</td>
-      <td>103.0</td>
-      <td>66.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>103</td>
+      <td>66</td>
+      <td>0</td>
+      <td>0</td>
       <td>24.3</td>
       <td>0.249</td>
       <td>29</td>
@@ -21996,10 +21955,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>588</th>
       <td>3</td>
-      <td>176.0</td>
-      <td>86.0</td>
-      <td>27.0</td>
-      <td>156.0</td>
+      <td>176</td>
+      <td>86</td>
+      <td>27</td>
+      <td>156</td>
       <td>33.3</td>
       <td>1.154</td>
       <td>52</td>
@@ -22008,10 +21967,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>589</th>
       <td>0</td>
-      <td>73.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>73</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>21.1</td>
       <td>0.342</td>
       <td>25</td>
@@ -22020,10 +21979,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>590</th>
       <td>11</td>
-      <td>111.0</td>
-      <td>84.0</td>
-      <td>40.0</td>
-      <td>NaN</td>
+      <td>111</td>
+      <td>84</td>
+      <td>40</td>
+      <td>0</td>
       <td>46.8</td>
       <td>0.925</td>
       <td>45</td>
@@ -22032,10 +21991,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>591</th>
       <td>2</td>
-      <td>112.0</td>
-      <td>78.0</td>
-      <td>50.0</td>
-      <td>140.0</td>
+      <td>112</td>
+      <td>78</td>
+      <td>50</td>
+      <td>140</td>
       <td>39.4</td>
       <td>0.175</td>
       <td>24</td>
@@ -22044,10 +22003,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>592</th>
       <td>3</td>
-      <td>132.0</td>
-      <td>80.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>132</td>
+      <td>80</td>
+      <td>0</td>
+      <td>0</td>
       <td>34.4</td>
       <td>0.402</td>
       <td>44</td>
@@ -22056,10 +22015,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>593</th>
       <td>2</td>
-      <td>82.0</td>
-      <td>52.0</td>
-      <td>22.0</td>
-      <td>115.0</td>
+      <td>82</td>
+      <td>52</td>
+      <td>22</td>
+      <td>115</td>
       <td>28.5</td>
       <td>1.699</td>
       <td>25</td>
@@ -22068,10 +22027,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>594</th>
       <td>6</td>
-      <td>123.0</td>
-      <td>72.0</td>
-      <td>45.0</td>
-      <td>230.0</td>
+      <td>123</td>
+      <td>72</td>
+      <td>45</td>
+      <td>230</td>
       <td>33.6</td>
       <td>0.733</td>
       <td>34</td>
@@ -22080,10 +22039,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>595</th>
       <td>0</td>
-      <td>188.0</td>
-      <td>82.0</td>
-      <td>14.0</td>
-      <td>185.0</td>
+      <td>188</td>
+      <td>82</td>
+      <td>14</td>
+      <td>185</td>
       <td>32.0</td>
       <td>0.682</td>
       <td>22</td>
@@ -22092,10 +22051,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>596</th>
       <td>0</td>
-      <td>67.0</td>
-      <td>76.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>67</td>
+      <td>76</td>
+      <td>0</td>
+      <td>0</td>
       <td>45.3</td>
       <td>0.194</td>
       <td>46</td>
@@ -22104,10 +22063,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>597</th>
       <td>1</td>
-      <td>89.0</td>
-      <td>24.0</td>
-      <td>19.0</td>
-      <td>25.0</td>
+      <td>89</td>
+      <td>24</td>
+      <td>19</td>
+      <td>25</td>
       <td>27.8</td>
       <td>0.559</td>
       <td>21</td>
@@ -22116,10 +22075,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>598</th>
       <td>1</td>
-      <td>173.0</td>
-      <td>74.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>173</td>
+      <td>74</td>
+      <td>0</td>
+      <td>0</td>
       <td>36.8</td>
       <td>0.088</td>
       <td>38</td>
@@ -22128,10 +22087,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>599</th>
       <td>1</td>
-      <td>109.0</td>
-      <td>38.0</td>
-      <td>18.0</td>
-      <td>120.0</td>
+      <td>109</td>
+      <td>38</td>
+      <td>18</td>
+      <td>120</td>
       <td>23.1</td>
       <td>0.407</td>
       <td>26</td>
@@ -22140,10 +22099,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>600</th>
       <td>1</td>
-      <td>108.0</td>
-      <td>88.0</td>
-      <td>19.0</td>
-      <td>NaN</td>
+      <td>108</td>
+      <td>88</td>
+      <td>19</td>
+      <td>0</td>
       <td>27.1</td>
       <td>0.400</td>
       <td>24</td>
@@ -22152,10 +22111,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>601</th>
       <td>6</td>
-      <td>96.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>96</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>23.7</td>
       <td>0.190</td>
       <td>28</td>
@@ -22164,10 +22123,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>602</th>
       <td>1</td>
-      <td>124.0</td>
-      <td>74.0</td>
-      <td>36.0</td>
-      <td>NaN</td>
+      <td>124</td>
+      <td>74</td>
+      <td>36</td>
+      <td>0</td>
       <td>27.8</td>
       <td>0.100</td>
       <td>30</td>
@@ -22176,10 +22135,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>603</th>
       <td>7</td>
-      <td>150.0</td>
-      <td>78.0</td>
-      <td>29.0</td>
-      <td>126.0</td>
+      <td>150</td>
+      <td>78</td>
+      <td>29</td>
+      <td>126</td>
       <td>35.2</td>
       <td>0.692</td>
       <td>54</td>
@@ -22188,10 +22147,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>604</th>
       <td>4</td>
-      <td>183.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>183</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>28.4</td>
       <td>0.212</td>
       <td>36</td>
@@ -22200,10 +22159,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>605</th>
       <td>1</td>
-      <td>124.0</td>
-      <td>60.0</td>
-      <td>32.0</td>
-      <td>NaN</td>
+      <td>124</td>
+      <td>60</td>
+      <td>32</td>
+      <td>0</td>
       <td>35.8</td>
       <td>0.514</td>
       <td>21</td>
@@ -22212,10 +22171,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>606</th>
       <td>1</td>
-      <td>181.0</td>
-      <td>78.0</td>
-      <td>42.0</td>
-      <td>293.0</td>
+      <td>181</td>
+      <td>78</td>
+      <td>42</td>
+      <td>293</td>
       <td>40.0</td>
       <td>1.258</td>
       <td>22</td>
@@ -22224,10 +22183,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>607</th>
       <td>1</td>
-      <td>92.0</td>
-      <td>62.0</td>
-      <td>25.0</td>
-      <td>41.0</td>
+      <td>92</td>
+      <td>62</td>
+      <td>25</td>
+      <td>41</td>
       <td>19.5</td>
       <td>0.482</td>
       <td>25</td>
@@ -22236,10 +22195,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>608</th>
       <td>0</td>
-      <td>152.0</td>
-      <td>82.0</td>
-      <td>39.0</td>
-      <td>272.0</td>
+      <td>152</td>
+      <td>82</td>
+      <td>39</td>
+      <td>272</td>
       <td>41.5</td>
       <td>0.270</td>
       <td>27</td>
@@ -22248,10 +22207,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>609</th>
       <td>1</td>
-      <td>111.0</td>
-      <td>62.0</td>
-      <td>13.0</td>
-      <td>182.0</td>
+      <td>111</td>
+      <td>62</td>
+      <td>13</td>
+      <td>182</td>
       <td>24.0</td>
       <td>0.138</td>
       <td>23</td>
@@ -22260,10 +22219,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>610</th>
       <td>3</td>
-      <td>106.0</td>
-      <td>54.0</td>
-      <td>21.0</td>
-      <td>158.0</td>
+      <td>106</td>
+      <td>54</td>
+      <td>21</td>
+      <td>158</td>
       <td>30.9</td>
       <td>0.292</td>
       <td>24</td>
@@ -22272,10 +22231,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>611</th>
       <td>3</td>
-      <td>174.0</td>
-      <td>58.0</td>
-      <td>22.0</td>
-      <td>194.0</td>
+      <td>174</td>
+      <td>58</td>
+      <td>22</td>
+      <td>194</td>
       <td>32.9</td>
       <td>0.593</td>
       <td>36</td>
@@ -22284,10 +22243,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>612</th>
       <td>7</td>
-      <td>168.0</td>
-      <td>88.0</td>
-      <td>42.0</td>
-      <td>321.0</td>
+      <td>168</td>
+      <td>88</td>
+      <td>42</td>
+      <td>321</td>
       <td>38.2</td>
       <td>0.787</td>
       <td>40</td>
@@ -22296,10 +22255,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>613</th>
       <td>6</td>
-      <td>105.0</td>
-      <td>80.0</td>
-      <td>28.0</td>
-      <td>NaN</td>
+      <td>105</td>
+      <td>80</td>
+      <td>28</td>
+      <td>0</td>
       <td>32.5</td>
       <td>0.878</td>
       <td>26</td>
@@ -22308,10 +22267,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>614</th>
       <td>11</td>
-      <td>138.0</td>
-      <td>74.0</td>
-      <td>26.0</td>
-      <td>144.0</td>
+      <td>138</td>
+      <td>74</td>
+      <td>26</td>
+      <td>144</td>
       <td>36.1</td>
       <td>0.557</td>
       <td>50</td>
@@ -22320,10 +22279,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>615</th>
       <td>3</td>
-      <td>106.0</td>
-      <td>72.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>106</td>
+      <td>72</td>
+      <td>0</td>
+      <td>0</td>
       <td>25.8</td>
       <td>0.207</td>
       <td>27</td>
@@ -22332,10 +22291,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>616</th>
       <td>6</td>
-      <td>117.0</td>
-      <td>96.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>117</td>
+      <td>96</td>
+      <td>0</td>
+      <td>0</td>
       <td>28.7</td>
       <td>0.157</td>
       <td>30</td>
@@ -22344,10 +22303,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>617</th>
       <td>2</td>
-      <td>68.0</td>
-      <td>62.0</td>
-      <td>13.0</td>
-      <td>15.0</td>
+      <td>68</td>
+      <td>62</td>
+      <td>13</td>
+      <td>15</td>
       <td>20.1</td>
       <td>0.257</td>
       <td>23</td>
@@ -22356,10 +22315,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>618</th>
       <td>9</td>
-      <td>112.0</td>
-      <td>82.0</td>
-      <td>24.0</td>
-      <td>NaN</td>
+      <td>112</td>
+      <td>82</td>
+      <td>24</td>
+      <td>0</td>
       <td>28.2</td>
       <td>1.282</td>
       <td>50</td>
@@ -22368,10 +22327,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>619</th>
       <td>0</td>
-      <td>119.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>119</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>32.4</td>
       <td>0.141</td>
       <td>24</td>
@@ -22380,10 +22339,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>620</th>
       <td>2</td>
-      <td>112.0</td>
-      <td>86.0</td>
-      <td>42.0</td>
-      <td>160.0</td>
+      <td>112</td>
+      <td>86</td>
+      <td>42</td>
+      <td>160</td>
       <td>38.4</td>
       <td>0.246</td>
       <td>28</td>
@@ -22392,10 +22351,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>621</th>
       <td>2</td>
-      <td>92.0</td>
-      <td>76.0</td>
-      <td>20.0</td>
-      <td>NaN</td>
+      <td>92</td>
+      <td>76</td>
+      <td>20</td>
+      <td>0</td>
       <td>24.2</td>
       <td>1.698</td>
       <td>28</td>
@@ -22404,10 +22363,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>622</th>
       <td>6</td>
-      <td>183.0</td>
-      <td>94.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>183</td>
+      <td>94</td>
+      <td>0</td>
+      <td>0</td>
       <td>40.8</td>
       <td>1.461</td>
       <td>45</td>
@@ -22416,10 +22375,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>623</th>
       <td>0</td>
-      <td>94.0</td>
-      <td>70.0</td>
-      <td>27.0</td>
-      <td>115.0</td>
+      <td>94</td>
+      <td>70</td>
+      <td>27</td>
+      <td>115</td>
       <td>43.5</td>
       <td>0.347</td>
       <td>21</td>
@@ -22428,10 +22387,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>624</th>
       <td>2</td>
-      <td>108.0</td>
-      <td>64.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>108</td>
+      <td>64</td>
+      <td>0</td>
+      <td>0</td>
       <td>30.8</td>
       <td>0.158</td>
       <td>21</td>
@@ -22440,10 +22399,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>625</th>
       <td>4</td>
-      <td>90.0</td>
-      <td>88.0</td>
-      <td>47.0</td>
-      <td>54.0</td>
+      <td>90</td>
+      <td>88</td>
+      <td>47</td>
+      <td>54</td>
       <td>37.7</td>
       <td>0.362</td>
       <td>29</td>
@@ -22452,10 +22411,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>626</th>
       <td>0</td>
-      <td>125.0</td>
-      <td>68.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>125</td>
+      <td>68</td>
+      <td>0</td>
+      <td>0</td>
       <td>24.7</td>
       <td>0.206</td>
       <td>21</td>
@@ -22464,10 +22423,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>627</th>
       <td>0</td>
-      <td>132.0</td>
-      <td>78.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>132</td>
+      <td>78</td>
+      <td>0</td>
+      <td>0</td>
       <td>32.4</td>
       <td>0.393</td>
       <td>21</td>
@@ -22476,10 +22435,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>628</th>
       <td>5</td>
-      <td>128.0</td>
-      <td>80.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>128</td>
+      <td>80</td>
+      <td>0</td>
+      <td>0</td>
       <td>34.6</td>
       <td>0.144</td>
       <td>45</td>
@@ -22488,10 +22447,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>629</th>
       <td>4</td>
-      <td>94.0</td>
-      <td>65.0</td>
-      <td>22.0</td>
-      <td>NaN</td>
+      <td>94</td>
+      <td>65</td>
+      <td>22</td>
+      <td>0</td>
       <td>24.7</td>
       <td>0.148</td>
       <td>21</td>
@@ -22500,10 +22459,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>630</th>
       <td>7</td>
-      <td>114.0</td>
-      <td>64.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>114</td>
+      <td>64</td>
+      <td>0</td>
+      <td>0</td>
       <td>27.4</td>
       <td>0.732</td>
       <td>34</td>
@@ -22512,10 +22471,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>631</th>
       <td>0</td>
-      <td>102.0</td>
-      <td>78.0</td>
-      <td>40.0</td>
-      <td>90.0</td>
+      <td>102</td>
+      <td>78</td>
+      <td>40</td>
+      <td>90</td>
       <td>34.5</td>
       <td>0.238</td>
       <td>24</td>
@@ -22524,10 +22483,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>632</th>
       <td>2</td>
-      <td>111.0</td>
-      <td>60.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>111</td>
+      <td>60</td>
+      <td>0</td>
+      <td>0</td>
       <td>26.2</td>
       <td>0.343</td>
       <td>23</td>
@@ -22536,10 +22495,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>633</th>
       <td>1</td>
-      <td>128.0</td>
-      <td>82.0</td>
-      <td>17.0</td>
-      <td>183.0</td>
+      <td>128</td>
+      <td>82</td>
+      <td>17</td>
+      <td>183</td>
       <td>27.5</td>
       <td>0.115</td>
       <td>22</td>
@@ -22548,10 +22507,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>634</th>
       <td>10</td>
-      <td>92.0</td>
-      <td>62.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>92</td>
+      <td>62</td>
+      <td>0</td>
+      <td>0</td>
       <td>25.9</td>
       <td>0.167</td>
       <td>31</td>
@@ -22560,10 +22519,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>635</th>
       <td>13</td>
-      <td>104.0</td>
-      <td>72.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>104</td>
+      <td>72</td>
+      <td>0</td>
+      <td>0</td>
       <td>31.2</td>
       <td>0.465</td>
       <td>38</td>
@@ -22572,10 +22531,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>636</th>
       <td>5</td>
-      <td>104.0</td>
-      <td>74.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>104</td>
+      <td>74</td>
+      <td>0</td>
+      <td>0</td>
       <td>28.8</td>
       <td>0.153</td>
       <td>48</td>
@@ -22584,10 +22543,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>637</th>
       <td>2</td>
-      <td>94.0</td>
-      <td>76.0</td>
-      <td>18.0</td>
-      <td>66.0</td>
+      <td>94</td>
+      <td>76</td>
+      <td>18</td>
+      <td>66</td>
       <td>31.6</td>
       <td>0.649</td>
       <td>23</td>
@@ -22596,10 +22555,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>638</th>
       <td>7</td>
-      <td>97.0</td>
-      <td>76.0</td>
-      <td>32.0</td>
-      <td>91.0</td>
+      <td>97</td>
+      <td>76</td>
+      <td>32</td>
+      <td>91</td>
       <td>40.9</td>
       <td>0.871</td>
       <td>32</td>
@@ -22608,10 +22567,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>639</th>
       <td>1</td>
-      <td>100.0</td>
-      <td>74.0</td>
-      <td>12.0</td>
-      <td>46.0</td>
+      <td>100</td>
+      <td>74</td>
+      <td>12</td>
+      <td>46</td>
       <td>19.5</td>
       <td>0.149</td>
       <td>28</td>
@@ -22620,10 +22579,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>640</th>
       <td>0</td>
-      <td>102.0</td>
-      <td>86.0</td>
-      <td>17.0</td>
-      <td>105.0</td>
+      <td>102</td>
+      <td>86</td>
+      <td>17</td>
+      <td>105</td>
       <td>29.3</td>
       <td>0.695</td>
       <td>27</td>
@@ -22632,10 +22591,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>641</th>
       <td>4</td>
-      <td>128.0</td>
-      <td>70.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>128</td>
+      <td>70</td>
+      <td>0</td>
+      <td>0</td>
       <td>34.3</td>
       <td>0.303</td>
       <td>24</td>
@@ -22644,10 +22603,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>642</th>
       <td>6</td>
-      <td>147.0</td>
-      <td>80.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>147</td>
+      <td>80</td>
+      <td>0</td>
+      <td>0</td>
       <td>29.5</td>
       <td>0.178</td>
       <td>50</td>
@@ -22656,10 +22615,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>643</th>
       <td>4</td>
-      <td>90.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>90</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>28.0</td>
       <td>0.610</td>
       <td>31</td>
@@ -22668,10 +22627,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>644</th>
       <td>3</td>
-      <td>103.0</td>
-      <td>72.0</td>
-      <td>30.0</td>
-      <td>152.0</td>
+      <td>103</td>
+      <td>72</td>
+      <td>30</td>
+      <td>152</td>
       <td>27.6</td>
       <td>0.730</td>
       <td>27</td>
@@ -22680,10 +22639,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>645</th>
       <td>2</td>
-      <td>157.0</td>
-      <td>74.0</td>
-      <td>35.0</td>
-      <td>440.0</td>
+      <td>157</td>
+      <td>74</td>
+      <td>35</td>
+      <td>440</td>
       <td>39.4</td>
       <td>0.134</td>
       <td>30</td>
@@ -22692,10 +22651,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>646</th>
       <td>1</td>
-      <td>167.0</td>
-      <td>74.0</td>
-      <td>17.0</td>
-      <td>144.0</td>
+      <td>167</td>
+      <td>74</td>
+      <td>17</td>
+      <td>144</td>
       <td>23.4</td>
       <td>0.447</td>
       <td>33</td>
@@ -22704,10 +22663,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>647</th>
       <td>0</td>
-      <td>179.0</td>
-      <td>50.0</td>
-      <td>36.0</td>
-      <td>159.0</td>
+      <td>179</td>
+      <td>50</td>
+      <td>36</td>
+      <td>159</td>
       <td>37.8</td>
       <td>0.455</td>
       <td>22</td>
@@ -22716,10 +22675,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>648</th>
       <td>11</td>
-      <td>136.0</td>
-      <td>84.0</td>
-      <td>35.0</td>
-      <td>130.0</td>
+      <td>136</td>
+      <td>84</td>
+      <td>35</td>
+      <td>130</td>
       <td>28.3</td>
       <td>0.260</td>
       <td>42</td>
@@ -22728,10 +22687,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>649</th>
       <td>0</td>
-      <td>107.0</td>
-      <td>60.0</td>
-      <td>25.0</td>
-      <td>NaN</td>
+      <td>107</td>
+      <td>60</td>
+      <td>25</td>
+      <td>0</td>
       <td>26.4</td>
       <td>0.133</td>
       <td>23</td>
@@ -22740,10 +22699,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>650</th>
       <td>1</td>
-      <td>91.0</td>
-      <td>54.0</td>
-      <td>25.0</td>
-      <td>100.0</td>
+      <td>91</td>
+      <td>54</td>
+      <td>25</td>
+      <td>100</td>
       <td>25.2</td>
       <td>0.234</td>
       <td>23</td>
@@ -22752,10 +22711,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>651</th>
       <td>1</td>
-      <td>117.0</td>
-      <td>60.0</td>
-      <td>23.0</td>
-      <td>106.0</td>
+      <td>117</td>
+      <td>60</td>
+      <td>23</td>
+      <td>106</td>
       <td>33.8</td>
       <td>0.466</td>
       <td>27</td>
@@ -22764,10 +22723,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>652</th>
       <td>5</td>
-      <td>123.0</td>
-      <td>74.0</td>
-      <td>40.0</td>
-      <td>77.0</td>
+      <td>123</td>
+      <td>74</td>
+      <td>40</td>
+      <td>77</td>
       <td>34.1</td>
       <td>0.269</td>
       <td>28</td>
@@ -22776,10 +22735,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>653</th>
       <td>2</td>
-      <td>120.0</td>
-      <td>54.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>120</td>
+      <td>54</td>
+      <td>0</td>
+      <td>0</td>
       <td>26.8</td>
       <td>0.455</td>
       <td>27</td>
@@ -22788,10 +22747,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>654</th>
       <td>1</td>
-      <td>106.0</td>
-      <td>70.0</td>
-      <td>28.0</td>
-      <td>135.0</td>
+      <td>106</td>
+      <td>70</td>
+      <td>28</td>
+      <td>135</td>
       <td>34.2</td>
       <td>0.142</td>
       <td>22</td>
@@ -22800,10 +22759,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>655</th>
       <td>2</td>
-      <td>155.0</td>
-      <td>52.0</td>
-      <td>27.0</td>
-      <td>540.0</td>
+      <td>155</td>
+      <td>52</td>
+      <td>27</td>
+      <td>540</td>
       <td>38.7</td>
       <td>0.240</td>
       <td>25</td>
@@ -22812,10 +22771,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>656</th>
       <td>2</td>
-      <td>101.0</td>
-      <td>58.0</td>
-      <td>35.0</td>
-      <td>90.0</td>
+      <td>101</td>
+      <td>58</td>
+      <td>35</td>
+      <td>90</td>
       <td>21.8</td>
       <td>0.155</td>
       <td>22</td>
@@ -22824,10 +22783,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>657</th>
       <td>1</td>
-      <td>120.0</td>
-      <td>80.0</td>
-      <td>48.0</td>
-      <td>200.0</td>
+      <td>120</td>
+      <td>80</td>
+      <td>48</td>
+      <td>200</td>
       <td>38.9</td>
       <td>1.162</td>
       <td>41</td>
@@ -22836,10 +22795,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>658</th>
       <td>11</td>
-      <td>127.0</td>
-      <td>106.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>127</td>
+      <td>106</td>
+      <td>0</td>
+      <td>0</td>
       <td>39.0</td>
       <td>0.190</td>
       <td>51</td>
@@ -22848,10 +22807,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>659</th>
       <td>3</td>
-      <td>80.0</td>
-      <td>82.0</td>
-      <td>31.0</td>
-      <td>70.0</td>
+      <td>80</td>
+      <td>82</td>
+      <td>31</td>
+      <td>70</td>
       <td>34.2</td>
       <td>1.292</td>
       <td>27</td>
@@ -22860,10 +22819,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>660</th>
       <td>10</td>
-      <td>162.0</td>
-      <td>84.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>162</td>
+      <td>84</td>
+      <td>0</td>
+      <td>0</td>
       <td>27.7</td>
       <td>0.182</td>
       <td>54</td>
@@ -22872,10 +22831,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>661</th>
       <td>1</td>
-      <td>199.0</td>
-      <td>76.0</td>
-      <td>43.0</td>
-      <td>NaN</td>
+      <td>199</td>
+      <td>76</td>
+      <td>43</td>
+      <td>0</td>
       <td>42.9</td>
       <td>1.394</td>
       <td>22</td>
@@ -22884,10 +22843,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>662</th>
       <td>8</td>
-      <td>167.0</td>
-      <td>106.0</td>
-      <td>46.0</td>
-      <td>231.0</td>
+      <td>167</td>
+      <td>106</td>
+      <td>46</td>
+      <td>231</td>
       <td>37.6</td>
       <td>0.165</td>
       <td>43</td>
@@ -22896,10 +22855,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>663</th>
       <td>9</td>
-      <td>145.0</td>
-      <td>80.0</td>
-      <td>46.0</td>
-      <td>130.0</td>
+      <td>145</td>
+      <td>80</td>
+      <td>46</td>
+      <td>130</td>
       <td>37.9</td>
       <td>0.637</td>
       <td>40</td>
@@ -22908,10 +22867,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>664</th>
       <td>6</td>
-      <td>115.0</td>
-      <td>60.0</td>
-      <td>39.0</td>
-      <td>NaN</td>
+      <td>115</td>
+      <td>60</td>
+      <td>39</td>
+      <td>0</td>
       <td>33.7</td>
       <td>0.245</td>
       <td>40</td>
@@ -22920,10 +22879,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>665</th>
       <td>1</td>
-      <td>112.0</td>
-      <td>80.0</td>
-      <td>45.0</td>
-      <td>132.0</td>
+      <td>112</td>
+      <td>80</td>
+      <td>45</td>
+      <td>132</td>
       <td>34.8</td>
       <td>0.217</td>
       <td>24</td>
@@ -22932,10 +22891,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>666</th>
       <td>4</td>
-      <td>145.0</td>
-      <td>82.0</td>
-      <td>18.0</td>
-      <td>NaN</td>
+      <td>145</td>
+      <td>82</td>
+      <td>18</td>
+      <td>0</td>
       <td>32.5</td>
       <td>0.235</td>
       <td>70</td>
@@ -22944,10 +22903,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>667</th>
       <td>10</td>
-      <td>111.0</td>
-      <td>70.0</td>
-      <td>27.0</td>
-      <td>NaN</td>
+      <td>111</td>
+      <td>70</td>
+      <td>27</td>
+      <td>0</td>
       <td>27.5</td>
       <td>0.141</td>
       <td>40</td>
@@ -22956,10 +22915,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>668</th>
       <td>6</td>
-      <td>98.0</td>
-      <td>58.0</td>
-      <td>33.0</td>
-      <td>190.0</td>
+      <td>98</td>
+      <td>58</td>
+      <td>33</td>
+      <td>190</td>
       <td>34.0</td>
       <td>0.430</td>
       <td>43</td>
@@ -22968,10 +22927,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>669</th>
       <td>9</td>
-      <td>154.0</td>
-      <td>78.0</td>
-      <td>30.0</td>
-      <td>100.0</td>
+      <td>154</td>
+      <td>78</td>
+      <td>30</td>
+      <td>100</td>
       <td>30.9</td>
       <td>0.164</td>
       <td>45</td>
@@ -22980,10 +22939,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>670</th>
       <td>6</td>
-      <td>165.0</td>
-      <td>68.0</td>
-      <td>26.0</td>
-      <td>168.0</td>
+      <td>165</td>
+      <td>68</td>
+      <td>26</td>
+      <td>168</td>
       <td>33.6</td>
       <td>0.631</td>
       <td>49</td>
@@ -22992,10 +22951,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>671</th>
       <td>1</td>
-      <td>99.0</td>
-      <td>58.0</td>
-      <td>10.0</td>
-      <td>NaN</td>
+      <td>99</td>
+      <td>58</td>
+      <td>10</td>
+      <td>0</td>
       <td>25.4</td>
       <td>0.551</td>
       <td>21</td>
@@ -23004,10 +22963,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>672</th>
       <td>10</td>
-      <td>68.0</td>
-      <td>106.0</td>
-      <td>23.0</td>
-      <td>49.0</td>
+      <td>68</td>
+      <td>106</td>
+      <td>23</td>
+      <td>49</td>
       <td>35.5</td>
       <td>0.285</td>
       <td>47</td>
@@ -23016,10 +22975,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>673</th>
       <td>3</td>
-      <td>123.0</td>
-      <td>100.0</td>
-      <td>35.0</td>
-      <td>240.0</td>
+      <td>123</td>
+      <td>100</td>
+      <td>35</td>
+      <td>240</td>
       <td>57.3</td>
       <td>0.880</td>
       <td>22</td>
@@ -23028,10 +22987,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>674</th>
       <td>8</td>
-      <td>91.0</td>
-      <td>82.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>91</td>
+      <td>82</td>
+      <td>0</td>
+      <td>0</td>
       <td>35.6</td>
       <td>0.587</td>
       <td>68</td>
@@ -23040,10 +22999,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>675</th>
       <td>6</td>
-      <td>195.0</td>
-      <td>70.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>195</td>
+      <td>70</td>
+      <td>0</td>
+      <td>0</td>
       <td>30.9</td>
       <td>0.328</td>
       <td>31</td>
@@ -23052,10 +23011,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>676</th>
       <td>9</td>
-      <td>156.0</td>
-      <td>86.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>156</td>
+      <td>86</td>
+      <td>0</td>
+      <td>0</td>
       <td>24.8</td>
       <td>0.230</td>
       <td>53</td>
@@ -23064,10 +23023,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>677</th>
       <td>0</td>
-      <td>93.0</td>
-      <td>60.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>93</td>
+      <td>60</td>
+      <td>0</td>
+      <td>0</td>
       <td>35.3</td>
       <td>0.263</td>
       <td>25</td>
@@ -23076,10 +23035,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>678</th>
       <td>3</td>
-      <td>121.0</td>
-      <td>52.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>121</td>
+      <td>52</td>
+      <td>0</td>
+      <td>0</td>
       <td>36.0</td>
       <td>0.127</td>
       <td>25</td>
@@ -23088,10 +23047,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>679</th>
       <td>2</td>
-      <td>101.0</td>
-      <td>58.0</td>
-      <td>17.0</td>
-      <td>265.0</td>
+      <td>101</td>
+      <td>58</td>
+      <td>17</td>
+      <td>265</td>
       <td>24.2</td>
       <td>0.614</td>
       <td>23</td>
@@ -23100,10 +23059,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>680</th>
       <td>2</td>
-      <td>56.0</td>
-      <td>56.0</td>
-      <td>28.0</td>
-      <td>45.0</td>
+      <td>56</td>
+      <td>56</td>
+      <td>28</td>
+      <td>45</td>
       <td>24.2</td>
       <td>0.332</td>
       <td>22</td>
@@ -23112,10 +23071,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>681</th>
       <td>0</td>
-      <td>162.0</td>
-      <td>76.0</td>
-      <td>36.0</td>
-      <td>NaN</td>
+      <td>162</td>
+      <td>76</td>
+      <td>36</td>
+      <td>0</td>
       <td>49.6</td>
       <td>0.364</td>
       <td>26</td>
@@ -23124,10 +23083,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>682</th>
       <td>0</td>
-      <td>95.0</td>
-      <td>64.0</td>
-      <td>39.0</td>
-      <td>105.0</td>
+      <td>95</td>
+      <td>64</td>
+      <td>39</td>
+      <td>105</td>
       <td>44.6</td>
       <td>0.366</td>
       <td>22</td>
@@ -23136,10 +23095,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>683</th>
       <td>4</td>
-      <td>125.0</td>
-      <td>80.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>125</td>
+      <td>80</td>
+      <td>0</td>
+      <td>0</td>
       <td>32.3</td>
       <td>0.536</td>
       <td>27</td>
@@ -23148,11 +23107,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>684</th>
       <td>5</td>
-      <td>136.0</td>
-      <td>82.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>136</td>
+      <td>82</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
       <td>0.640</td>
       <td>69</td>
       <td>0</td>
@@ -23160,10 +23119,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>685</th>
       <td>2</td>
-      <td>129.0</td>
-      <td>74.0</td>
-      <td>26.0</td>
-      <td>205.0</td>
+      <td>129</td>
+      <td>74</td>
+      <td>26</td>
+      <td>205</td>
       <td>33.2</td>
       <td>0.591</td>
       <td>25</td>
@@ -23172,10 +23131,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>686</th>
       <td>3</td>
-      <td>130.0</td>
-      <td>64.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>130</td>
+      <td>64</td>
+      <td>0</td>
+      <td>0</td>
       <td>23.1</td>
       <td>0.314</td>
       <td>22</td>
@@ -23184,10 +23143,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>687</th>
       <td>1</td>
-      <td>107.0</td>
-      <td>50.0</td>
-      <td>19.0</td>
-      <td>NaN</td>
+      <td>107</td>
+      <td>50</td>
+      <td>19</td>
+      <td>0</td>
       <td>28.3</td>
       <td>0.181</td>
       <td>29</td>
@@ -23196,10 +23155,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>688</th>
       <td>1</td>
-      <td>140.0</td>
-      <td>74.0</td>
-      <td>26.0</td>
-      <td>180.0</td>
+      <td>140</td>
+      <td>74</td>
+      <td>26</td>
+      <td>180</td>
       <td>24.1</td>
       <td>0.828</td>
       <td>23</td>
@@ -23208,10 +23167,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>689</th>
       <td>1</td>
-      <td>144.0</td>
-      <td>82.0</td>
-      <td>46.0</td>
-      <td>180.0</td>
+      <td>144</td>
+      <td>82</td>
+      <td>46</td>
+      <td>180</td>
       <td>46.1</td>
       <td>0.335</td>
       <td>46</td>
@@ -23220,10 +23179,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>690</th>
       <td>8</td>
-      <td>107.0</td>
-      <td>80.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>107</td>
+      <td>80</td>
+      <td>0</td>
+      <td>0</td>
       <td>24.6</td>
       <td>0.856</td>
       <td>34</td>
@@ -23232,10 +23191,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>691</th>
       <td>13</td>
-      <td>158.0</td>
-      <td>114.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>158</td>
+      <td>114</td>
+      <td>0</td>
+      <td>0</td>
       <td>42.3</td>
       <td>0.257</td>
       <td>44</td>
@@ -23244,10 +23203,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>692</th>
       <td>2</td>
-      <td>121.0</td>
-      <td>70.0</td>
-      <td>32.0</td>
-      <td>95.0</td>
+      <td>121</td>
+      <td>70</td>
+      <td>32</td>
+      <td>95</td>
       <td>39.1</td>
       <td>0.886</td>
       <td>23</td>
@@ -23256,10 +23215,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>693</th>
       <td>7</td>
-      <td>129.0</td>
-      <td>68.0</td>
-      <td>49.0</td>
-      <td>125.0</td>
+      <td>129</td>
+      <td>68</td>
+      <td>49</td>
+      <td>125</td>
       <td>38.5</td>
       <td>0.439</td>
       <td>43</td>
@@ -23268,10 +23227,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>694</th>
       <td>2</td>
-      <td>90.0</td>
-      <td>60.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>90</td>
+      <td>60</td>
+      <td>0</td>
+      <td>0</td>
       <td>23.5</td>
       <td>0.191</td>
       <td>25</td>
@@ -23280,10 +23239,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>695</th>
       <td>7</td>
-      <td>142.0</td>
-      <td>90.0</td>
-      <td>24.0</td>
-      <td>480.0</td>
+      <td>142</td>
+      <td>90</td>
+      <td>24</td>
+      <td>480</td>
       <td>30.4</td>
       <td>0.128</td>
       <td>43</td>
@@ -23292,10 +23251,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>696</th>
       <td>3</td>
-      <td>169.0</td>
-      <td>74.0</td>
-      <td>19.0</td>
-      <td>125.0</td>
+      <td>169</td>
+      <td>74</td>
+      <td>19</td>
+      <td>125</td>
       <td>29.9</td>
       <td>0.268</td>
       <td>31</td>
@@ -23304,10 +23263,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>697</th>
       <td>0</td>
-      <td>99.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>99</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>25.0</td>
       <td>0.253</td>
       <td>22</td>
@@ -23316,10 +23275,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>698</th>
       <td>4</td>
-      <td>127.0</td>
-      <td>88.0</td>
-      <td>11.0</td>
-      <td>155.0</td>
+      <td>127</td>
+      <td>88</td>
+      <td>11</td>
+      <td>155</td>
       <td>34.5</td>
       <td>0.598</td>
       <td>28</td>
@@ -23328,10 +23287,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>699</th>
       <td>4</td>
-      <td>118.0</td>
-      <td>70.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>118</td>
+      <td>70</td>
+      <td>0</td>
+      <td>0</td>
       <td>44.5</td>
       <td>0.904</td>
       <td>26</td>
@@ -23340,10 +23299,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>700</th>
       <td>2</td>
-      <td>122.0</td>
-      <td>76.0</td>
-      <td>27.0</td>
-      <td>200.0</td>
+      <td>122</td>
+      <td>76</td>
+      <td>27</td>
+      <td>200</td>
       <td>35.9</td>
       <td>0.483</td>
       <td>26</td>
@@ -23352,10 +23311,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>701</th>
       <td>6</td>
-      <td>125.0</td>
-      <td>78.0</td>
-      <td>31.0</td>
-      <td>NaN</td>
+      <td>125</td>
+      <td>78</td>
+      <td>31</td>
+      <td>0</td>
       <td>27.6</td>
       <td>0.565</td>
       <td>49</td>
@@ -23364,10 +23323,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>702</th>
       <td>1</td>
-      <td>168.0</td>
-      <td>88.0</td>
-      <td>29.0</td>
-      <td>NaN</td>
+      <td>168</td>
+      <td>88</td>
+      <td>29</td>
+      <td>0</td>
       <td>35.0</td>
       <td>0.905</td>
       <td>52</td>
@@ -23376,10 +23335,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>703</th>
       <td>2</td>
-      <td>129.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>129</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>38.5</td>
       <td>0.304</td>
       <td>41</td>
@@ -23388,10 +23347,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>704</th>
       <td>4</td>
-      <td>110.0</td>
-      <td>76.0</td>
-      <td>20.0</td>
-      <td>100.0</td>
+      <td>110</td>
+      <td>76</td>
+      <td>20</td>
+      <td>100</td>
       <td>28.4</td>
       <td>0.118</td>
       <td>27</td>
@@ -23400,10 +23359,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>705</th>
       <td>6</td>
-      <td>80.0</td>
-      <td>80.0</td>
-      <td>36.0</td>
-      <td>NaN</td>
+      <td>80</td>
+      <td>80</td>
+      <td>36</td>
+      <td>0</td>
       <td>39.8</td>
       <td>0.177</td>
       <td>28</td>
@@ -23412,11 +23371,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>706</th>
       <td>10</td>
-      <td>115.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>115</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
       <td>0.261</td>
       <td>30</td>
       <td>1</td>
@@ -23424,10 +23383,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>707</th>
       <td>2</td>
-      <td>127.0</td>
-      <td>46.0</td>
-      <td>21.0</td>
-      <td>335.0</td>
+      <td>127</td>
+      <td>46</td>
+      <td>21</td>
+      <td>335</td>
       <td>34.4</td>
       <td>0.176</td>
       <td>22</td>
@@ -23436,10 +23395,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>708</th>
       <td>9</td>
-      <td>164.0</td>
-      <td>78.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>164</td>
+      <td>78</td>
+      <td>0</td>
+      <td>0</td>
       <td>32.8</td>
       <td>0.148</td>
       <td>45</td>
@@ -23448,10 +23407,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>709</th>
       <td>2</td>
-      <td>93.0</td>
-      <td>64.0</td>
-      <td>32.0</td>
-      <td>160.0</td>
+      <td>93</td>
+      <td>64</td>
+      <td>32</td>
+      <td>160</td>
       <td>38.0</td>
       <td>0.674</td>
       <td>23</td>
@@ -23460,10 +23419,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>710</th>
       <td>3</td>
-      <td>158.0</td>
-      <td>64.0</td>
-      <td>13.0</td>
-      <td>387.0</td>
+      <td>158</td>
+      <td>64</td>
+      <td>13</td>
+      <td>387</td>
       <td>31.2</td>
       <td>0.295</td>
       <td>24</td>
@@ -23472,10 +23431,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>711</th>
       <td>5</td>
-      <td>126.0</td>
-      <td>78.0</td>
-      <td>27.0</td>
-      <td>22.0</td>
+      <td>126</td>
+      <td>78</td>
+      <td>27</td>
+      <td>22</td>
       <td>29.6</td>
       <td>0.439</td>
       <td>40</td>
@@ -23484,10 +23443,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>712</th>
       <td>10</td>
-      <td>129.0</td>
-      <td>62.0</td>
-      <td>36.0</td>
-      <td>NaN</td>
+      <td>129</td>
+      <td>62</td>
+      <td>36</td>
+      <td>0</td>
       <td>41.2</td>
       <td>0.441</td>
       <td>38</td>
@@ -23496,10 +23455,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>713</th>
       <td>0</td>
-      <td>134.0</td>
-      <td>58.0</td>
-      <td>20.0</td>
-      <td>291.0</td>
+      <td>134</td>
+      <td>58</td>
+      <td>20</td>
+      <td>291</td>
       <td>26.4</td>
       <td>0.352</td>
       <td>21</td>
@@ -23508,10 +23467,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>714</th>
       <td>3</td>
-      <td>102.0</td>
-      <td>74.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>102</td>
+      <td>74</td>
+      <td>0</td>
+      <td>0</td>
       <td>29.5</td>
       <td>0.121</td>
       <td>32</td>
@@ -23520,10 +23479,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>715</th>
       <td>7</td>
-      <td>187.0</td>
-      <td>50.0</td>
-      <td>33.0</td>
-      <td>392.0</td>
+      <td>187</td>
+      <td>50</td>
+      <td>33</td>
+      <td>392</td>
       <td>33.9</td>
       <td>0.826</td>
       <td>34</td>
@@ -23532,10 +23491,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>716</th>
       <td>3</td>
-      <td>173.0</td>
-      <td>78.0</td>
-      <td>39.0</td>
-      <td>185.0</td>
+      <td>173</td>
+      <td>78</td>
+      <td>39</td>
+      <td>185</td>
       <td>33.8</td>
       <td>0.970</td>
       <td>31</td>
@@ -23544,10 +23503,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>717</th>
       <td>10</td>
-      <td>94.0</td>
-      <td>72.0</td>
-      <td>18.0</td>
-      <td>NaN</td>
+      <td>94</td>
+      <td>72</td>
+      <td>18</td>
+      <td>0</td>
       <td>23.1</td>
       <td>0.595</td>
       <td>56</td>
@@ -23556,10 +23515,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>718</th>
       <td>1</td>
-      <td>108.0</td>
-      <td>60.0</td>
-      <td>46.0</td>
-      <td>178.0</td>
+      <td>108</td>
+      <td>60</td>
+      <td>46</td>
+      <td>178</td>
       <td>35.5</td>
       <td>0.415</td>
       <td>24</td>
@@ -23568,10 +23527,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>719</th>
       <td>5</td>
-      <td>97.0</td>
-      <td>76.0</td>
-      <td>27.0</td>
-      <td>NaN</td>
+      <td>97</td>
+      <td>76</td>
+      <td>27</td>
+      <td>0</td>
       <td>35.6</td>
       <td>0.378</td>
       <td>52</td>
@@ -23580,10 +23539,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>720</th>
       <td>4</td>
-      <td>83.0</td>
-      <td>86.0</td>
-      <td>19.0</td>
-      <td>NaN</td>
+      <td>83</td>
+      <td>86</td>
+      <td>19</td>
+      <td>0</td>
       <td>29.3</td>
       <td>0.317</td>
       <td>34</td>
@@ -23592,10 +23551,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>721</th>
       <td>1</td>
-      <td>114.0</td>
-      <td>66.0</td>
-      <td>36.0</td>
-      <td>200.0</td>
+      <td>114</td>
+      <td>66</td>
+      <td>36</td>
+      <td>200</td>
       <td>38.1</td>
       <td>0.289</td>
       <td>21</td>
@@ -23604,10 +23563,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>722</th>
       <td>1</td>
-      <td>149.0</td>
-      <td>68.0</td>
-      <td>29.0</td>
-      <td>127.0</td>
+      <td>149</td>
+      <td>68</td>
+      <td>29</td>
+      <td>127</td>
       <td>29.3</td>
       <td>0.349</td>
       <td>42</td>
@@ -23616,10 +23575,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>723</th>
       <td>5</td>
-      <td>117.0</td>
-      <td>86.0</td>
-      <td>30.0</td>
-      <td>105.0</td>
+      <td>117</td>
+      <td>86</td>
+      <td>30</td>
+      <td>105</td>
       <td>39.1</td>
       <td>0.251</td>
       <td>42</td>
@@ -23628,10 +23587,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>724</th>
       <td>1</td>
-      <td>111.0</td>
-      <td>94.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>111</td>
+      <td>94</td>
+      <td>0</td>
+      <td>0</td>
       <td>32.8</td>
       <td>0.265</td>
       <td>45</td>
@@ -23640,10 +23599,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>725</th>
       <td>4</td>
-      <td>112.0</td>
-      <td>78.0</td>
-      <td>40.0</td>
-      <td>NaN</td>
+      <td>112</td>
+      <td>78</td>
+      <td>40</td>
+      <td>0</td>
       <td>39.4</td>
       <td>0.236</td>
       <td>38</td>
@@ -23652,10 +23611,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>726</th>
       <td>1</td>
-      <td>116.0</td>
-      <td>78.0</td>
-      <td>29.0</td>
-      <td>180.0</td>
+      <td>116</td>
+      <td>78</td>
+      <td>29</td>
+      <td>180</td>
       <td>36.1</td>
       <td>0.496</td>
       <td>25</td>
@@ -23664,10 +23623,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>727</th>
       <td>0</td>
-      <td>141.0</td>
-      <td>84.0</td>
-      <td>26.0</td>
-      <td>NaN</td>
+      <td>141</td>
+      <td>84</td>
+      <td>26</td>
+      <td>0</td>
       <td>32.4</td>
       <td>0.433</td>
       <td>22</td>
@@ -23676,10 +23635,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>728</th>
       <td>2</td>
-      <td>175.0</td>
-      <td>88.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>175</td>
+      <td>88</td>
+      <td>0</td>
+      <td>0</td>
       <td>22.9</td>
       <td>0.326</td>
       <td>22</td>
@@ -23688,10 +23647,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>729</th>
       <td>2</td>
-      <td>92.0</td>
-      <td>52.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>92</td>
+      <td>52</td>
+      <td>0</td>
+      <td>0</td>
       <td>30.1</td>
       <td>0.141</td>
       <td>22</td>
@@ -23700,10 +23659,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>730</th>
       <td>3</td>
-      <td>130.0</td>
-      <td>78.0</td>
-      <td>23.0</td>
-      <td>79.0</td>
+      <td>130</td>
+      <td>78</td>
+      <td>23</td>
+      <td>79</td>
       <td>28.4</td>
       <td>0.323</td>
       <td>34</td>
@@ -23712,10 +23671,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>731</th>
       <td>8</td>
-      <td>120.0</td>
-      <td>86.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>120</td>
+      <td>86</td>
+      <td>0</td>
+      <td>0</td>
       <td>28.4</td>
       <td>0.259</td>
       <td>22</td>
@@ -23724,10 +23683,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>732</th>
       <td>2</td>
-      <td>174.0</td>
-      <td>88.0</td>
-      <td>37.0</td>
-      <td>120.0</td>
+      <td>174</td>
+      <td>88</td>
+      <td>37</td>
+      <td>120</td>
       <td>44.5</td>
       <td>0.646</td>
       <td>24</td>
@@ -23736,10 +23695,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>733</th>
       <td>2</td>
-      <td>106.0</td>
-      <td>56.0</td>
-      <td>27.0</td>
-      <td>165.0</td>
+      <td>106</td>
+      <td>56</td>
+      <td>27</td>
+      <td>165</td>
       <td>29.0</td>
       <td>0.426</td>
       <td>22</td>
@@ -23748,10 +23707,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>734</th>
       <td>2</td>
-      <td>105.0</td>
-      <td>75.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>105</td>
+      <td>75</td>
+      <td>0</td>
+      <td>0</td>
       <td>23.3</td>
       <td>0.560</td>
       <td>53</td>
@@ -23760,10 +23719,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>735</th>
       <td>4</td>
-      <td>95.0</td>
-      <td>60.0</td>
-      <td>32.0</td>
-      <td>NaN</td>
+      <td>95</td>
+      <td>60</td>
+      <td>32</td>
+      <td>0</td>
       <td>35.4</td>
       <td>0.284</td>
       <td>28</td>
@@ -23772,10 +23731,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>736</th>
       <td>0</td>
-      <td>126.0</td>
-      <td>86.0</td>
-      <td>27.0</td>
-      <td>120.0</td>
+      <td>126</td>
+      <td>86</td>
+      <td>27</td>
+      <td>120</td>
       <td>27.4</td>
       <td>0.515</td>
       <td>21</td>
@@ -23784,10 +23743,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>737</th>
       <td>8</td>
-      <td>65.0</td>
-      <td>72.0</td>
-      <td>23.0</td>
-      <td>NaN</td>
+      <td>65</td>
+      <td>72</td>
+      <td>23</td>
+      <td>0</td>
       <td>32.0</td>
       <td>0.600</td>
       <td>42</td>
@@ -23796,10 +23755,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>738</th>
       <td>2</td>
-      <td>99.0</td>
-      <td>60.0</td>
-      <td>17.0</td>
-      <td>160.0</td>
+      <td>99</td>
+      <td>60</td>
+      <td>17</td>
+      <td>160</td>
       <td>36.6</td>
       <td>0.453</td>
       <td>21</td>
@@ -23808,10 +23767,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>739</th>
       <td>1</td>
-      <td>102.0</td>
-      <td>74.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>102</td>
+      <td>74</td>
+      <td>0</td>
+      <td>0</td>
       <td>39.5</td>
       <td>0.293</td>
       <td>42</td>
@@ -23820,10 +23779,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>740</th>
       <td>11</td>
-      <td>120.0</td>
-      <td>80.0</td>
-      <td>37.0</td>
-      <td>150.0</td>
+      <td>120</td>
+      <td>80</td>
+      <td>37</td>
+      <td>150</td>
       <td>42.3</td>
       <td>0.785</td>
       <td>48</td>
@@ -23832,10 +23791,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>741</th>
       <td>3</td>
-      <td>102.0</td>
-      <td>44.0</td>
-      <td>20.0</td>
-      <td>94.0</td>
+      <td>102</td>
+      <td>44</td>
+      <td>20</td>
+      <td>94</td>
       <td>30.8</td>
       <td>0.400</td>
       <td>26</td>
@@ -23844,10 +23803,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>742</th>
       <td>1</td>
-      <td>109.0</td>
-      <td>58.0</td>
-      <td>18.0</td>
-      <td>116.0</td>
+      <td>109</td>
+      <td>58</td>
+      <td>18</td>
+      <td>116</td>
       <td>28.5</td>
       <td>0.219</td>
       <td>22</td>
@@ -23856,10 +23815,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>743</th>
       <td>9</td>
-      <td>140.0</td>
-      <td>94.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>140</td>
+      <td>94</td>
+      <td>0</td>
+      <td>0</td>
       <td>32.7</td>
       <td>0.734</td>
       <td>45</td>
@@ -23868,10 +23827,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>744</th>
       <td>13</td>
-      <td>153.0</td>
-      <td>88.0</td>
-      <td>37.0</td>
-      <td>140.0</td>
+      <td>153</td>
+      <td>88</td>
+      <td>37</td>
+      <td>140</td>
       <td>40.6</td>
       <td>1.174</td>
       <td>39</td>
@@ -23880,10 +23839,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>745</th>
       <td>12</td>
-      <td>100.0</td>
-      <td>84.0</td>
-      <td>33.0</td>
-      <td>105.0</td>
+      <td>100</td>
+      <td>84</td>
+      <td>33</td>
+      <td>105</td>
       <td>30.0</td>
       <td>0.488</td>
       <td>46</td>
@@ -23892,10 +23851,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>746</th>
       <td>1</td>
-      <td>147.0</td>
-      <td>94.0</td>
-      <td>41.0</td>
-      <td>NaN</td>
+      <td>147</td>
+      <td>94</td>
+      <td>41</td>
+      <td>0</td>
       <td>49.3</td>
       <td>0.358</td>
       <td>27</td>
@@ -23904,10 +23863,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>747</th>
       <td>1</td>
-      <td>81.0</td>
-      <td>74.0</td>
-      <td>41.0</td>
-      <td>57.0</td>
+      <td>81</td>
+      <td>74</td>
+      <td>41</td>
+      <td>57</td>
       <td>46.3</td>
       <td>1.096</td>
       <td>32</td>
@@ -23916,10 +23875,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>748</th>
       <td>3</td>
-      <td>187.0</td>
-      <td>70.0</td>
-      <td>22.0</td>
-      <td>200.0</td>
+      <td>187</td>
+      <td>70</td>
+      <td>22</td>
+      <td>200</td>
       <td>36.4</td>
       <td>0.408</td>
       <td>36</td>
@@ -23928,10 +23887,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>749</th>
       <td>6</td>
-      <td>162.0</td>
-      <td>62.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>162</td>
+      <td>62</td>
+      <td>0</td>
+      <td>0</td>
       <td>24.3</td>
       <td>0.178</td>
       <td>50</td>
@@ -23940,10 +23899,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>750</th>
       <td>4</td>
-      <td>136.0</td>
-      <td>70.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>136</td>
+      <td>70</td>
+      <td>0</td>
+      <td>0</td>
       <td>31.2</td>
       <td>1.182</td>
       <td>22</td>
@@ -23952,10 +23911,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>751</th>
       <td>1</td>
-      <td>121.0</td>
-      <td>78.0</td>
-      <td>39.0</td>
-      <td>74.0</td>
+      <td>121</td>
+      <td>78</td>
+      <td>39</td>
+      <td>74</td>
       <td>39.0</td>
       <td>0.261</td>
       <td>28</td>
@@ -23964,10 +23923,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>752</th>
       <td>3</td>
-      <td>108.0</td>
-      <td>62.0</td>
-      <td>24.0</td>
-      <td>NaN</td>
+      <td>108</td>
+      <td>62</td>
+      <td>24</td>
+      <td>0</td>
       <td>26.0</td>
       <td>0.223</td>
       <td>25</td>
@@ -23976,10 +23935,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>753</th>
       <td>0</td>
-      <td>181.0</td>
-      <td>88.0</td>
-      <td>44.0</td>
-      <td>510.0</td>
+      <td>181</td>
+      <td>88</td>
+      <td>44</td>
+      <td>510</td>
       <td>43.3</td>
       <td>0.222</td>
       <td>26</td>
@@ -23988,10 +23947,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>754</th>
       <td>8</td>
-      <td>154.0</td>
-      <td>78.0</td>
-      <td>32.0</td>
-      <td>NaN</td>
+      <td>154</td>
+      <td>78</td>
+      <td>32</td>
+      <td>0</td>
       <td>32.4</td>
       <td>0.443</td>
       <td>45</td>
@@ -24000,10 +23959,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>755</th>
       <td>1</td>
-      <td>128.0</td>
-      <td>88.0</td>
-      <td>39.0</td>
-      <td>110.0</td>
+      <td>128</td>
+      <td>88</td>
+      <td>39</td>
+      <td>110</td>
       <td>36.5</td>
       <td>1.057</td>
       <td>37</td>
@@ -24012,10 +23971,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>756</th>
       <td>7</td>
-      <td>137.0</td>
-      <td>90.0</td>
-      <td>41.0</td>
-      <td>NaN</td>
+      <td>137</td>
+      <td>90</td>
+      <td>41</td>
+      <td>0</td>
       <td>32.0</td>
       <td>0.391</td>
       <td>39</td>
@@ -24024,10 +23983,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>757</th>
       <td>0</td>
-      <td>123.0</td>
-      <td>72.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>123</td>
+      <td>72</td>
+      <td>0</td>
+      <td>0</td>
       <td>36.3</td>
       <td>0.258</td>
       <td>52</td>
@@ -24036,10 +23995,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>758</th>
       <td>1</td>
-      <td>106.0</td>
-      <td>76.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>106</td>
+      <td>76</td>
+      <td>0</td>
+      <td>0</td>
       <td>37.5</td>
       <td>0.197</td>
       <td>26</td>
@@ -24048,10 +24007,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>759</th>
       <td>6</td>
-      <td>190.0</td>
-      <td>92.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>190</td>
+      <td>92</td>
+      <td>0</td>
+      <td>0</td>
       <td>35.5</td>
       <td>0.278</td>
       <td>66</td>
@@ -24060,10 +24019,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>760</th>
       <td>2</td>
-      <td>88.0</td>
-      <td>58.0</td>
-      <td>26.0</td>
-      <td>16.0</td>
+      <td>88</td>
+      <td>58</td>
+      <td>26</td>
+      <td>16</td>
       <td>28.4</td>
       <td>0.766</td>
       <td>22</td>
@@ -24072,10 +24031,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>761</th>
       <td>9</td>
-      <td>170.0</td>
-      <td>74.0</td>
-      <td>31.0</td>
-      <td>NaN</td>
+      <td>170</td>
+      <td>74</td>
+      <td>31</td>
+      <td>0</td>
       <td>44.0</td>
       <td>0.403</td>
       <td>43</td>
@@ -24084,10 +24043,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>762</th>
       <td>9</td>
-      <td>89.0</td>
-      <td>62.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>89</td>
+      <td>62</td>
+      <td>0</td>
+      <td>0</td>
       <td>22.5</td>
       <td>0.142</td>
       <td>33</td>
@@ -24096,10 +24055,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>763</th>
       <td>10</td>
-      <td>101.0</td>
-      <td>76.0</td>
-      <td>48.0</td>
-      <td>180.0</td>
+      <td>101</td>
+      <td>76</td>
+      <td>48</td>
+      <td>180</td>
       <td>32.9</td>
       <td>0.171</td>
       <td>63</td>
@@ -24108,10 +24067,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>764</th>
       <td>2</td>
-      <td>122.0</td>
-      <td>70.0</td>
-      <td>27.0</td>
-      <td>NaN</td>
+      <td>122</td>
+      <td>70</td>
+      <td>27</td>
+      <td>0</td>
       <td>36.8</td>
       <td>0.340</td>
       <td>27</td>
@@ -24120,10 +24079,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>765</th>
       <td>5</td>
-      <td>121.0</td>
-      <td>72.0</td>
-      <td>23.0</td>
-      <td>112.0</td>
+      <td>121</td>
+      <td>72</td>
+      <td>23</td>
+      <td>112</td>
       <td>26.2</td>
       <td>0.245</td>
       <td>30</td>
@@ -24132,10 +24091,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>766</th>
       <td>1</td>
-      <td>126.0</td>
-      <td>60.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>126</td>
+      <td>60</td>
+      <td>0</td>
+      <td>0</td>
       <td>30.1</td>
       <td>0.349</td>
       <td>47</td>
@@ -24144,10 +24103,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <tr>
       <th>767</th>
       <td>1</td>
-      <td>93.0</td>
-      <td>70.0</td>
-      <td>31.0</td>
-      <td>NaN</td>
+      <td>93</td>
+      <td>70</td>
+      <td>31</td>
+      <td>0</td>
       <td>30.4</td>
       <td>0.315</td>
       <td>23</td>
@@ -24171,7 +24130,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="DATASET-SETELAH-IMPUTASI">DATASET SETELAH IMPUTASI<a class="anchor-link" href="#DATASET-SETELAH-IMPUTASI">&#182;</a></h3>
+<h4 id="DATASET-SETELAH-IMPUTASI">DATASET SETELAH IMPUTASI<a class="anchor-link" href="#DATASET-SETELAH-IMPUTASI">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -24180,10 +24139,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[68]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">datasets_imputed</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">datasets_imputed</span> <span class="o">=</span> <span class="n">praproses</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span>
+<span class="n">datasets_imputed</span>
 </pre></div>
 
      </div>
@@ -24201,7 +24161,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[68]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 
 
 
@@ -33470,7 +33430,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="DATASET-SETELAH-DISKRITISASI-DAN-IMPUTASI-KNN">DATASET SETELAH DISKRITISASI DAN IMPUTASI KNN<a class="anchor-link" href="#DATASET-SETELAH-DISKRITISASI-DAN-IMPUTASI-KNN">&#182;</a></h3>
+<h4 id="DATASET-SETELAH-DISKRITISASI-TANPA-IMPUTASI-KNN">DATASET SETELAH DISKRITISASI TANPA IMPUTASI KNN<a class="anchor-link" href="#DATASET-SETELAH-DISKRITISASI-TANPA-IMPUTASI-KNN">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -33479,10 +33439,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[69]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dnoknn</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dnoknn</span> <span class="o">=</span> <span class="n">runNoknn</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span>
+<span class="n">dnoknn</span>
 </pre></div>
 
      </div>
@@ -33500,7 +33461,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[69]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 
 
 
@@ -42769,7 +42730,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="DATASET-SETELAH-DISKRITISASI-TANPA-IMPUTASI-KNN">DATASET SETELAH DISKRITISASI TANPA IMPUTASI KNN<a class="anchor-link" href="#DATASET-SETELAH-DISKRITISASI-TANPA-IMPUTASI-KNN">&#182;</a></h3>
+<h4 id="DATASET-SETELAH-DISKRITISASI-DENGAN-IMPUTASI-KNN">DATASET SETELAH DISKRITISASI DENGAN IMPUTASI KNN<a class="anchor-link" href="#DATASET-SETELAH-DISKRITISASI-DENGAN-IMPUTASI-KNN">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -42778,10 +42739,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[70]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dwithknn</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dwithknn</span> <span class="o">=</span> <span class="n">runAll</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span>
+<span class="n">dwithknn</span>
 </pre></div>
 
      </div>
@@ -42799,7 +42761,19 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[70]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>{&#39;Pregnancies&#39;: (0.039180260954807755, 6.0), &#39;Glucose&#39;: (0.13518841941127935, 127.0), &#39;BloodPressure&#39;: (0.018731718578645196, 63.0), &#39;SkinThickness&#39;: (0.07250945002996534, 23.0), &#39;Insulin&#39;: (0.14435516834581175, 108.0), &#39;BMI&#39;: (0.07469977982812326, 27.8), &#39;DiabetesPedigreeFunction&#39;: (0.02079639637723707, 0.527), &#39;Age&#39;: (0.0724727100056407, 28.0)}
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 
 
 
@@ -52068,7 +52042,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="FUNGSI-ALGORITMA-C-45">FUNGSI ALGORITMA C-45<a class="anchor-link" href="#FUNGSI-ALGORITMA-C-45">&#182;</a></h3>
+<h3 id="FUNGSI-ALGORITMA-C4.5">FUNGSI ALGORITMA C4.5<a class="anchor-link" href="#FUNGSI-ALGORITMA-C4.5">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -52077,7 +52051,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[71]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calc_total_entropy</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">class_list</span><span class="p">,</span><span class="n">t</span><span class="p">):</span>
@@ -52341,8 +52315,33 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
         <span class="n">hasil_prediksi</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="c1">#mendapatkan hasil prediksi dari data yang diuji</span>
 
     <span class="k">return</span> <span class="n">hasil_prediksi</span>
+</pre></div>
 
-<span class="k">def</span> <span class="nf">performa</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="FUNGSI-AKURASI">FUNGSI AKURASI<a class="anchor-link" href="#FUNGSI-AKURASI">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">performa</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>
     <span class="c1">#confusion matrix</span>
     <span class="n">matrix</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Confusion matrix : </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">matrix</span><span class="p">)</span>
@@ -52393,7 +52392,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[72]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">t_to</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
@@ -52493,7 +52492,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[83]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">k_fold</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">skn</span><span class="p">):</span>
@@ -52525,12 +52524,14 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
         <span class="n">y_test</span><span class="o">=</span><span class="n">test_data</span><span class="p">[</span><span class="s1">&#39;Outcome&#39;</span><span class="p">]</span>
         <span class="n">yyxx</span><span class="o">=</span><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">y_test</span><span class="p">]</span>
         
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fold yang ke &quot;</span><span class="p">,</span><span class="n">o</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;dengan data training berjumlah :&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_data</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&gt;&gt;&gt; FOLD KE &quot;</span><span class="p">,</span><span class="n">o</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Panjang data test :&quot;</span><span class="p">,</span> <span class="n">test_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Panjang data train :&quot;</span><span class="p">,</span> <span class="n">train_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data Test :</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">yyxx</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;**********************************************************&quot;</span><span class="p">)</span>
         
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*******************&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Algoritma C4.5&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*******************&quot;</span><span class="p">)</span>
         <span class="n">treec45</span><span class="o">=</span><span class="n">c45</span><span class="p">(</span><span class="n">train_data</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span><span class="s1">&#39;Outcome&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
 
         <span class="n">c45_y_pred</span> <span class="o">=</span><span class="n">evaluate</span><span class="p">(</span><span class="n">treec45</span><span class="p">,</span><span class="n">test_data</span><span class="p">)</span>
@@ -52549,8 +52550,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
         <span class="k">for</span> <span class="n">sk</span> <span class="ow">in</span> <span class="n">skn</span><span class="p">:</span>
             <span class="n">hkk</span><span class="o">=</span><span class="n">predict_adb</span><span class="p">(</span><span class="n">adahk</span><span class="p">,</span><span class="n">test_data</span><span class="p">,</span><span class="n">sk</span><span class="p">)</span>
             <span class="n">hsk</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hkk</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;**********************************************************&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*******************&quot;</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adaboost &quot;</span><span class="p">,</span><span class="s2">&quot;t-&quot;</span><span class="p">,</span><span class="n">sk</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*******************&quot;</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil Prediksi Adaboost :</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">hkk</span><span class="p">)</span>
             <span class="n">ax1</span><span class="p">,</span><span class="n">ax2</span><span class="p">,</span><span class="n">ax3</span> <span class="o">=</span> <span class="n">performa</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">hkk</span><span class="p">)</span>
             <span class="n">ada_sk</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ax1</span><span class="p">)</span>
@@ -52585,7 +52587,18 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="MENJALANKAN-UJI-SKENARIO">MENJALANKAN UJI SKENARIO<a class="anchor-link" href="#MENJALANKAN-UJI-SKENARIO">&#182;</a></h3><h4 id="Dataset-dengan-imputasi-K-NN">Dataset dengan imputasi K-NN<a class="anchor-link" href="#Dataset-dengan-imputasi-K-NN">&#182;</a></h4>
+<h3 id="MENJALANKAN-UJI-SKENARIO">MENJALANKAN UJI SKENARIO<a class="anchor-link" href="#MENJALANKAN-UJI-SKENARIO">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Dataset-dengan-imputasi-K-NN">Dataset dengan imputasi K-NN<a class="anchor-link" href="#Dataset-dengan-imputasi-K-NN">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -52594,7 +52607,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[84]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sknar</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">]</span>
@@ -52621,12 +52634,14 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Fold yang ke  1 dengan data training berjumlah : 77
+<pre>&gt;&gt;&gt; FOLD KE  1
 Panjang data test : 77
 Panjang data train : 691
 Data Test :
  [1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0]
-**********************************************************
+*******************
+Algoritma C4.5
+*******************
 Hasil Prediksi C45 :
  [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0]
 Confusion matrix : 
@@ -52673,8 +52688,9 @@ w16 {&#39;DiabetesPedigreeFunction&#39;: {0.527: 1.0, 1.5270000000000001: 0.0}} 
 w17 {&#39;BMI&#39;: {28.8: 1.0, 27.8: 0.0}} 0.028790608426090183
 w18 {&#39;Glucose&#39;: {127.0: 1.0, 128.0: 0.0}} 0.03669136337045756
 w19 {&#39;Insulin&#39;: {108.0: 0.0, 109.0: 0.0}} 0.030320755499146708
-**********************************************************
+*******************
 Adaboost  t- 5
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0]
 Confusion matrix : 
@@ -52701,8 +52717,9 @@ Akurasi fold ini adalah : 64.94  %
 Presisi fold ini adalah : 59.26  %
 Recall fold ini adalah : 50.0  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 10
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0]
 Confusion matrix : 
@@ -52729,8 +52746,9 @@ Akurasi fold ini adalah : 70.13  %
 Presisi fold ini adalah : 63.64  %
 Recall fold ini adalah : 65.62  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 15
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0]
 Confusion matrix : 
@@ -52757,8 +52775,9 @@ Akurasi fold ini adalah : 70.13  %
 Presisi fold ini adalah : 64.52  %
 Recall fold ini adalah : 62.5  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 20
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0]
 Confusion matrix : 
@@ -52785,12 +52804,14 @@ Akurasi fold ini adalah : 70.13  %
 Presisi fold ini adalah : 64.52  %
 Recall fold ini adalah : 62.5  %
 ===========================================================
-Fold yang ke  2 dengan data training berjumlah : 77
+&gt;&gt;&gt; FOLD KE  2
 Panjang data test : 77
 Panjang data train : 691
 Data Test :
  [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0]
-**********************************************************
+*******************
+Algoritma C4.5
+*******************
 Hasil Prediksi C45 :
  [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0]
 Confusion matrix : 
@@ -52837,8 +52858,9 @@ w16 {&#39;Pregnancies&#39;: {6.0: 0.0, 7.0: 1.0}} 0.032721275417328506
 w17 {&#39;SkinThickness&#39;: {24.0: 1.0, 23.0: 0.0}} 0.018475417449789967
 w18 {&#39;BloodPressure&#39;: {64.0: 0.0, 63.0: 1.0}} 0.009903989354940862
 w19 {&#39;Insulin&#39;: {109.0: 1.0, 108.0: 0.0}} 0.014493390376846634
-**********************************************************
+*******************
 Adaboost  t- 5
+*******************
 Hasil Prediksi Adaboost :
  [0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1]
 Confusion matrix : 
@@ -52865,8 +52887,9 @@ Akurasi fold ini adalah : 74.03  %
 Presisi fold ini adalah : 53.12  %
 Recall fold ini adalah : 77.27  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 10
+*******************
 Hasil Prediksi Adaboost :
  [0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1]
 Confusion matrix : 
@@ -52893,8 +52916,9 @@ Akurasi fold ini adalah : 77.92  %
 Presisi fold ini adalah : 61.9  %
 Recall fold ini adalah : 59.09  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 15
+*******************
 Hasil Prediksi Adaboost :
  [0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1]
 Confusion matrix : 
@@ -52921,8 +52945,9 @@ Akurasi fold ini adalah : 77.92  %
 Presisi fold ini adalah : 61.9  %
 Recall fold ini adalah : 59.09  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 20
+*******************
 Hasil Prediksi Adaboost :
  [0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1]
 Confusion matrix : 
@@ -52949,12 +52974,14 @@ Akurasi fold ini adalah : 77.92  %
 Presisi fold ini adalah : 60.87  %
 Recall fold ini adalah : 63.64  %
 ===========================================================
-Fold yang ke  3 dengan data training berjumlah : 77
+&gt;&gt;&gt; FOLD KE  3
 Panjang data test : 77
 Panjang data train : 691
 Data Test :
  [1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0]
-**********************************************************
+*******************
+Algoritma C4.5
+*******************
 Hasil Prediksi C45 :
  [1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0]
 Confusion matrix : 
@@ -53001,8 +53028,9 @@ w16 {&#39;Pregnancies&#39;: {6.0: 1.0, 7.0: 0.0}} 0.044227829143850296
 w17 {&#39;SkinThickness&#39;: {24.0: 0.0, 23.0: 0.0}} 0.022778329084824703
 w18 {&#39;SkinThickness&#39;: {24.0: 1.0, 23.0: 0.0}} 0.021653205777851466
 w19 {&#39;Insulin&#39;: {109.0: 0.0, 108.0: 1.0}} 0.03300982325983914
-**********************************************************
+*******************
 Adaboost  t- 5
+*******************
 Hasil Prediksi Adaboost :
  [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1]
 Confusion matrix : 
@@ -53029,8 +53057,9 @@ Akurasi fold ini adalah : 76.62  %
 Presisi fold ini adalah : 75.0  %
 Recall fold ini adalah : 70.59  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 10
+*******************
 Hasil Prediksi Adaboost :
  [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1]
 Confusion matrix : 
@@ -53057,8 +53086,9 @@ Akurasi fold ini adalah : 77.92  %
 Presisi fold ini adalah : 74.29  %
 Recall fold ini adalah : 76.47  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 15
+*******************
 Hasil Prediksi Adaboost :
  [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1]
 Confusion matrix : 
@@ -53085,8 +53115,9 @@ Akurasi fold ini adalah : 79.22  %
 Presisi fold ini adalah : 75.0  %
 Recall fold ini adalah : 79.41  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 20
+*******************
 Hasil Prediksi Adaboost :
  [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1]
 Confusion matrix : 
@@ -53113,12 +53144,14 @@ Akurasi fold ini adalah : 79.22  %
 Presisi fold ini adalah : 75.0  %
 Recall fold ini adalah : 79.41  %
 ===========================================================
-Fold yang ke  4 dengan data training berjumlah : 77
+&gt;&gt;&gt; FOLD KE  4
 Panjang data test : 77
 Panjang data train : 691
 Data Test :
  [1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0]
-**********************************************************
+*******************
+Algoritma C4.5
+*******************
 Hasil Prediksi C45 :
  [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 Confusion matrix : 
@@ -53165,8 +53198,9 @@ w16 {&#39;BMI&#39;: {28.8: 1.0, 27.8: 0.0}} 0.033959455747984674
 w17 {&#39;Age&#39;: {29.0: 0.0, 28.0: 1.0}} 0.05337244794106118
 w18 {&#39;BloodPressure&#39;: {64.0: 1.0, 63.0: 0.0}} 0.018261596716922898
 w19 {&#39;Insulin&#39;: {109.0: 0.0, 108.0: 1.0}} 0.03884950184349952
-**********************************************************
+*******************
 Adaboost  t- 5
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0]
 Confusion matrix : 
@@ -53193,8 +53227,9 @@ Akurasi fold ini adalah : 66.23  %
 Presisi fold ini adalah : 56.67  %
 Recall fold ini adalah : 56.67  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 10
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0]
 Confusion matrix : 
@@ -53221,8 +53256,9 @@ Akurasi fold ini adalah : 70.13  %
 Presisi fold ini adalah : 62.07  %
 Recall fold ini adalah : 60.0  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 15
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0]
 Confusion matrix : 
@@ -53249,8 +53285,9 @@ Akurasi fold ini adalah : 67.53  %
 Presisi fold ini adalah : 57.58  %
 Recall fold ini adalah : 63.33  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 20
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0]
 Confusion matrix : 
@@ -53277,12 +53314,14 @@ Akurasi fold ini adalah : 70.13  %
 Presisi fold ini adalah : 62.07  %
 Recall fold ini adalah : 60.0  %
 ===========================================================
-Fold yang ke  5 dengan data training berjumlah : 77
+&gt;&gt;&gt; FOLD KE  5
 Panjang data test : 77
 Panjang data train : 691
 Data Test :
  [1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-**********************************************************
+*******************
+Algoritma C4.5
+*******************
 Hasil Prediksi C45 :
  [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 Confusion matrix : 
@@ -53329,8 +53368,9 @@ w16 {&#39;Pregnancies&#39;: {6.0: 1.0, 7.0: 0.0}} 0.1008831739165547
 w17 {&#39;SkinThickness&#39;: {24.0: 0.0, 23.0: 0.0}} 0.06516827679038725
 w18 {&#39;SkinThickness&#39;: {24.0: 1.0, 23.0: 0.0}} 0.060553514307021605
 w19 {&#39;BMI&#39;: {28.8: 0.0, 27.8: 0.0}} 0.039346752732509066
-**********************************************************
+*******************
 Adaboost  t- 5
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0]
 Confusion matrix : 
@@ -53357,8 +53397,9 @@ Akurasi fold ini adalah : 77.92  %
 Presisi fold ini adalah : 75.0  %
 Recall fold ini adalah : 55.56  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 10
+*******************
 Hasil Prediksi Adaboost :
  [1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0]
 Confusion matrix : 
@@ -53385,8 +53426,9 @@ Akurasi fold ini adalah : 79.22  %
 Presisi fold ini adalah : 72.0  %
 Recall fold ini adalah : 66.67  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 15
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0]
 Confusion matrix : 
@@ -53413,8 +53455,9 @@ Akurasi fold ini adalah : 79.22  %
 Presisi fold ini adalah : 76.19  %
 Recall fold ini adalah : 59.26  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 20
+*******************
 Hasil Prediksi Adaboost :
  [1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0]
 Confusion matrix : 
@@ -53441,12 +53484,14 @@ Akurasi fold ini adalah : 80.52  %
 Presisi fold ini adalah : 75.0  %
 Recall fold ini adalah : 66.67  %
 ===========================================================
-Fold yang ke  6 dengan data training berjumlah : 77
+&gt;&gt;&gt; FOLD KE  6
 Panjang data test : 77
 Panjang data train : 691
 Data Test :
  [0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0]
-**********************************************************
+*******************
+Algoritma C4.5
+*******************
 Hasil Prediksi C45 :
  [0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0]
 Confusion matrix : 
@@ -53493,8 +53538,9 @@ w16 {&#39;SkinThickness&#39;: {24.0: 1.0, 23.0: 0.0}} 0.02726091327424862
 w17 {&#39;BloodPressure&#39;: {64.0: 0.0, 63.0: 1.0}} 0.05348373898113194
 w18 {&#39;BMI&#39;: {28.8: 1.0, 27.8: 0.0}} 0.026558851120298748
 w19 {&#39;Age&#39;: {29.0: 1.0, 28.0: 0.0}} 0.033970549304723624
-**********************************************************
+*******************
 Adaboost  t- 5
+*******************
 Hasil Prediksi Adaboost :
  [0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0]
 Confusion matrix : 
@@ -53521,8 +53567,9 @@ Akurasi fold ini adalah : 77.92  %
 Presisi fold ini adalah : 74.07  %
 Recall fold ini adalah : 66.67  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 10
+*******************
 Hasil Prediksi Adaboost :
  [0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0]
 Confusion matrix : 
@@ -53549,8 +53596,9 @@ Akurasi fold ini adalah : 81.82  %
 Presisi fold ini adalah : 80.77  %
 Recall fold ini adalah : 70.0  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 15
+*******************
 Hasil Prediksi Adaboost :
  [0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0]
 Confusion matrix : 
@@ -53577,8 +53625,9 @@ Akurasi fold ini adalah : 81.82  %
 Presisi fold ini adalah : 80.77  %
 Recall fold ini adalah : 70.0  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 20
+*******************
 Hasil Prediksi Adaboost :
  [0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0]
 Confusion matrix : 
@@ -53605,12 +53654,14 @@ Akurasi fold ini adalah : 81.82  %
 Presisi fold ini adalah : 78.57  %
 Recall fold ini adalah : 73.33  %
 ===========================================================
-Fold yang ke  7 dengan data training berjumlah : 77
+&gt;&gt;&gt; FOLD KE  7
 Panjang data test : 77
 Panjang data train : 691
 Data Test :
  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0]
-**********************************************************
+*******************
+Algoritma C4.5
+*******************
 Hasil Prediksi C45 :
  [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0]
 Confusion matrix : 
@@ -53657,8 +53708,9 @@ w16 {&#39;DiabetesPedigreeFunction&#39;: {1.5270000000000001: 0.0, 0.527: 1.0}} 
 w17 {&#39;Insulin&#39;: {109.0: 0.0, 108.0: 1.0}} 0.03253435571037753
 w18 {&#39;BMI&#39;: {28.8: 1.0, 27.8: 0.0}} 0.03304134886877499
 w19 {&#39;Age&#39;: {29.0: 0.0, 28.0: 1.0}} 0.027492320414903387
-**********************************************************
+*******************
 Adaboost  t- 5
+*******************
 Hasil Prediksi Adaboost :
  [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
 Confusion matrix : 
@@ -53685,8 +53737,9 @@ Akurasi fold ini adalah : 79.22  %
 Presisi fold ini adalah : 43.75  %
 Recall fold ini adalah : 50.0  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 10
+*******************
 Hasil Prediksi Adaboost :
  [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
 Confusion matrix : 
@@ -53713,8 +53766,9 @@ Akurasi fold ini adalah : 81.82  %
 Presisi fold ini adalah : 50.0  %
 Recall fold ini adalah : 78.57  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 15
+*******************
 Hasil Prediksi Adaboost :
  [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
 Confusion matrix : 
@@ -53741,8 +53795,9 @@ Akurasi fold ini adalah : 81.82  %
 Presisi fold ini adalah : 50.0  %
 Recall fold ini adalah : 78.57  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 20
+*******************
 Hasil Prediksi Adaboost :
  [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
 Confusion matrix : 
@@ -53769,12 +53824,14 @@ Akurasi fold ini adalah : 81.82  %
 Presisi fold ini adalah : 50.0  %
 Recall fold ini adalah : 78.57  %
 ===========================================================
-Fold yang ke  8 dengan data training berjumlah : 77
+&gt;&gt;&gt; FOLD KE  8
 Panjang data test : 77
 Panjang data train : 691
 Data Test :
  [1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0]
-**********************************************************
+*******************
+Algoritma C4.5
+*******************
 Hasil Prediksi C45 :
  [1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0]
 Confusion matrix : 
@@ -53821,8 +53878,9 @@ w16 {&#39;SkinThickness&#39;: {24.0: 1.0, 23.0: 0.0}} 0.02608286857135777
 w17 {&#39;Age&#39;: {29.0: 0.0, 28.0: 1.0}} 0.02493713868162798
 w18 {&#39;Pregnancies&#39;: {6.0: 0.0, 7.0: 1.0}} 0.02440038848666421
 w19 {&#39;DiabetesPedigreeFunction&#39;: {1.5270000000000001: 0.0, 0.527: 1.0}} 0.02010147537943155
-**********************************************************
+*******************
 Adaboost  t- 5
+*******************
 Hasil Prediksi Adaboost :
  [1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0]
 Confusion matrix : 
@@ -53849,8 +53907,9 @@ Akurasi fold ini adalah : 84.42  %
 Presisi fold ini adalah : 68.57  %
 Recall fold ini adalah : 96.0  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 10
+*******************
 Hasil Prediksi Adaboost :
  [1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0]
 Confusion matrix : 
@@ -53877,8 +53936,9 @@ Akurasi fold ini adalah : 85.71  %
 Presisi fold ini adalah : 75.0  %
 Recall fold ini adalah : 84.0  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 15
+*******************
 Hasil Prediksi Adaboost :
  [1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0]
 Confusion matrix : 
@@ -53905,8 +53965,9 @@ Akurasi fold ini adalah : 85.71  %
 Presisi fold ini adalah : 75.0  %
 Recall fold ini adalah : 84.0  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 20
+*******************
 Hasil Prediksi Adaboost :
  [1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0]
 Confusion matrix : 
@@ -53933,12 +53994,14 @@ Akurasi fold ini adalah : 85.71  %
 Presisi fold ini adalah : 75.0  %
 Recall fold ini adalah : 84.0  %
 ===========================================================
-Fold yang ke  9 dengan data training berjumlah : 77
+&gt;&gt;&gt; FOLD KE  9
 Panjang data test : 77
 Panjang data train : 691
 Data Test :
  [0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0]
-**********************************************************
+*******************
+Algoritma C4.5
+*******************
 Hasil Prediksi C45 :
  [0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0]
 Confusion matrix : 
@@ -53985,8 +54048,9 @@ w16 {&#39;SkinThickness&#39;: {24.0: 1.0, 23.0: 0.0}} 0.017527072246665158
 w17 {&#39;Insulin&#39;: {109.0: 1.0, 108.0: 0.0}} 0.011218774909028182
 w18 {&#39;BloodPressure&#39;: {64.0: 0.0, 63.0: 1.0}} 0.022364240282909672
 w19 {&#39;Pregnancies&#39;: {6.0: 0.0, 7.0: 1.0}} 0.015818639002555184
-**********************************************************
+*******************
 Adaboost  t- 5
+*******************
 Hasil Prediksi Adaboost :
  [0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0]
 Confusion matrix : 
@@ -54013,8 +54077,9 @@ Akurasi fold ini adalah : 71.43  %
 Presisi fold ini adalah : 53.12  %
 Recall fold ini adalah : 70.83  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 10
+*******************
 Hasil Prediksi Adaboost :
  [0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0]
 Confusion matrix : 
@@ -54041,8 +54106,9 @@ Akurasi fold ini adalah : 72.73  %
 Presisi fold ini adalah : 56.0  %
 Recall fold ini adalah : 58.33  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 15
+*******************
 Hasil Prediksi Adaboost :
  [0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0]
 Confusion matrix : 
@@ -54069,8 +54135,9 @@ Akurasi fold ini adalah : 72.73  %
 Presisi fold ini adalah : 56.52  %
 Recall fold ini adalah : 54.17  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 20
+*******************
 Hasil Prediksi Adaboost :
  [0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0]
 Confusion matrix : 
@@ -54097,12 +54164,14 @@ Akurasi fold ini adalah : 72.73  %
 Presisi fold ini adalah : 56.52  %
 Recall fold ini adalah : 54.17  %
 ===========================================================
-Fold yang ke  10 dengan data training berjumlah : 75
+&gt;&gt;&gt; FOLD KE  10
 Panjang data test : 75
 Panjang data train : 693
 Data Test :
  [1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0]
-**********************************************************
+*******************
+Algoritma C4.5
+*******************
 Hasil Prediksi C45 :
  [1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0]
 Confusion matrix : 
@@ -54149,8 +54218,9 @@ w16 {&#39;Age&#39;: {29.0: 1.0, 28.0: 0.0}} 0.0612240284178165
 w17 {&#39;Pregnancies&#39;: {6.0: 0.0, 7.0: 0.0}} 0.036233317715199304
 w18 {&#39;Pregnancies&#39;: {6.0: 1.0, 7.0: 0.0}} 0.03626821358670146
 w19 {&#39;SkinThickness&#39;: {24.0: 0.0, 23.0: 0.0}} 0.019201534471161238
-**********************************************************
+*******************
 Adaboost  t- 5
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0]
 Confusion matrix : 
@@ -54177,8 +54247,9 @@ Akurasi fold ini adalah : 81.33  %
 Presisi fold ini adalah : 78.57  %
 Recall fold ini adalah : 73.33  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 10
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0]
 Confusion matrix : 
@@ -54205,8 +54276,9 @@ Akurasi fold ini adalah : 78.67  %
 Presisi fold ini adalah : 79.17  %
 Recall fold ini adalah : 63.33  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 15
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0]
 Confusion matrix : 
@@ -54233,8 +54305,9 @@ Akurasi fold ini adalah : 78.67  %
 Presisi fold ini adalah : 79.17  %
 Recall fold ini adalah : 63.33  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 20
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0]
 Confusion matrix : 
@@ -54285,7 +54358,7 @@ Recall fold ini adalah : 63.33  %
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[85]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">nk_acc_c45</span><span class="p">,</span><span class="n">nk_acc_adb</span><span class="p">,</span><span class="n">adatree</span><span class="p">,</span><span class="n">treec45s</span><span class="o">=</span><span class="n">k_fold</span><span class="p">(</span><span class="n">dnoknn</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="n">sknar</span><span class="p">)</span>
@@ -54310,12 +54383,14 @@ Recall fold ini adalah : 63.33  %
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Fold yang ke  1 dengan data training berjumlah : 77
+<pre>&gt;&gt;&gt; FOLD KE  1
 Panjang data test : 77
 Panjang data train : 691
 Data Test :
  [1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0]
-**********************************************************
+*******************
+Algoritma C4.5
+*******************
 Hasil Prediksi C45 :
  [1.0, 0.0, 0.0, 0.0, 1, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1, 0.0, 1.0, 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0, 0.0, 0.0, 0.0, 0.0, 0, 0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1, 0.0, 1, 0.0, 0.0, 1.0, 0.0, 0.0, 1, 0, 0, 0.0, 1.0, 1.0, 0, 1, 0.0, 1.0, 0.0, 0, 1.0, 0.0, 1, 0.0, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1, 0.0, 0.0, 0.0, 0, 0.0]
 Confusion matrix : 
@@ -54362,8 +54437,9 @@ w16 {&#39;Insulin&#39;: {120: 0.0, 121: 1.0}} 0.03229422147239687
 w17 {&#39;DiabetesPedigreeFunction&#39;: {0.527: 1.0, 1.5270000000000001: 0.0}} 0.016588973158100033
 w18 {&#39;BMI&#39;: {28.8: 1.0, 27.8: 0.0}} 0.009522557731094212
 w19 {&#39;Age&#39;: {28: 0.0, 29: 1.0}} 0.013991974547398135
-**********************************************************
+*******************
 Adaboost  t- 5
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0]
 Confusion matrix : 
@@ -54390,8 +54466,9 @@ Akurasi fold ini adalah : 63.64  %
 Presisi fold ini adalah : 57.14  %
 Recall fold ini adalah : 50.0  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 10
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]
 Confusion matrix : 
@@ -54418,8 +54495,9 @@ Akurasi fold ini adalah : 71.43  %
 Presisi fold ini adalah : 69.23  %
 Recall fold ini adalah : 56.25  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 15
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]
 Confusion matrix : 
@@ -54446,8 +54524,9 @@ Akurasi fold ini adalah : 71.43  %
 Presisi fold ini adalah : 70.83  %
 Recall fold ini adalah : 53.12  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 20
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]
 Confusion matrix : 
@@ -54474,12 +54553,14 @@ Akurasi fold ini adalah : 71.43  %
 Presisi fold ini adalah : 70.83  %
 Recall fold ini adalah : 53.12  %
 ===========================================================
-Fold yang ke  2 dengan data training berjumlah : 77
+&gt;&gt;&gt; FOLD KE  2
 Panjang data test : 77
 Panjang data train : 691
 Data Test :
  [0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]
-**********************************************************
+*******************
+Algoritma C4.5
+*******************
 Hasil Prediksi C45 :
  [0.0, 0.0, 0, 0, 0, 1.0, 0, 1.0, 0.0, 0.0, 0.0, 1.0, 0, 0, 1, 0.0, 0.0, 0, 1.0, 0.0, 0, 0.0, 0, 1.0, 1.0, 0, 0, 0.0, 0.0, 0, 1.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1, 0.0, 1, 0.0, 1.0, 0, 1, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0, 1.0, 0.0, 1.0, 1.0]
 Confusion matrix : 
@@ -54526,8 +54607,9 @@ w16 {&#39;Insulin&#39;: {120: 0.0, 121: 1.0}} 0.03802724951506011
 w17 {&#39;DiabetesPedigreeFunction&#39;: {1.5270000000000001: 0.0, 0.527: 1.0}} 0.031341729182533494
 w18 {&#39;Age&#39;: {29: 1.0, 28: 0.0}} 0.02135179914348787
 w19 {&#39;Pregnancies&#39;: {6: 0.0, 7: 0.0}} 0.011823277593309348
-**********************************************************
+*******************
 Adaboost  t- 5
+*******************
 Hasil Prediksi Adaboost :
  [0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1]
 Confusion matrix : 
@@ -54554,8 +54636,9 @@ Akurasi fold ini adalah : 76.62  %
 Presisi fold ini adalah : 57.69  %
 Recall fold ini adalah : 68.18  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 10
+*******************
 Hasil Prediksi Adaboost :
  [0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1]
 Confusion matrix : 
@@ -54582,8 +54665,9 @@ Akurasi fold ini adalah : 77.92  %
 Presisi fold ini adalah : 64.71  %
 Recall fold ini adalah : 50.0  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 15
+*******************
 Hasil Prediksi Adaboost :
  [0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1]
 Confusion matrix : 
@@ -54610,8 +54694,9 @@ Akurasi fold ini adalah : 77.92  %
 Presisi fold ini adalah : 64.71  %
 Recall fold ini adalah : 50.0  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 20
+*******************
 Hasil Prediksi Adaboost :
  [0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1]
 Confusion matrix : 
@@ -54638,12 +54723,14 @@ Akurasi fold ini adalah : 77.92  %
 Presisi fold ini adalah : 64.71  %
 Recall fold ini adalah : 50.0  %
 ===========================================================
-Fold yang ke  3 dengan data training berjumlah : 77
+&gt;&gt;&gt; FOLD KE  3
 Panjang data test : 77
 Panjang data train : 691
 Data Test :
  [1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1]
-**********************************************************
+*******************
+Algoritma C4.5
+*******************
 Hasil Prediksi C45 :
  [1.0, 1.0, 0, 0, 0.0, 1.0, 1.0, 0.0, 0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0, 0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0, 0.0, 1, 1.0, 0.0, 1.0, 0, 0, 1.0, 1.0, 0.0, 0.0, 0.0, 0, 1.0, 0, 1, 1.0, 0.0, 1.0, 0, 1.0, 1.0, 0.0, 0.0, 1.0, 0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0]
 Confusion matrix : 
@@ -54690,8 +54777,9 @@ w16 {&#39;BMI&#39;: {28.8: 1.0, 27.8: 0.0}} 0.01677426136374761
 w17 {&#39;SkinThickness&#39;: {32: 0.0, 31: 1.0}} 0.02045416069622986
 w18 {&#39;DiabetesPedigreeFunction&#39;: {1.5270000000000001: 0.0, 0.527: 0.0}} 0.017639517244763005
 w19 {&#39;DiabetesPedigreeFunction&#39;: {1.5270000000000001: 0.0, 0.527: 1.0}} 0.01976314962763356
-**********************************************************
+*******************
 Adaboost  t- 5
+*******************
 Hasil Prediksi Adaboost :
  [1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1]
 Confusion matrix : 
@@ -54718,8 +54806,9 @@ Akurasi fold ini adalah : 76.62  %
 Presisi fold ini adalah : 71.05  %
 Recall fold ini adalah : 79.41  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 10
+*******************
 Hasil Prediksi Adaboost :
  [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1]
 Confusion matrix : 
@@ -54746,8 +54835,9 @@ Akurasi fold ini adalah : 79.22  %
 Presisi fold ini adalah : 82.14  %
 Recall fold ini adalah : 67.65  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 15
+*******************
 Hasil Prediksi Adaboost :
  [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1]
 Confusion matrix : 
@@ -54774,8 +54864,9 @@ Akurasi fold ini adalah : 79.22  %
 Presisi fold ini adalah : 82.14  %
 Recall fold ini adalah : 67.65  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 20
+*******************
 Hasil Prediksi Adaboost :
  [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1]
 Confusion matrix : 
@@ -54802,12 +54893,14 @@ Akurasi fold ini adalah : 79.22  %
 Presisi fold ini adalah : 82.14  %
 Recall fold ini adalah : 67.65  %
 ===========================================================
-Fold yang ke  4 dengan data training berjumlah : 77
+&gt;&gt;&gt; FOLD KE  4
 Panjang data test : 77
 Panjang data train : 691
 Data Test :
  [1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0]
-**********************************************************
+*******************
+Algoritma C4.5
+*******************
 Hasil Prediksi C45 :
  [1.0, 0.0, 0.0, 0.0, 0.0, 1, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0, 0.0, 0, 0.0, 0.0, 0.0, 0, 1, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1, 0, 0.0, 1.0, 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0, 0.0, 0, 0.0, 1, 1, 1.0, 0.0, 1.0, 1.0, 1.0, 0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0, 0]
 Confusion matrix : 
@@ -54854,8 +54947,9 @@ w16 {&#39;BMI&#39;: {28.8: 0.0, 27.8: 1.0}} 0.00919335448427747
 w17 {&#39;Glucose&#39;: {128: 0.0, 127: 1.0}} 0.014862142141176477
 w18 {&#39;DiabetesPedigreeFunction&#39;: {1.5270000000000001: 1.0, 0.527: 1.0}} 0.010488238430331783
 w19 {&#39;DiabetesPedigreeFunction&#39;: {1.5270000000000001: 1.0, 0.527: 0.0}} 0.01185926611851229
-**********************************************************
+*******************
 Adaboost  t- 5
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0]
 Confusion matrix : 
@@ -54882,8 +54976,9 @@ Akurasi fold ini adalah : 66.23  %
 Presisi fold ini adalah : 56.67  %
 Recall fold ini adalah : 56.67  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 10
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
 Confusion matrix : 
@@ -54910,8 +55005,9 @@ Akurasi fold ini adalah : 67.53  %
 Presisi fold ini adalah : 60.87  %
 Recall fold ini adalah : 46.67  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 15
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
 Confusion matrix : 
@@ -54938,8 +55034,9 @@ Akurasi fold ini adalah : 67.53  %
 Presisi fold ini adalah : 60.87  %
 Recall fold ini adalah : 46.67  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 20
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
 Confusion matrix : 
@@ -54966,12 +55063,14 @@ Akurasi fold ini adalah : 67.53  %
 Presisi fold ini adalah : 60.87  %
 Recall fold ini adalah : 46.67  %
 ===========================================================
-Fold yang ke  5 dengan data training berjumlah : 77
+&gt;&gt;&gt; FOLD KE  5
 Panjang data test : 77
 Panjang data train : 691
 Data Test :
  [1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0]
-**********************************************************
+*******************
+Algoritma C4.5
+*******************
 Hasil Prediksi C45 :
  [1.0, 1.0, 0, 0, 0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0, 0.0, 0.0, 0, 0.0, 0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0, 1.0, 0.0, 0.0, 1.0, 1.0, 0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0, 0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0, 0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0, 0.0, 1.0, 0.0, 0.0, 0, 0.0, 0.0, 0]
 Confusion matrix : 
@@ -55018,8 +55117,9 @@ w16 {&#39;BMI&#39;: {28.8: 1.0, 27.8: 0.0}} 0.033462294652272476
 w17 {&#39;BloodPressure&#39;: {69: 0.0, 68: 1.0}} 0.02208120763264851
 w18 {&#39;DiabetesPedigreeFunction&#39;: {1.5270000000000001: 1.0, 0.527: 0.0}} 0.017142479498485876
 w19 {&#39;Pregnancies&#39;: {6: 1.0, 7: 1.0}} 0.010949551963433196
-**********************************************************
+*******************
 Adaboost  t- 5
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0]
 Confusion matrix : 
@@ -55046,8 +55146,9 @@ Akurasi fold ini adalah : 76.62  %
 Presisi fold ini adalah : 69.57  %
 Recall fold ini adalah : 59.26  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 10
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0]
 Confusion matrix : 
@@ -55074,8 +55175,9 @@ Akurasi fold ini adalah : 79.22  %
 Presisi fold ini adalah : 76.19  %
 Recall fold ini adalah : 59.26  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 15
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0]
 Confusion matrix : 
@@ -55102,8 +55204,9 @@ Akurasi fold ini adalah : 79.22  %
 Presisi fold ini adalah : 76.19  %
 Recall fold ini adalah : 59.26  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 20
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0]
 Confusion matrix : 
@@ -55130,12 +55233,14 @@ Akurasi fold ini adalah : 79.22  %
 Presisi fold ini adalah : 76.19  %
 Recall fold ini adalah : 59.26  %
 ===========================================================
-Fold yang ke  6 dengan data training berjumlah : 77
+&gt;&gt;&gt; FOLD KE  6
 Panjang data test : 77
 Panjang data train : 691
 Data Test :
  [0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0]
-**********************************************************
+*******************
+Algoritma C4.5
+*******************
 Hasil Prediksi C45 :
  [0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0, 0.0, 1.0, 0.0, 0, 1.0, 0, 0.0, 0.0, 1.0, 0, 0.0, 1.0, 0.0, 0.0, 0, 0, 1.0, 0, 0, 1.0, 0.0, 1.0, 1.0, 0.0, 1, 0.0, 1.0, 0, 0.0, 0.0, 0.0, 1.0, 1.0, 0, 1.0, 1.0, 0.0, 0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0, 0.0, 0.0, 0.0, 0, 1.0, 0.0, 0.0, 0.0, 1, 1, 0.0, 1.0, 1, 0.0, 0]
 Confusion matrix : 
@@ -55182,8 +55287,9 @@ w16 {&#39;Pregnancies&#39;: {6: 0.0, 7: 0.0}} 0.020791996692471004
 w17 {&#39;Pregnancies&#39;: {6: 1.0, 7: 0.0}} 0.029286287382713893
 w18 {&#39;BMI&#39;: {28.8: 0.0, 27.8: 0.0}} 0.014007415207947554
 w19 {&#39;BMI&#39;: {28.8: 1.0, 27.8: 0.0}} 0.018524349452760144
-**********************************************************
+*******************
 Adaboost  t- 5
+*******************
 Hasil Prediksi Adaboost :
  [0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0]
 Confusion matrix : 
@@ -55210,8 +55316,9 @@ Akurasi fold ini adalah : 77.92  %
 Presisi fold ini adalah : 72.41  %
 Recall fold ini adalah : 70.0  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 10
+*******************
 Hasil Prediksi Adaboost :
  [0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0]
 Confusion matrix : 
@@ -55238,8 +55345,9 @@ Akurasi fold ini adalah : 79.22  %
 Presisi fold ini adalah : 81.82  %
 Recall fold ini adalah : 60.0  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 15
+*******************
 Hasil Prediksi Adaboost :
  [0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0]
 Confusion matrix : 
@@ -55266,8 +55374,9 @@ Akurasi fold ini adalah : 80.52  %
 Presisi fold ini adalah : 85.71  %
 Recall fold ini adalah : 60.0  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 20
+*******************
 Hasil Prediksi Adaboost :
  [0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0]
 Confusion matrix : 
@@ -55294,12 +55403,14 @@ Akurasi fold ini adalah : 81.82  %
 Presisi fold ini adalah : 90.0  %
 Recall fold ini adalah : 60.0  %
 ===========================================================
-Fold yang ke  7 dengan data training berjumlah : 77
+&gt;&gt;&gt; FOLD KE  7
 Panjang data test : 77
 Panjang data train : 691
 Data Test :
  [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
-**********************************************************
+*******************
+Algoritma C4.5
+*******************
 Hasil Prediksi C45 :
  [1, 0.0, 0.0, 0, 0, 1.0, 1.0, 1.0, 1, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0, 1.0, 1.0, 0.0, 0, 0, 1.0, 1.0, 1, 1.0, 0, 1.0, 0.0, 0.0, 1.0, 1.0, 0, 0.0, 0.0, 0.0, 0, 1.0, 0, 0.0, 0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0, 0.0, 0, 0, 0.0, 1.0, 0.0, 1.0, 1, 0, 0, 0, 1.0, 0.0, 0, 0, 0, 0.0, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0]
 Confusion matrix : 
@@ -55346,8 +55457,9 @@ w16 {&#39;BMI&#39;: {28.8: 1.0, 27.8: 0.0}} 0.023205914529791524
 w17 {&#39;DiabetesPedigreeFunction&#39;: {1.5270000000000001: 0.0, 0.527: 0.0}} 0.013628895491653758
 w18 {&#39;DiabetesPedigreeFunction&#39;: {1.5270000000000001: 0.0, 0.527: 1.0}} 0.016848329981988503
 w19 {&#39;Age&#39;: {29: 1.0, 28: 0.0}} 0.012223853986120949
-**********************************************************
+*******************
 Adaboost  t- 5
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0]
 Confusion matrix : 
@@ -55374,8 +55486,9 @@ Akurasi fold ini adalah : 76.62  %
 Presisi fold ini adalah : 42.86  %
 Recall fold ini adalah : 85.71  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 10
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 Confusion matrix : 
@@ -55402,8 +55515,9 @@ Akurasi fold ini adalah : 74.03  %
 Presisi fold ini adalah : 33.33  %
 Recall fold ini adalah : 42.86  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 15
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
 Confusion matrix : 
@@ -55430,8 +55544,9 @@ Akurasi fold ini adalah : 75.32  %
 Presisi fold ini adalah : 36.84  %
 Recall fold ini adalah : 50.0  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 20
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
 Confusion matrix : 
@@ -55458,12 +55573,14 @@ Akurasi fold ini adalah : 75.32  %
 Presisi fold ini adalah : 36.84  %
 Recall fold ini adalah : 50.0  %
 ===========================================================
-Fold yang ke  8 dengan data training berjumlah : 77
+&gt;&gt;&gt; FOLD KE  8
 Panjang data test : 77
 Panjang data train : 691
 Data Test :
  [1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0]
-**********************************************************
+*******************
+Algoritma C4.5
+*******************
 Hasil Prediksi C45 :
  [0.0, 1, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0, 1.0, 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1, 0.0, 0.0, 1.0, 1.0, 0, 0.0, 0.0, 1, 0, 1, 0.0, 1.0, 0, 1.0, 0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0, 0, 0, 0, 1, 1.0, 0.0, 1.0, 0, 1.0, 0, 0, 0.0, 1.0, 0.0, 1, 0]
 Confusion matrix : 
@@ -55510,8 +55627,9 @@ w16 {&#39;Pregnancies&#39;: {6: 1.0, 7: 1.0}} 0.010996047299479447
 w17 {&#39;Pregnancies&#39;: {6: 0.0, 7: 1.0}} 0.01582432864914028
 w18 {&#39;Insulin&#39;: {120: 0.0, 121: 1.0}} 0.008194564468002383
 w19 {&#39;BMI&#39;: {28.8: 1.0, 27.8: 1.0}} 0.011459215961354628
-**********************************************************
+*******************
 Adaboost  t- 5
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0]
 Confusion matrix : 
@@ -55538,8 +55656,9 @@ Akurasi fold ini adalah : 81.82  %
 Presisi fold ini adalah : 72.0  %
 Recall fold ini adalah : 72.0  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 10
+*******************
 Hasil Prediksi Adaboost :
  [1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0]
 Confusion matrix : 
@@ -55566,8 +55685,9 @@ Akurasi fold ini adalah : 88.31  %
 Presisi fold ini adalah : 83.33  %
 Recall fold ini adalah : 80.0  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 15
+*******************
 Hasil Prediksi Adaboost :
  [1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0]
 Confusion matrix : 
@@ -55594,8 +55714,9 @@ Akurasi fold ini adalah : 88.31  %
 Presisi fold ini adalah : 83.33  %
 Recall fold ini adalah : 80.0  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 20
+*******************
 Hasil Prediksi Adaboost :
  [1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0]
 Confusion matrix : 
@@ -55622,12 +55743,14 @@ Akurasi fold ini adalah : 88.31  %
 Presisi fold ini adalah : 83.33  %
 Recall fold ini adalah : 80.0  %
 ===========================================================
-Fold yang ke  9 dengan data training berjumlah : 77
+&gt;&gt;&gt; FOLD KE  9
 Panjang data test : 77
 Panjang data train : 691
 Data Test :
  [0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0]
-**********************************************************
+*******************
+Algoritma C4.5
+*******************
 Hasil Prediksi C45 :
  [0.0, 0, 1.0, 0.0, 0, 0, 1.0, 0.0, 0.0, 0.0, 0, 1.0, 1.0, 0, 0, 0.0, 0, 0, 0.0, 0.0, 0.0, 0.0, 1.0, 0, 0.0, 1.0, 1.0, 0.0, 0, 1.0, 1.0, 1.0, 1.0, 0, 0, 0.0, 0.0, 0, 0, 0.0, 0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0, 1.0, 0.0, 1.0, 0]
 Confusion matrix : 
@@ -55674,8 +55797,9 @@ w16 {&#39;BMI&#39;: {28.8: 0.0, 27.8: 0.0}} 0.014042660671587062
 w17 {&#39;BMI&#39;: {28.8: 1.0, 27.8: 0.0}} 0.014576774546838424
 w18 {&#39;Insulin&#39;: {120: 1.0, 121: 0.0}} 0.015159819443421865
 w19 {&#39;Glucose&#39;: {128: 0.0, 127: 0.0}} 0.01510706297110345
-**********************************************************
+*******************
 Adaboost  t- 5
+*******************
 Hasil Prediksi Adaboost :
  [0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0]
 Confusion matrix : 
@@ -55702,8 +55826,9 @@ Akurasi fold ini adalah : 72.73  %
 Presisi fold ini adalah : 55.17  %
 Recall fold ini adalah : 66.67  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 10
+*******************
 Hasil Prediksi Adaboost :
  [0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0]
 Confusion matrix : 
@@ -55730,8 +55855,9 @@ Akurasi fold ini adalah : 72.73  %
 Presisi fold ini adalah : 57.89  %
 Recall fold ini adalah : 45.83  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 15
+*******************
 Hasil Prediksi Adaboost :
  [0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0]
 Confusion matrix : 
@@ -55758,8 +55884,9 @@ Akurasi fold ini adalah : 74.03  %
 Presisi fold ini adalah : 61.11  %
 Recall fold ini adalah : 45.83  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 20
+*******************
 Hasil Prediksi Adaboost :
  [0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0]
 Confusion matrix : 
@@ -55786,12 +55913,14 @@ Akurasi fold ini adalah : 74.03  %
 Presisi fold ini adalah : 61.11  %
 Recall fold ini adalah : 45.83  %
 ===========================================================
-Fold yang ke  10 dengan data training berjumlah : 75
+&gt;&gt;&gt; FOLD KE  10
 Panjang data test : 75
 Panjang data train : 693
 Data Test :
  [1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0]
-**********************************************************
+*******************
+Algoritma C4.5
+*******************
 Hasil Prediksi C45 :
  [1, 0, 0.0, 1.0, 0, 0, 0.0, 0, 0, 1.0, 1.0, 0.0, 0.0, 0.0, 0, 1.0, 1.0, 1.0, 0.0, 1, 0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0, 0, 0.0, 0, 1.0, 0, 0.0, 1, 0.0, 0.0, 1.0, 1, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0]
 Confusion matrix : 
@@ -55838,8 +55967,9 @@ w16 {&#39;Insulin&#39;: {120: 1.0, 121: 1.0}} 0.01685753181252852
 w17 {&#39;Insulin&#39;: {120: 0.0, 121: 1.0}} 0.018017076974993405
 w18 {&#39;BMI&#39;: {28.8: 1.0, 27.8: 1.0}} 0.007765807218662133
 w19 {&#39;BMI&#39;: {28.8: 0.0, 27.8: 1.0}} 0.010433447997290273
-**********************************************************
+*******************
 Adaboost  t- 5
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0]
 Confusion matrix : 
@@ -55866,8 +55996,9 @@ Akurasi fold ini adalah : 81.33  %
 Presisi fold ini adalah : 80.77  %
 Recall fold ini adalah : 70.0  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 10
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0]
 Confusion matrix : 
@@ -55894,8 +56025,9 @@ Akurasi fold ini adalah : 80.0  %
 Presisi fold ini adalah : 82.61  %
 Recall fold ini adalah : 63.33  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 15
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0]
 Confusion matrix : 
@@ -55922,8 +56054,9 @@ Akurasi fold ini adalah : 80.0  %
 Presisi fold ini adalah : 82.61  %
 Recall fold ini adalah : 63.33  %
 ===========================================================
-**********************************************************
+*******************
 Adaboost  t- 20
+*******************
 Hasil Prediksi Adaboost :
  [1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0]
 Confusion matrix : 
@@ -55974,7 +56107,7 @@ Recall fold ini adalah : 63.33  %
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[76]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_colname</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
@@ -56049,12 +56182,23 @@ Recall fold ini adalah : 63.33  %
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Dengan-imputasi-K-NN">Dengan imputasi K-NN<a class="anchor-link" href="#Dengan-imputasi-K-NN">&#182;</a></h4>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[77]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_conclute_data</span><span class="p">(</span><span class="n">wk_acc_adb</span><span class="p">,</span><span class="n">wk_acc_c45</span><span class="p">)</span>
@@ -56216,12 +56360,23 @@ C45-recall = 70.15400000000001
 
 </div>
 
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Tanpa-imputasi-K-NN">Tanpa imputasi K-NN<a class="anchor-link" href="#Tanpa-imputasi-K-NN">&#182;</a></h4>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[78]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_conclute_data</span><span class="p">(</span><span class="n">nk_acc_adb</span><span class="p">,</span><span class="n">nk_acc_c45</span><span class="p">)</span>
@@ -56390,475 +56545,10 @@ t-5 recall = 67.78999999999999
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="LAMPIRAN">LAMPIRAN<a class="anchor-link" href="#LAMPIRAN">&#182;</a></h3><h4 id="Contoh-Hasil-Rule-C-45-pada-Fold---1">Contoh Hasil Rule C-45 pada Fold - 1<a class="anchor-link" href="#Contoh-Hasil-Rule-C-45-pada-Fold---1">&#182;</a></h4>
+<h3 id="LAMPIRAN">LAMPIRAN<a class="anchor-link" href="#LAMPIRAN">&#182;</a></h3>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[81]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">formatData</span><span class="p">(</span><span class="n">treec45s</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Glucose
-	127
-		Age
-			28
-				Pregnancies
-					6
-						BMI
-							28.8
-								DiabetesPedigreeFunction
-									0.527
-										Insulin
-											120
-												BloodPressure
-													69
-														SkinThickness
-															32
-																0.0
-															31
-																0.0
-													68
-														SkinThickness
-															31
-																0.0
-															32
-																0.0
-											121
-												BloodPressure
-													69
-														0
-													68
-														SkinThickness
-															32
-																0.0
-															31
-																0.0
-									1.5270000000000001
-										SkinThickness
-											31
-												Insulin
-													121
-														0
-													120
-														BloodPressure
-															68
-																0.0
-															69
-																0.0
-											32
-												BloodPressure
-													68
-														Insulin
-															120
-																0.0
-															121
-																1.0
-													69
-														0
-							27.8
-								DiabetesPedigreeFunction
-									0.527
-										0
-									1.5270000000000001
-										BloodPressure
-											68
-												Insulin
-													120
-														0.0
-													121
-														0.0
-											69
-												0
-					7
-						1
-			29
-				Insulin
-					120
-						BMI
-							28.8
-								DiabetesPedigreeFunction
-									1.5270000000000001
-										Pregnancies
-											7
-												SkinThickness
-													31
-														BloodPressure
-															69
-																0.0
-															68
-																0.0
-													32
-														SkinThickness
-															32
-																1.0
-											6
-												BloodPressure
-													69
-														SkinThickness
-															31
-																0.0
-															32
-																0.0
-													68
-														SkinThickness
-															32
-																0.0
-															31
-																0.0
-									0.527
-										SkinThickness
-											32
-												BloodPressure
-													69
-														Pregnancies
-															7
-																0.0
-															6
-																0.0
-													68
-														Pregnancies
-															6
-																0.0
-															7
-																0.0
-											31
-												BloodPressure
-													69
-														Pregnancies
-															6
-																0.0
-															7
-																0.0
-													68
-														Pregnancies
-															7
-																0.0
-															6
-																0.0
-							27.8
-								SkinThickness
-									31
-										DiabetesPedigreeFunction
-											0.527
-												BloodPressure
-													68
-														Pregnancies
-															6
-																0.0
-															7
-																0.0
-													69
-														Pregnancies
-															6
-																0.0
-															7
-																0.0
-											1.5270000000000001
-												BloodPressure
-													68
-														Pregnancies
-															6
-																0.0
-															7
-																1.0
-													69
-														Pregnancies
-															6
-																0.0
-															7
-																0.0
-									32
-										0
-					121
-						DiabetesPedigreeFunction
-							0.527
-								BMI
-									28.8
-										BloodPressure
-											69
-												SkinThickness
-													31
-														Pregnancies
-															6
-																0.0
-															7
-																1.0
-													32
-														Pregnancies
-															6
-																0.0
-															7
-																0.0
-											68
-												SkinThickness
-													31
-														0.0
-													32
-														0.0
-									27.8
-										0
-							1.5270000000000001
-								Pregnancies
-									6
-										BMI
-											28.8
-												SkinThickness
-													31
-														1
-													32
-														BloodPressure
-															69
-																0.0
-															68
-																1.0
-											27.8
-												BMI
-													27.8
-														0.0
-									7
-										1
-	128
-		BMI
-			28.8
-				Pregnancies
-					6
-						Age
-							28
-								SkinThickness
-									31
-										DiabetesPedigreeFunction
-											0.527
-												Insulin
-													120
-														BloodPressure
-															68
-																1.0
-															69
-																0.0
-													121
-														Insulin
-															121
-																0.0
-											1.5270000000000001
-												Insulin
-													121
-														BloodPressure
-															68
-																1.0
-															69
-																0.0
-													120
-														BloodPressure
-															69
-																1.0
-															68
-																0.0
-									32
-										BloodPressure
-											69
-												Insulin
-													121
-														DiabetesPedigreeFunction
-															0.527
-																0.0
-															1.5270000000000001
-																0.0
-													120
-														DiabetesPedigreeFunction
-															1.5270000000000001
-																1.0
-															0.527
-																1.0
-											68
-												DiabetesPedigreeFunction
-													1.5270000000000001
-														Insulin
-															120
-																0.0
-															121
-																1.0
-													0.527
-														1
-							29
-								BloodPressure
-									69
-										DiabetesPedigreeFunction
-											0.527
-												SkinThickness
-													31
-														Insulin
-															120
-																1.0
-															121
-																1.0
-													32
-														Insulin
-															120
-																0.0
-															121
-																1.0
-											1.5270000000000001
-												Insulin
-													120
-														SkinThickness
-															31
-																1.0
-															32
-																1.0
-													121
-														SkinThickness
-															31
-																1.0
-															32
-																0.0
-									68
-										SkinThickness
-											31
-												Insulin
-													121
-														DiabetesPedigreeFunction
-															0.527
-																1.0
-															1.5270000000000001
-																0.0
-													120
-														DiabetesPedigreeFunction
-															1.5270000000000001
-																1.0
-															0.527
-																1.0
-											32
-												1
-					7
-						DiabetesPedigreeFunction
-							0.527
-								BloodPressure
-									69
-										SkinThickness
-											32
-												Insulin
-													120
-														1.0
-													121
-														1.0
-											31
-												Insulin
-													120
-														1.0
-													121
-														0.0
-									68
-										1
-							1.5270000000000001
-								SkinThickness
-									31
-										1
-									32
-										Insulin
-											121
-												BloodPressure
-													68
-														1.0
-													69
-														1.0
-											120
-												1
-			27.8
-				SkinThickness
-					31
-						DiabetesPedigreeFunction
-							0.527
-								Pregnancies
-									6
-										Insulin
-											120
-												BloodPressure
-													69
-														Age
-															29
-																0.0
-															28
-																0.0
-													68
-														Age
-															28
-																1.0
-															29
-																0.0
-											121
-												Age
-													28
-														0
-													29
-														BloodPressure
-															68
-																0.0
-															69
-																1.0
-									7
-										Insulin
-											121
-												1
-											120
-												BloodPressure
-													68
-														0.0
-													69
-														0.0
-							1.5270000000000001
-								Pregnancies
-									6
-										0
-									7
-										Insulin
-											121
-												0.0
-											120
-												0.0
-					32
-						Insulin
-							120
-								DiabetesPedigreeFunction
-									1.5270000000000001
-										1.0
-									0.527
-										0.0
-							121
-								1
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -56866,7 +56556,111 @@ t-5 recall = 67.78999999999999
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Hasil-Rule-Adaboost">Hasil Rule Adaboost<a class="anchor-link" href="#Hasil-Rule-Adaboost">&#182;</a></h4>
+<h4 id="Contoh-Hasil-Rule-C-45-pada-Fold---1">Contoh Hasil Rule C-45 pada Fold - 1<a class="anchor-link" href="#Contoh-Hasil-Rule-C-45-pada-Fold---1">&#182;</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>{'Glucose': {127: {'Age': {28: {'Pregnancies': {6: {'BMI': {28.8: {'DiabetesPedigreeFunction': {0.527: {'Insulin': {120: {'BloodPressure': {69: {'SkinThickness': {32: 0.0,
+                31: 0.0}},
+              68: {'SkinThickness': {31: 0.0, 32: 0.0}}}},
+            121: {'BloodPressure': {69: 0,
+              68: {'SkinThickness': {32: 0.0, 31: 0.0}}}}}},
+          1.5270000000000001: {'SkinThickness': {31: {'Insulin': {121: 0,
+              120: {'BloodPressure': {68: 0.0, 69: 0.0}}}},
+            32: {'BloodPressure': {68: {'Insulin': {120: 0.0, 121: 1.0}},
+              69: 0}}}}}},
+        27.8: {'DiabetesPedigreeFunction': {0.527: 0,
+          1.5270000000000001: {'BloodPressure': {68: {'Insulin': {120: 0.0,
+              121: 0.0}},
+            69: 0}}}}}},
+      7: 1}},
+    29: {'Insulin': {120: {'BMI': {28.8: {'DiabetesPedigreeFunction': {1.5270000000000001: {'Pregnancies': {7: {'SkinThickness': {31: {'BloodPressure': {69: 0.0,
+                68: 0.0}},
+              32: {'SkinThickness': {32: 1.0}}}},
+            6: {'BloodPressure': {69: {'SkinThickness': {31: 0.0, 32: 0.0}},
+              68: {'SkinThickness': {32: 0.0, 31: 0.0}}}}}},
+          0.527: {'SkinThickness': {32: {'BloodPressure': {69: {'Pregnancies': {7: 0.0,
+                6: 0.0}},
+              68: {'Pregnancies': {6: 0.0, 7: 0.0}}}},
+            31: {'BloodPressure': {69: {'Pregnancies': {6: 0.0, 7: 0.0}},
+              68: {'Pregnancies': {7: 0.0, 6: 0.0}}}}}}}},
+        27.8: {'SkinThickness': {31: {'DiabetesPedigreeFunction': {0.527: {'BloodPressure': {68: {'Pregnancies': {6: 0.0,
+                7: 0.0}},
+              69: {'Pregnancies': {6: 0.0, 7: 0.0}}}},
+            1.5270000000000001: {'BloodPressure': {68: {'Pregnancies': {6: 0.0,
+                7: 1.0}},
+              69: {'Pregnancies': {6: 0.0, 7: 0.0}}}}}},
+          32: 0}}}},
+      121: {'DiabetesPedigreeFunction': {0.527: {'BMI': {28.8: {'BloodPressure': {69: {'SkinThickness': {31: {'Pregnancies': {6: 0.0,
+                7: 1.0}},
+              32: {'Pregnancies': {6: 0.0, 7: 0.0}}}},
+            68: {'SkinThickness': {31: 0.0, 32: 0.0}}}},
+          27.8: 0}},
+        1.5270000000000001: {'Pregnancies': {6: {'BMI': {28.8: {'SkinThickness': {31: 1,
+              32: {'BloodPressure': {69: 0.0, 68: 1.0}}}},
+            27.8: {'BMI': {27.8: 0.0}}}},
+          7: 1}}}}}}}},
+  128: {'BMI': {28.8: {'Pregnancies': {6: {'Age': {28: {'SkinThickness': {31: {'DiabetesPedigreeFunction': {0.527: {'Insulin': {120: {'BloodPressure': {68: 1.0,
+                69: 0.0}},
+              121: {'Insulin': {121: 0.0}}}},
+            1.5270000000000001: {'Insulin': {121: {'BloodPressure': {68: 1.0,
+                69: 0.0}},
+              120: {'BloodPressure': {69: 1.0, 68: 0.0}}}}}},
+          32: {'BloodPressure': {69: {'Insulin': {121: {'DiabetesPedigreeFunction': {0.527: 0.0,
+                1.5270000000000001: 0.0}},
+              120: {'DiabetesPedigreeFunction': {1.5270000000000001: 1.0,
+                0.527: 1.0}}}},
+            68: {'DiabetesPedigreeFunction': {1.5270000000000001: {'Insulin': {120: 0.0,
+                121: 1.0}},
+              0.527: 1}}}}}},
+        29: {'BloodPressure': {69: {'DiabetesPedigreeFunction': {0.527: {'SkinThickness': {31: {'Insulin': {120: 1.0,
+                121: 1.0}},
+              32: {'Insulin': {120: 0.0, 121: 1.0}}}},
+            1.5270000000000001: {'Insulin': {120: {'SkinThickness': {31: 1.0,
+                32: 1.0}},
+              121: {'SkinThickness': {31: 1.0, 32: 0.0}}}}}},
+          68: {'SkinThickness': {31: {'Insulin': {121: {'DiabetesPedigreeFunction': {0.527: 1.0,
+                1.5270000000000001: 0.0}},
+              120: {'DiabetesPedigreeFunction': {1.5270000000000001: 1.0,
+                0.527: 1.0}}}},
+            32: 1}}}}}},
+      7: {'DiabetesPedigreeFunction': {0.527: {'BloodPressure': {69: {'SkinThickness': {32: {'Insulin': {120: 1.0,
+              121: 1.0}},
+            31: {'Insulin': {120: 1.0, 121: 0.0}}}},
+          68: 1}},
+        1.5270000000000001: {'SkinThickness': {31: 1,
+          32: {'Insulin': {121: {'BloodPressure': {68: 1.0, 69: 1.0}},
+            120: 1}}}}}}}},
+    27.8: {'SkinThickness': {31: {'DiabetesPedigreeFunction': {0.527: {'Pregnancies': {6: {'Insulin': {120: {'BloodPressure': {69: {'Age': {29: 0.0,
+                28: 0.0}},
+              68: {'Age': {28: 1.0, 29: 0.0}}}},
+            121: {'Age': {28: 0, 29: {'BloodPressure': {68: 0.0, 69: 1.0}}}}}},
+          7: {'Insulin': {121: 1,
+            120: {'BloodPressure': {68: 0.0, 69: 0.0}}}}}},
+        1.5270000000000001: {'Pregnancies': {6: 0,
+          7: {'Insulin': {121: 0.0, 120: 0.0}}}}}},
+      32: {'Insulin': {120: {'DiabetesPedigreeFunction': {1.5270000000000001: 1.0,
+          0.527: 0.0}},
+        121: 1}}}}}}}}</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Contoh-Hasil-Rule-Adaboost">Contoh Hasil Rule Adaboost<a class="anchor-link" href="#Contoh-Hasil-Rule-Adaboost">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -56886,7 +56680,7 @@ t-5 recall = 67.78999999999999
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[89]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">adatree</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
@@ -56907,7 +56701,7 @@ t-5 recall = 67.78999999999999
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[89]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
 
 
 
@@ -56938,7 +56732,7 @@ t-5 recall = 67.78999999999999
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[90]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">adatree</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
@@ -56959,7 +56753,7 @@ t-5 recall = 67.78999999999999
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[90]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
 
 
 
