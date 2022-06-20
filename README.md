@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>forgh</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>train_test</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14588,7 +14588,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1">#for manipulating the csv data</span>
@@ -14618,13 +14618,13 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>134217728</pre>
+<pre>0</pre>
 </div>
 
 </div>
@@ -14649,7 +14649,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">nulling</span> <span class="p">(</span><span class="n">df_in</span><span class="p">,</span> <span class="n">col_name</span><span class="p">):</span>
@@ -14691,7 +14691,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     <span class="n">df_imputed</span><span class="o">=</span><span class="n">df_imputed</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">df_imputed</span>
     
-<span class="k">def</span> <span class="nf">praproses</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">knn</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">praproses</span><span class="p">(</span><span class="n">daf</span><span class="p">,</span><span class="n">knn</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">df</span><span class="o">=</span><span class="n">daf</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">tempn</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Glucose&#39;</span><span class="p">,</span><span class="s1">&#39;BloodPressure&#39;</span><span class="p">,</span><span class="s1">&#39;SkinThickness&#39;</span><span class="p">,</span><span class="s1">&#39;Insulin&#39;</span><span class="p">,</span><span class="s1">&#39;BMI&#39;</span><span class="p">]</span>
     <span class="n">tempr</span><span class="o">=</span><span class="p">{</span>
         <span class="s1">&#39;Glucose&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
@@ -14786,8 +14787,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
         <span class="n">zz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">aa</span>
     <span class="k">return</span> <span class="n">zz</span>
 
-<span class="k">def</span> <span class="nf">runAll</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-    <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">runAll</span><span class="p">(</span><span class="n">dataa</span><span class="p">):</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">dataa</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">data</span><span class="o">=</span><span class="n">praproses</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
     <span class="n">splitter</span> <span class="o">=</span> <span class="n">helper_disk</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="s1">&#39;Outcome&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">splitter</span><span class="p">)</span>
@@ -14796,9 +14797,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
     <span class="k">return</span> <span class="n">pp_disc</span>
 
-<span class="k">def</span> <span class="nf">runNoknn</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-    <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="n">data</span> <span class="o">=</span>  <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;diabetes.csv&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">runNoknn</span><span class="p">(</span><span class="n">dataa</span><span class="p">):</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">dataa</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">data</span><span class="o">=</span><span class="n">praproses</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">splitter</span> <span class="o">=</span> <span class="n">helper_disk</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="s1">&#39;Outcome&#39;</span><span class="p">)</span>
     <span class="n">zz</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>    
@@ -14839,7 +14839,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">raw_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;diabetes.csv&#39;</span><span class="p">)</span>
@@ -14861,7 +14861,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 
 
 
@@ -24139,7 +24139,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">datasets_imputed</span> <span class="o">=</span> <span class="n">praproses</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span>
@@ -24161,7 +24161,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 
 
 
@@ -33439,7 +33439,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dnoknn</span> <span class="o">=</span> <span class="n">runNoknn</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span>
@@ -33461,7 +33461,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 
 
 
@@ -42739,7 +42739,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dwithknn</span> <span class="o">=</span> <span class="n">runAll</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span>
@@ -42773,7 +42773,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
 
 
 
@@ -52051,7 +52051,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calc_total_entropy</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">class_list</span><span class="p">,</span><span class="n">t</span><span class="p">):</span>
@@ -52338,7 +52338,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">performa</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>
@@ -52392,7 +52392,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">t_to</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
@@ -52492,7 +52492,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">k_fold</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">skn</span><span class="p">):</span>
@@ -52607,7 +52607,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sknar</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">]</span>
@@ -54358,7 +54358,7 @@ Recall fold ini adalah : 63.33  %
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">nk_acc_c45</span><span class="p">,</span><span class="n">nk_acc_adb</span><span class="p">,</span><span class="n">adatree</span><span class="p">,</span><span class="n">treec45s</span><span class="o">=</span><span class="n">k_fold</span><span class="p">(</span><span class="n">dnoknn</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="n">sknar</span><span class="p">)</span>
@@ -56107,7 +56107,7 @@ Recall fold ini adalah : 63.33  %
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_colname</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
@@ -56158,10 +56158,10 @@ Recall fold ini adalah : 63.33  %
     <span class="n">temp</span> <span class="o">=</span> <span class="n">get_df</span><span class="p">(</span><span class="n">sax</span><span class="p">,</span><span class="n">acc_adb</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">temp</span> <span class="p">:</span>
         <span class="n">i_name</span><span class="o">=</span><span class="n">get_colname</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;******************&quot;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nilai&quot;</span><span class="p">,</span><span class="n">i_name</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;******************&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
         <span class="n">get_max_at_fold</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
         <span class="n">get_mean_max_at_fold</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
@@ -56198,7 +56198,7 @@ Recall fold ini adalah : 63.33  %
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_conclute_data</span><span class="p">(</span><span class="n">wk_acc_adb</span><span class="p">,</span><span class="n">wk_acc_c45</span><span class="p">)</span>
@@ -56223,7 +56223,10 @@ Recall fold ini adalah : 63.33  %
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>   C45-akurasi  t-5 akurasi  t-10 akurasi  t-15 akurasi  t-20 akurasi
+<pre>******************
+Nilai akurasi
+******************
+   C45-akurasi  t-5 akurasi  t-10 akurasi  t-15 akurasi  t-20 akurasi
 0        63.64        64.94         70.13         70.13         70.13
 1        74.03        74.03         77.92         77.92         77.92
 2        81.82        76.62         77.92         79.22         79.22
@@ -56234,9 +56237,6 @@ Recall fold ini adalah : 63.33  %
 7        81.82        84.42         85.71         85.71         85.71
 8        70.13        71.43         72.73         72.73         72.73
 9        81.33        81.33         78.67         78.67         78.67
-******************
-Nilai akurasi
-******************
 ====================================
 Nilai Max keseluruhan fold :
 ====================================
@@ -56266,6 +56266,9 @@ dtype: float64
 
 &gt;&gt;&gt; Nilai maksimal rata-rata keseluruhan fold :
 t-20 akurasi = 77.86699999999999
+******************
+Nilai presisi
+******************
    C45-presisi  t-5 presisi  t-10 presisi  t-15 presisi  t-20 presisi
 0        57.69        59.26         63.64         64.52         64.52
 1        53.57        53.12         61.90         61.90         60.87
@@ -56277,9 +56280,6 @@ t-20 akurasi = 77.86699999999999
 7        66.67        68.57         75.00         75.00         75.00
 8        51.85        53.12         56.00         56.52         56.52
 9        78.57        78.57         79.17         79.17         79.17
-******************
-Nilai presisi
-******************
 ====================================
 Nilai Max keseluruhan fold :
 ====================================
@@ -56309,6 +56309,9 @@ dtype: float64
 
 &gt;&gt;&gt; Nilai maksimal rata-rata keseluruhan fold :
 t-20 presisi = 67.672
+******************
+Nilai recall
+******************
    C45-recall  t-5 recall  t-10 recall  t-15 recall  t-20 recall
 0       46.88       50.00        65.62        62.50        62.50
 1       68.18       77.27        59.09        59.09        63.64
@@ -56320,9 +56323,6 @@ t-20 presisi = 67.672
 7       88.00       96.00        84.00        84.00        84.00
 8       58.33       70.83        58.33        54.17        54.17
 9       73.33       73.33        63.33        63.33        63.33
-******************
-Nilai recall
-******************
 ====================================
 Nilai Max keseluruhan fold :
 ====================================
@@ -56376,7 +56376,7 @@ C45-recall = 70.15400000000001
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_conclute_data</span><span class="p">(</span><span class="n">nk_acc_adb</span><span class="p">,</span><span class="n">nk_acc_c45</span><span class="p">)</span>
@@ -56401,7 +56401,10 @@ C45-recall = 70.15400000000001
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>   C45-akurasi  t-5 akurasi  t-10 akurasi  t-15 akurasi  t-20 akurasi
+<pre>******************
+Nilai akurasi
+******************
+   C45-akurasi  t-5 akurasi  t-10 akurasi  t-15 akurasi  t-20 akurasi
 0        63.64        63.64         71.43         71.43         71.43
 1        71.43        76.62         77.92         77.92         77.92
 2        74.03        76.62         79.22         79.22         79.22
@@ -56412,9 +56415,6 @@ C45-recall = 70.15400000000001
 7        80.52        81.82         88.31         88.31         88.31
 8        72.73        72.73         72.73         74.03         74.03
 9        77.33        81.33         80.00         80.00         80.00
-******************
-Nilai akurasi
-******************
 ====================================
 Nilai Max keseluruhan fold :
 ====================================
@@ -56444,6 +56444,9 @@ dtype: float64
 
 &gt;&gt;&gt; Nilai maksimal rata-rata keseluruhan fold :
 t-20 akurasi = 77.47999999999999
+******************
+Nilai presisi
+******************
    C45-presisi  t-5 presisi  t-10 presisi  t-15 presisi  t-20 presisi
 0        59.09        57.14         69.23         70.83         70.83
 1        50.00        57.69         64.71         64.71         64.71
@@ -56455,9 +56458,6 @@ t-20 akurasi = 77.47999999999999
 7        69.23        72.00         83.33         83.33         83.33
 8        56.00        55.17         57.89         61.11         61.11
 9        76.00        80.77         82.61         82.61         82.61
-******************
-Nilai presisi
-******************
 ====================================
 Nilai Max keseluruhan fold :
 ====================================
@@ -56487,6 +56487,9 @@ dtype: float64
 
 &gt;&gt;&gt; Nilai maksimal rata-rata keseluruhan fold :
 t-20 presisi = 70.863
+******************
+Nilai recall
+******************
    C45-recall  t-5 recall  t-10 recall  t-15 recall  t-20 recall
 0       40.62       50.00        56.25        53.12        53.12
 1       54.55       68.18        50.00        50.00        50.00
@@ -56498,9 +56501,6 @@ t-20 presisi = 70.863
 7       72.00       72.00        80.00        80.00        80.00
 8       58.33       66.67        45.83        45.83        45.83
 9       63.33       70.00        63.33        63.33        63.33
-******************
-Nilai recall
-******************
 ====================================
 Nilai Max keseluruhan fold :
 ====================================
@@ -56680,7 +56680,7 @@ t-5 recall = 67.78999999999999
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">adatree</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
@@ -56701,7 +56701,7 @@ t-5 recall = 67.78999999999999
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
 
 
 
@@ -56732,7 +56732,7 @@ t-5 recall = 67.78999999999999
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">adatree</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
@@ -56753,7 +56753,7 @@ t-5 recall = 67.78999999999999
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
 
 
 
