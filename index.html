@@ -224,23 +224,21 @@
           <h1>Contact</h1>
         </div>
         <div class="col-xs-12 col-md-8">
-          <form action="">
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Subject</label>
-              <input type="sub" class="form-control" id="exampleFormControlInput1" placeholder="">
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            <div class="mb-3">
-              <button class="btn btn-primary" type="submit">Submit</button>
-            </div>
-          </form>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="emailfrom" placeholder="name@example.com" required>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Subject</label>
+            <input type="sub" class="form-control" id="subjecte" placeholder="Enter subject" required>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+            <textarea class="form-control" id="bodye" rows="3"></textarea>
+          </div>
+          <div class="mb-3">
+            <a class="btn btn-primary" onclick="mailtoo()">Send Mail</a>
+          </div>
         </div>
       </div>
 
