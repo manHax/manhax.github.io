@@ -1,40 +1,44 @@
-const aa = document.getElementById("footergen");
-let yeard = new Date().getFullYear();
-ftext = `${aa.innerText[0]} ${yeard} Manhakkim`;
-aa.innerText = ftext;
+// Footer year
+(function() {
+  const el = document.getElementById("footergen");
+  if (!el) return;
+  const year = new Date().getFullYear();
+  el.textContent = `© ${year} Manhakkim`;
+})();
 
+// Mailto helper
 function mailtoo() {
-  const subject = document.getElementById("subjecte").value;
-  const body = document.getElementById("bodye").value;
-  window.location.href = `mailto:lhakim1762@gmail.com?subject=${subject}&body=${body}`;
+  const subject = document.getElementById("subjecte").value || "";
+  const body = document.getElementById("bodye").value || "";
+  const emailFrom = document.getElementById("emailfrom").value || "";
+  const composed = `From: ${emailFrom}\n\n${body}`;
+  const s = encodeURIComponent(subject);
+  const b = encodeURIComponent(composed);
+  window.location.href = `mailto:lhakim1762@gmail.com?subject=${s}&body=${b}`;
 }
 
-function setact(bScroll) {}
+// Simple scrollspy to highlight current section link
+(function() {
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".navbar .nav-link");
+  if (!sections.length || !navLinks.length) return;
 
-window.onscroll = function () {
-  var sections = document.querySelectorAll("section");
-  const navv = document.getElementsByClassName("nav-link");
-  var tamp = [];
-
-  var bScroll = document.documentElement.scrollTop + 2;
-  console.log(`bs = ${bScroll}`);
-  for (var i = 1; i < sections.length; i++) {
-    var sHeight = sections[i].offsetHeight;
-    var offsets = sections[i].offsetTop - 50;
-    console.log(sections[i]);
-    console.log(sHeight, offsets);
-
-    tamp.push([sHeight, offsets]);
-
-    if (bScroll > offsets && bScroll < offsets + sHeight) {
-      navv[i - 1].className = "nav-link active";
-    } else {
-      navv[i - 1].className = "nav-link";
+  function onScroll() {
+    const scrollPos = document.documentElement.scrollTop + 60; // offset for fixed nav
+    for (let i = 1; i < sections.length; i++) { // skip hero/about at index 0
+      const s = sections[i];
+      const top = s.offsetTop;
+      const bottom = top + s.offsetHeight;
+      const link = navLinks[i - 1];
+      if (scrollPos >= top && scrollPos < bottom) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
     }
   }
-};
-// if (bScroll > offsets && bScroll < offsets + sHeight) {
-//   navv[i-1].className = "nav-link active"
-// } else {
-//   navv[i-1].className = "nav-link"
-// }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  // Initialize state
+  onScroll();
+})();
