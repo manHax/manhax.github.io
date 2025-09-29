@@ -21,6 +21,7 @@ function mailtoo() {
 (function() {
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".navbar .nav-link");
+  const navbar = document.querySelector(".navbar");
   if (!sections.length || !navLinks.length) return;
 
   function onScroll() {
@@ -35,6 +36,10 @@ function mailtoo() {
       } else {
         link.classList.remove("active");
       }
+    }
+    if (navbar) {
+      if (window.scrollY > 10) navbar.classList.add("nav-scrolled");
+      else navbar.classList.remove("nav-scrolled");
     }
   }
 
