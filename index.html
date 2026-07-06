@@ -17,7 +17,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20260706-3">
+  <script>
+    (function() {
+      var storedTheme = null;
+      try {
+        storedTheme = localStorage.getItem("theme-preference");
+      } catch (error) {}
+      var preferredDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var theme = storedTheme || (preferredDark ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css?v=20260707-1">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -34,8 +45,13 @@
               <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
               <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
               <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+              <li class="nav-item"><a class="nav-link" href="#side-projects">Side Projects</a></li>
               <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
+            <button type="button" class="theme-toggle ms-lg-3" id="themeToggle" aria-label="Switch color theme">
+              <i class="bi bi-moon-stars-fill" id="themeToggleIcon" aria-hidden="true"></i>
+              <span id="themeToggleText">Dark</span>
+            </button>
           </div>
         </div>
       </nav>
@@ -224,6 +240,68 @@
         </div>
       </section>
 
+      <section id="side-projects" class="home-section">
+        <div class="container">
+          <div class="section-header reveal-on-scroll">
+            <div>
+              <p class="section-kicker">Side Projects</p>
+              <h2>Mini apps, experiments, and AI-assisted builds outside formal client work.</h2>
+            </div>
+            <p class="section-description">This section is for smaller builds that show exploration, product curiosity, and the way I test ideas quickly through prototypes, personal tools, and iterative experiments.</p>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card reveal-on-scroll">
+              <span class="project-badge">Academic Project</span>
+              <h3>Final Thesis (Skripsi)</h3>
+              <p>Research project focused on improving decision tree performance for diabetes diagnosis using AdaBoost, covering methodology, experiments, and result analysis.</p>
+              <div class="project-tags">
+                <span>Machine Learning</span>
+                <span>Decision Tree</span>
+                <span>AdaBoost</span>
+              </div>
+              <a class="project-link" href="/projects/skripsi/">View Project</a>
+            </article>
+
+            <article class="project-card reveal-on-scroll">
+              <span class="project-badge">Experiment</span>
+              <h3>App Demo (WIP)</h3>
+              <p>A small application demo used to explore feature ideas, interaction flow, and implementation details in a lightweight prototype format.</p>
+              <div class="project-tags">
+                <span>Prototype</span>
+                <span>Mini App</span>
+                <span>Work in Progress</span>
+              </div>
+              <a class="project-link" href="/inv/">Open Demo</a>
+            </article>
+
+            <article class="project-card reveal-on-scroll">
+              <span class="project-badge">Personal Platform</span>
+              <h3>Personal Site</h3>
+              <p>A personal website and notes space where I publish small ideas, experiments, and ongoing improvements around web presentation and content structure.</p>
+              <div class="project-tags">
+                <span>Website</span>
+                <span>Notes</span>
+                <span>Iteration</span>
+              </div>
+              <a class="project-link" href="http://manhakkim.my.id" target="_blank" rel="noopener noreferrer">Visit Site</a>
+            </article>
+
+            <article class="project-card reveal-on-scroll">
+              <span class="project-badge">AI-Assisted Build</span>
+              <h3>Rapid Vibe Coding Experiments</h3>
+              <p>Short-cycle prototypes built to test product ideas, interface directions, and practical AI-assisted development workflows before turning them into more serious implementations.</p>
+              <div class="project-tags">
+                <span>AI-Assisted</span>
+                <span>Prototype</span>
+                <span>Exploration</span>
+              </div>
+              <span class="project-link project-link-muted">Ongoing exploration</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section id="contact" class="home-section section-surface">
         <div class="container">
           <div class="contact-shell reveal-on-scroll">
@@ -265,6 +343,6 @@
     </footer>
   </div>
 
-  <script src="assets/js/scripts.js?v=20260706-3"></script>
+  <script src="assets/js/scripts.js?v=20260707-1"></script>
 </body>
 </html>
