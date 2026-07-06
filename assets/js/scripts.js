@@ -25,18 +25,22 @@ function mailtoo() {
   if (!sections.length || !navLinks.length) return;
 
   function onScroll() {
-    const scrollPos = document.documentElement.scrollTop + 60; // offset for fixed nav
-    for (let i = 1; i < sections.length; i++) { // skip hero/about at index 0
-      const s = sections[i];
-      const top = s.offsetTop;
-      const bottom = top + s.offsetHeight;
-      const link = navLinks[i - 1];
+    const scrollPos = document.documentElement.scrollTop + 120;
+
+    sections.forEach((section) => {
+      const top = section.offsetTop;
+      const bottom = top + section.offsetHeight;
+      const id = section.getAttribute("id");
+      const link = document.querySelector(`.navbar .nav-link[href="#${id}"]`);
+      if (!link) return;
+
       if (scrollPos >= top && scrollPos < bottom) {
         link.classList.add("active");
       } else {
         link.classList.remove("active");
       }
-    }
+    });
+
     if (navbar) {
       if (window.scrollY > 10) navbar.classList.add("nav-scrolled");
       else navbar.classList.remove("nav-scrolled");
@@ -46,4 +50,25 @@ function mailtoo() {
   window.addEventListener("scroll", onScroll, { passive: true });
   // Initialize state
   onScroll();
+})();
+
+// Reveal sections as they enter the viewport
+(function() {
+  const elements = document.querySelectorAll(".reveal-on-scroll");
+  if (!elements.length || !("IntersectionObserver" in window)) {
+    elements.forEach((element) => element.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  }, {
+    threshold: 0.18
+  });
+
+  elements.forEach((element) => observer.observe(element));
 })();
