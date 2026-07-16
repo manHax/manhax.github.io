@@ -156,6 +156,15 @@ p {
   font-weight: 700;
 }
 
+.navbar .navbar-brand {
+  color: var(--text);
+}
+
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus {
+  color: var(--brand);
+}
+
 .navbar .nav-link {
   color: var(--nav-link);
   font-weight: 600;
