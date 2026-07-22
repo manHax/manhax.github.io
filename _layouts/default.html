@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}Manhakkim</title>
+  <meta name="theme-color" content="#10212b">
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/57902751?v=4">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    (function() {
+      var storedTheme = null;
+      try {
+        storedTheme = localStorage.getItem("theme-preference");
+      } catch (error) {}
+      var preferredDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var theme = storedTheme || (preferredDark ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .blog-container {
+      max-width: 800px;
+      margin: 120px auto 60px;
+      padding: 0 20px;
+    }
+    .blog-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .blog-container h1, .blog-container h2, .blog-container h3 {
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+    .blog-container p {
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .blog-container pre {
+      background: var(--surface-2);
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    .blog-container code {
+      background: var(--surface-2);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+    .blog-container pre code {
+      background: transparent;
+      padding: 0;
+    }
+    .blog-container blockquote {
+      border-left: 4px solid var(--brand-primary);
+      padding-left: 20px;
+      margin-left: 0;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+    .blog-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
+      margin-bottom: 10px !important;
+    }
+    .blog-meta {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 40px !important;
+      display: block;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header>
+      <nav class="navbar navbar-light fixed-top navbar-expand-lg site-navbar" style="background: var(--surface-1); border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+          <a class="navbar-brand" href="/">Manhakkim</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="/#experience">Experience</a></li>
+              <li class="nav-item"><a class="nav-link" href="/#projects">Projects</a></li>
+              <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
+              <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li>
+            </ul>
+            <button type="button" class="theme-toggle ms-lg-3" id="themeToggle" aria-label="Switch color theme">
+              <i class="bi bi-moon-stars-fill" id="themeToggleIcon" aria-hidden="true"></i>
+              <span id="themeToggleText">Dark</span>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      {{ content }}
+    </main>
+
+    <footer class="site-footer" style="margin-top: 80px;">
+      <div class="container">
+        <span id="footergen">&copy; 2022 Manhakkim</span>
+        <span class="footer-note">Made with AI</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/assets/js/scripts.js"></script>
+</body>
+</html>
