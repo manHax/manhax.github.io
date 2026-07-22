@@ -2,13 +2,13 @@
 layout: default
 title: Blog
 ---
-<div class="blog-container reveal-on-scroll">
+<div class="blog-container">
   <h1 class="blog-title" style="margin-bottom: 2rem !important;">Blog</h1>
   <p style="color: var(--text-secondary); margin-bottom: 3rem;">Writings, thoughts, and documentation.</p>
 
   <div class="posts-list">
     {% for post in site.posts %}
-      <article style="margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border-color);">
+      <article class="reveal-on-scroll" style="margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border-color);">
         <h2 style="font-size: 1.5rem; margin-top: 0; margin-bottom: 0.5rem;">
           <a href="{{ post.url }}" style="color: var(--text-primary); text-decoration: none;">
             {{ post.title }}

@@ -1,4 +1,8 @@
-# Laptop Selalu Dicolok Seperti PC? Begini Cara Menjaga Umur Baterainya
+---
+layout: post
+title: "Laptop Selalu Dicolok Seperti PC? Begini Cara Menjaga Umur Baterainya"
+date: 2024-01-01
+---
 
 Banyak orang memakai laptop persis seperti PC desktop: tersambung ke monitor eksternal, dock, atau charger hampir sepanjang waktu, dan baterainya nyaris tidak pernah dipakai untuk "kabur" tanpa colokan. Muncul pertanyaan wajar: apakah kebiasaan ini justru bagus untuk baterai karena jarang di-cycle, atau malah merusak?
 
