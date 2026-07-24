@@ -1,9 +1,15 @@
 ---
+title: 'Mitos Baterai Laptop: Apakah Harus Selalu Dicolok?'
+tags:
+- hardware
+- tips
+created: 2026-07-24 08:59:19.478000
+updated: 2026-07-24 09:00:53.102000
+favorite: false
+published: true
+date: '2024-01-01'
 layout: post
-title: "Laptop Selalu Dicolok Seperti PC? Begini Cara Menjaga Umur Baterainya"
-date: 2024-01-01
 ---
-
 Banyak orang memakai laptop persis seperti PC desktop: tersambung ke monitor eksternal, dock, atau charger hampir sepanjang waktu, dan baterainya nyaris tidak pernah dipakai untuk "kabur" tanpa colokan. Muncul pertanyaan wajar: apakah kebiasaan ini justru bagus untuk baterai karena jarang di-cycle, atau malah merusak?
 
 Jawaban singkatnya: **niatnya benar, tapi caranya perlu disesuaikan** — karena baterai yang terus-menerus ditahan di 100% justru mempercepat penuaan kimiawinya, bukan memperlambat.
