@@ -16,7 +16,12 @@ title: Blog
         </h2>
         <span class="blog-meta" style="margin-bottom: 1rem !important; display: block;">{{ post.date | date: "%B %d, %Y" }}</span>
         <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-          {{ post.excerpt | strip_html | truncatewords: 30 }}
+          {% assign content_parts = post.content | split: '</h1>' %}
+          {% if content_parts.size > 1 %}
+            {{ content_parts[1] | strip_html | truncatewords: 30 }}
+          {% else %}
+            {{ post.excerpt | strip_html | truncatewords: 30 }}
+          {% endif %}
         </p>
         <a href="{{ post.url }}" style="color: var(--brand-primary); text-decoration: none; font-weight: 500;">Read more &rarr;</a>
       </article>
