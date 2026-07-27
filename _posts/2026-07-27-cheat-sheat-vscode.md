@@ -1,16 +1,16 @@
 ---
-title: cheat-sheat-vscode
+title: Perbandingan Shortcut GoLand dan VS Code (Default Keymap)
 tags:
 - software
 - tips
 created: 2026-07-24 08:59:19.478000
-updated: 2026-07-27 12:28:40.871000
+updated: 2026-07-27 12:29:38.133000
 favorite: false
 published: true
 date: '2026-07-27'
 layout: post
 ---
-#Mitos Baterai Laptop: Apakah Harus Selalu Dicolok?
+# Perbandingan Shortcut GoLand dan VS Code (Default Keymap)
 
 Perbandingan shortcut GoLand (default keymap) vs VS Code equivalent-nya (default VS Code keymap, asumsi pake Go extension).
 
