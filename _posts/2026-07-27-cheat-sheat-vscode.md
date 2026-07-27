@@ -4,12 +4,14 @@ tags:
 - software
 - tips
 created: 2026-07-24 08:59:19.478000
-updated: 2026-07-24 09:00:53.102000
+updated: 2026-07-27 12:28:40.871000
 favorite: false
 published: true
 date: '2026-07-27'
 layout: post
 ---
+#Mitos Baterai Laptop: Apakah Harus Selalu Dicolok?
+
 Perbandingan shortcut GoLand (default keymap) vs VS Code equivalent-nya (default VS Code keymap, asumsi pake Go extension).
 
 ## Navigasi
