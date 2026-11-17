@@ -7,6 +7,13 @@ layout: default
     <span class="blog-meta blog-animate" style="animation-delay: 0.1s; opacity: 0;">{{ page.date | date: "%B %d, %Y" }}</span>
   {% endif %}
   <div class="blog-content blog-animate" style="animation-delay: 0.2s; opacity: 0;">
-    {{ content }}
+    {% assign trimmed_content = content | lstrip %}
+    {% assign first_three = trimmed_content | slice: 0, 3 %}
+    {% if first_three == '<h1' %}
+      {% assign content_parts = trimmed_content | split: '</h1>' %}
+      {% for part in content_parts offset: 1 %}{% if forloop.index > 1 %}</h1>{% endif %}{{ part }}{% endfor %}
+    {% else %}
+      {{ content }}
+    {% endif %}
   </div>
 </div>
