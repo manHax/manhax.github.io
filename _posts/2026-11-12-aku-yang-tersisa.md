@@ -3,10 +3,10 @@ title: Aku yang Tersisa
 tags:
 - refleksi
 created: 2026-11-18 00:16:19.210000
-updated: 2026-11-18 00:19:18.626000
-favorite: false
+updated: 2026-11-18 15:56:04.899000
+favorite: true
 published: true
-date: '2026-11-18'
+date: '2026-11-12'
 layout: post
 ---
 # Aku yang Tersisa
